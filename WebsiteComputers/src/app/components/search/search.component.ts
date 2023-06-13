@@ -1,19 +1,20 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { ApiServiceService } from 'src/app/services/api-service.service';
 
-
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css']
 })
-export class HomeComponent {
+export class SearchComponent {
   items: MenuItem[] = [];
   banner: any = [];
   brands:any = [];
   contents:any =[];
   responsiveOptions: any;
+  keyword:any;
   searchKeyword: any = '';
 
   //test
@@ -28,8 +29,9 @@ export class HomeComponent {
   
   sortKey: any;
 	
-  constructor(private service: ApiServiceService){
+  constructor(private service: ApiServiceService, private router: ActivatedRoute){
     this.initResponsive();
+    
   }
 
   initResponsive() {
@@ -54,11 +56,14 @@ export class HomeComponent {
 
   ngOnInit() {
 
+    this.router.paramMap.subscribe(params => {
+      this.keyword = params.get('keyword');
+      this.getProducts();
+    });
+
     this.getItemsNav();
 
     this.getBanner();
-
-    this.getProducts();
 
     this.getBrands();
 
@@ -89,7 +94,7 @@ export class HomeComponent {
   getBanner(){
     this.service.getData("banner").subscribe((result) =>
     {
-      console.log(result, 'bannerResult#');
+      // console.log(result, 'bannerResult#');
       this.banner = result;
     });
   }
@@ -97,15 +102,15 @@ export class HomeComponent {
   getProducts() {
     this.service.getData("products").subscribe((result) =>
     {
-      console.log(result, 'productsResult#');
-      this.contents = result;
+      this.contents = result.filter((product:any) => product.name.toLowerCase().indexOf(this.keyword) != -1);
+      console.log(this.keyword, "#this is key word");
     });
   }
 
   getBrands() {
     this.service.getData("brands").subscribe((result) =>
     {
-      console.log(result, 'brandsResult#');
+      // console.log(result, 'brandsResult#');
       this.brands = result;
     });
   }
