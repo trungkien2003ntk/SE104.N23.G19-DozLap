@@ -17,6 +17,19 @@ export class BrandComponent {
 	getParamBrand: any;
   selectedBrand:any;
 
+    //test
+    sortOptions = [
+      {label: 'Price High to Low', value: '!price'},
+      {label: 'Price Low to High', value: 'price'}
+    ];
+
+    sortOrder: number = 0;
+  
+    sortField: string = '';
+    
+    sortKey: any;
+  
+
   constructor(private service: ApiServiceService, private router: ActivatedRoute){
     this.initResponsive();
   }
@@ -97,5 +110,18 @@ export class BrandComponent {
       console.log(result, 'brandsResult#');
       this.brands = result;
     });
+  }
+
+  onSortChange(event:any) {
+    let value = event.value;
+
+    if (value.indexOf('!') === 0) {
+        this.sortOrder = -1;
+        this.sortField = value.substring(1, value.length);
+    }
+    else {
+        this.sortOrder = 1;
+        this.sortField = value;
+    }
   }
 }

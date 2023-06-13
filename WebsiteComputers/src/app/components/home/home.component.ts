@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { ApiServiceService } from 'src/app/services/api-service.service';
-
+import {DataViewModule} from 'primeng/dataview';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +14,18 @@ export class HomeComponent {
   brands:any = [];
   contents:any =[];
   responsiveOptions: any;
+
+  //test
+  sortOptions = [
+    {label: 'Price High to Low', value: '!price'},
+    {label: 'Price Low to High', value: 'price'}
+  ];
+
+  sortOrder: number = 0;
+
+  sortField: string = '';
+  
+  sortKey: any;
 	
   constructor(private service: ApiServiceService){
     this.initResponsive();
@@ -48,6 +60,8 @@ export class HomeComponent {
     this.getProducts();
 
     this.getBrands();
+
+    //test
   }
 
   getItemsNav() {
@@ -95,5 +109,17 @@ export class HomeComponent {
     });
   }
 
+  onSortChange(event:any) {
+    let value = event.value;
+
+    if (value.indexOf('!') === 0) {
+        this.sortOrder = -1;
+        this.sortField = value.substring(1, value.length);
+    }
+    else {
+        this.sortOrder = 1;
+        this.sortField = value;
+    }
+  }
 
 }
