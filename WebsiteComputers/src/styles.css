@@ -1,5 +1,202 @@
-
 @import '~node_modules/primeicons/primeicons.css';
 @import '~node_modules/primeng/resources/themes/lara-light-blue/theme.css';
 @import '~node_modules/primeng/resources/primeng.min.css';
 @import "~bootstrap/dist/css/bootstrap.css";
+
+:root {
+    --poppins: 'Poppins', sans-serif;
+    --lato: 'Lato', sans-serif;
+    --light: #F9F9F9;
+    --blue: #3C91E6;
+    --light-blue: #CFE8FF;
+    --grey: #eee;
+    --dark-grey: #AAAAAA;
+    --dark: #342E37;
+    --red: #DB504A;
+    --yellow: #FFCE26;
+    --light-yellow: #FFF2C6;
+    --orange: #FD7238;
+    --light-orange: #FFE0D3;
+    --super-light-orange: rgb(240, 217, 175);
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body.dark {
+    --light: #0C0C1E;
+    --grey: #060714;
+    --dark: #FBFBFB;
+}
+
+body {
+    background: var(--light);
+    overflow-x: hidden;
+}
+
+
+/* NAVBAR */
+nav {
+    height: 56px;
+    background: beige;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    grid-gap: 24px;
+    font-family: var(--lato);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    bottom: -40px;
+    left: 0;
+    border-radius: 50%;
+    box-shadow: -20px -20px 0 beige;
+}
+
+nav a {
+    color: black;
+}
+
+nav .bx.bx-menu {
+    cursor: pointer;
+    color: black;
+}
+
+nav .nav-link {
+    font-size: 16px;
+    transition: .3s ease;
+}
+
+nav .nav-link:hover {
+    color: var(--blue);
+}
+
+nav form {
+    width: 100%;
+    margin-right: auto;
+}
+
+nav form .form-input {
+    display: flex;
+    align-items: center;
+    height: 36px;
+}
+
+nav form .form-input input {
+    flex-grow: 1;
+    padding: 0px 16px;
+    height: 100%;
+    border: none;
+    background: rgb(240, 217, 175);
+    border-radius: 36px;
+    width: 100%;
+    color: black;
+    outline: none;
+}
+
+nav form .form-input button {
+    width: 36px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+nav form .form-input .p-button-rounded {
+    background-color: rgb(240, 217, 175);
+}
+
+nav .profile img {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+/* NAVBAR */
+
+
+/* brands */
+
+/* brands */
+
+
+/* content */
+.hover-pointer:hover {
+    cursor: pointer;
+}
+
+.card {
+    padding: 2rem;
+    box-shadow: 0 2px 1px -1px darkgray, 0 1px 1px 0 darkgray, 0 1px 3px 0 darkgray;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+
+/* test */
+.p-dropdown {
+    width: 14rem;
+    font-weight: normal;
+}
+
+.product-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.product-description {
+    margin: 0 0 1rem 0;
+}
+
+.product-category-icon {
+    vertical-align: middle;
+    margin-right: .5rem;
+}
+
+.product-category {
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.product-list-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+.product-grid-item {
+    margin: .5em;
+    border: 1px solid #dee2e6;
+    display: flex;
+    flex-direction: column;
+}
+
+.p-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.product-grid-item-bottom{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* content */
