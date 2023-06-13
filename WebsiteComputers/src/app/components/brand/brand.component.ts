@@ -66,6 +66,7 @@ export class BrandComponent {
     this.getBanner();
     
     this.getBrands();
+
   }
 
   getItemsNav() {
@@ -123,5 +124,14 @@ export class BrandComponent {
         this.sortOrder = 1;
         this.sortField = value;
     }
+  }
+  
+  onSearchClick(searchInput: HTMLInputElement) {
+    searchInput.value = '';
+  }
+
+  onSearchEnter(searchInput: HTMLInputElement) {
+    const searchButton = searchInput.nextElementSibling as HTMLElement;
+    searchButton.click();
   }
 }
