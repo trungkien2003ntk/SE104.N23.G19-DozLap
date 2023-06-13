@@ -1,6 +1,6 @@
 <!-- NAVBAR -->
-<nav>
-    <a href="#" class="nav-link">Categories</a>
+<nav style="min-width: 1000px">
+    <a href="" class="nav-link" style="width: 150px;">Laptop Center</a>
     <form action="#">
         <div class="form-input" style="margin-left: 30%; width: 30%;">
             <input type="search" placeholder="Search...">
@@ -8,10 +8,6 @@
                 class="p-button-rounded"></button>
         </div>
     </form>
-    <a href="#" class="notification">
-        <i class='bx bxs-bell'></i>
-        <span class="num">8</span>
-    </a>
     <a href="#" class="profile">
         <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g">
     </a>
@@ -20,7 +16,7 @@
 
 
 <!-- banner -->
-<div style="align-items: center; text-align: center;">
+<div style="align-items: center; text-align: center; ">
     <p-carousel [value]="products" styleClass="custom-carousel" [numVisible]="3" [numScroll]="1" [circular]="true"
         [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
         <ng-template pTemplate="header">
@@ -31,7 +27,7 @@
         </ng-template>
         <ng-template let-product pTemplate="item">
             <div class="product-item">
-                <div class="product-item-content">
+                <div class="product-item-content hover-pointer">
                     <div class="mb-3">
                         <img style="height: 50px;" src="assets/logo.png" [alt]="product.name" class="product-image" />
                     </div>
@@ -48,173 +44,49 @@
 </div>
 <!-- banner -->
 
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="margin-left: 10%; margin-right: 10%;">
-    <div class="col">
-        <div class="card shadow-sm">
-            <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
-                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                    dy=".3em">Thumbnail</text>
-            </svg> -->
-            <img style="height: 270px;"  src="https://cellphones.com.vn/sforum/wp-content/uploads/2022/02/MacBook-Pro-2020-cover.jpg"/>
 
-            <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card shadow-sm">
-            <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
-                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                    dy=".3em">Thumbnail</text>
-            </svg> -->
-            <img style="height: 270px;" src="https://9to5mac.com/wp-content/uploads/sites/6/2021/10/MacBook-Pro-2021.jpg?quality=82&strip=all&w=1024"/>
-            <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card shadow-sm">
-            <img style="height: 270px;"  src="https://cellphones.com.vn/sforum/wp-content/uploads/2022/02/MacBook-Pro-2020-cover.jpg"/>
-
-            <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
-            </div>
-        </div>
+<!-- brands -->
+<div style="border-radius: 5000px; background-color: beige; width: 10%; margin-left: 10%; margin-right: 10%; height:max-content; width: 80%; padding: 10px; display: flex; flex-wrap: wrap; justify-content: center; min-width: 1000px">
+    <div class="hover-pointer" style="border-radius: 5000px; background-color: orange; width: 150px; orientation:portrait; align-items: center; text-align: center;padding: 10px; margin: 10px; display: inline;" *ngFor="let b of brands">
+        <img src="{{b.img}}" style="height: 30px;"/>
+        
+        <p style="display: inline;">{{b.name}}</p>
     </div>
 
-    <div class="col">
-        <div class="card shadow-sm">
-            <img style="height: 270px;"  src="https://cdn.tgdd.vn/Files/2021/06/27/1363660/giai-thich-ten-goi-cua-cac-dong-laptop-hp-va-dong--3.png"/>
-
-            <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card shadow-sm">
-            <img style="height: 270px;"  src="https://cellphones.com.vn/sforum/wp-content/uploads/2022/02/MacBook-Pro-2020-cover.jpg"/>
-
-            <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card shadow-sm">
-            <img style="height: 270px;"  src="https://cdn2.cellphones.com.vn/x,webp,q100/media/wysiwyg/laptop/HP/laptop-hp-1.jpg"/>
-
-            <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col">
-        <div class="card shadow-sm">
-            <img style="height: 270px;"  src="https://bizweb.dktcdn.net/100/033/226/files/0000-6461987cv1d.jpg?v=1640865061245"/>
-
-            <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card shadow-sm">
-            <img style="height: 270px;"  src="https://cellphones.com.vn/sforum/wp-content/uploads/2022/02/MacBook-Pro-2020-cover.jpg"/>
-
-            <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card shadow-sm">
-            <img style="height: 270px;"  src="https://maytinhkimlong.com/uploads/product/640%20IMG/laptop_hp_15_dy2091wm_491d1ua_bc%20-%20Copy%201.jpg"/>
-
-            <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
+<br/>
+<!-- brands -->
+
+
+<!-- table content -->
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="margin-left: 10%; margin-right: 10%;">
+
+    <div class="col" *ngFor="let c of contents" style="min-width: 400px;">
+        <div class="card shadow-sm">
+
+            <div style="width: 380px; height: 270px; align-self: center; margin-top: 5px;" class="hover-pointer">
+                <img style="height: 100%; width: 100%;"  src="{{c.img}}"/>
+                
+            </div>
+            <h3 style="margin-left: 15px; margin-top: 15px;" class="hover-pointer">{{c.name}}</h3>
+
+            <div class="card-body" style="width: 400px; height: 230px;">
+                <p class="card-text" style="height: 150px; overflow: hidden; text-overflow: ellipsis;">{{c.body}}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>
+                    <p style="margin-right: 5px; color: red;">${{c.price}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- table content -->
+
+
+<br/>
 <router-outlet></router-outlet>
