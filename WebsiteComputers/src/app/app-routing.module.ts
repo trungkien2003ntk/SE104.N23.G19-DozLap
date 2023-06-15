@@ -7,6 +7,9 @@ import { SearchComponent } from './components/search/search.component';
 import { ProductComponent } from './components/product/product.component';
 import { UserComponent } from './components/user/user.component';
 import { CartComponent } from './components/cart/cart.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -15,8 +18,10 @@ const routes: Routes = [
   { path: 'category/:id', component: CategoryComponent },
   { path: 'search/:keyword', component: SearchComponent },
   { path: 'product/:id', component: ProductComponent },
-  { path: 'user', component: UserComponent },
-  { path: 'cart', component: CartComponent },
+  { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
+  { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: '**', component: NotFoundComponent },
 ];
 

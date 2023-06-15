@@ -1,71 +1,20 @@
-.tabView{
-    margin-left: 10%;
-    margin-right: 10%;
-    display: block;
-    width: 80%;
-}
-
-.content-bar{
-    border-top: .0625rem solid #efefef;
-    padding-top: 10px;
-    height: auto;
-}
-
-.main-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 30%;
-}
-
-.table-content{
-    border-collapse: separate;
-    border-spacing: 0 20px;
-}
-
-.table-content .td-right input{
-    width: 300px;
-}
-
-.table-content .td-right label input{
-    width: auto;
-    margin-left: 10px;
-}
-
-.radio-group label {
-    display: inline-block;
-    margin-right: 20px;
-}  
-
-.avt-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-left: .0625rem solid #efefef;
-}
-
-.td-left{
-    text-align: right;
-    margin-left: 100px;
-}
-
-.td-right{
-    text-align: left;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .login-page {
-    width: 100%;
-    padding: auto 0 0;
-
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
 }
 
 .form {
-    max-width: 500px;
-    padding: 25px;
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
     text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 .form input {
@@ -110,10 +59,6 @@
 .form .message a {
     color: #4CAF50;
     text-decoration: none;
-}
-
-.form .register-form {
-    max-width: auto;
 }
 
 .container {
@@ -166,8 +111,3 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
-.radio-group {
-    display: flex;
-    flex-direction: row;
-}  

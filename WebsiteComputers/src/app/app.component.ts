@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiServiceService } from './services/api-service.service';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +8,19 @@ import { ApiServiceService } from './services/api-service.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  isLoginPage!: boolean;
   banner: any = [];
   category:any = [];
   contents:any =[];
   responsiveOptions: any;
 
-  constructor(private service: ApiServiceService){
+  constructor(private service: ApiServiceService, private router: Router){
+
+    router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.isLoginPage = (event.url === '/login' || event.url === '/register' );
+      }
+    });
     this.initResponsive();
   }
 

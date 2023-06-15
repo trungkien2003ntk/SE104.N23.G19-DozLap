@@ -1,67 +1,68 @@
-<!-- NAVBAR -->
-<nav style="min-width: 1000px">
-    <a href="" class="nav-link" style="width: 150px;">Laptop Center</a>
-    <form action="#">
-        <div class="form-input" style="margin-left: 30%; width: 30%;">
-            <input type="search" placeholder="Search..." #searchInput (keyup.enter)="onSearchEnter(searchInput)">
-            <button
-            style="margin-left: 10px;" pButton pRipple type="button" icon="pi pi-search"
-            class="p-button-rounded" [routerLink]="'/search/' + searchInput.value"
-            (click)="onSearchClick(searchInput)"></button>
-        </div>
-    </form>
-    <p-button icon="pi pi-shopping-cart" routerLink="/cart"></p-button>
-    <a routerLink="/user" class="profile">
-        <img 
-            src="https://vcdn1-vnexpress.vnecdn.net/2022/02/09/son-tung-mtp-8052-1632297031-2149-1644377166.jpg?w=0&h=0&q=100&dpr=1&fit=crop&s=B8_7p2IFO-Fug3eZuXPEBg">
-    </a>
-</nav>
-<!-- NAVBAR -->
+<ng-container *ngIf="!isLoginPage">
+    <!-- NAVBAR -->
+    <nav style="min-width: 1000px">
+        <a href="" class="nav-link" style="width: 150px;">Laptop Center</a>
+        <form action="#">
+            <div class="form-input" style="margin-left: 30%; width: 30%;">
+                <input type="search" placeholder="Search..." #searchInput (keyup.enter)="onSearchEnter(searchInput)">
+                <button style="margin-left: 10px;" pButton pRipple type="button" icon="pi pi-search"
+                    class="p-button-rounded" [routerLink]="'/search/' + searchInput.value"
+                    (click)="onSearchClick(searchInput)"></button>
+            </div>
+        </form>
+        <p-button icon="pi pi-shopping-cart" routerLink="/cart"></p-button>
+        <a routerLink="/user" class="profile">
+            <img
+                src="https://vcdn1-vnexpress.vnecdn.net/2022/02/09/son-tung-mtp-8052-1632297031-2149-1644377166.jpg?w=0&h=0&q=100&dpr=1&fit=crop&s=B8_7p2IFO-Fug3eZuXPEBg">
+        </a>
+    </nav>
+    <!-- NAVBAR -->
 
-<!-- banner -->
-<div style="align-items: center; text-align: center; ">
-    <p-carousel [value]="banner" styleClass="custom-carousel" [numVisible]="3" [numScroll]="1" [circular]="true"
-        [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
-        <ng-template pTemplate="header">
-            <h1 style="color: red;">
-                <i><b>Hot</b></i>
-            </h1>
-            <br />
-        </ng-template>
-        <ng-template let-product pTemplate="item">
-            <div class="product-item">
-                <div class="product-item-content hover-pointer" [routerLink]="['/product/', product.id]">
-                    <div class="mb-3">
-                        <img style="height: 50px;" src="{{product.image_url}}" [alt]="product.name" class="product-image" />
-                    </div>
-                    <div>
-                        <h4 class="mb-1">{{product.name}}</h4>
-                        <h6 class="mt-0 mb-3" style="color: red;">{{product.price | currency:'VND'}}</h6>
-                        <!-- <span
+    <!-- banner -->
+    <div style="align-items: center; text-align: center; ">
+        <p-carousel [value]="banner" styleClass="custom-carousel" [numVisible]="3" [numScroll]="1" [circular]="true"
+            [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+            <ng-template pTemplate="header">
+                <h1 style="color: red;">
+                    <i><b>Hot</b></i>
+                </h1>
+                <br />
+            </ng-template>
+            <ng-template let-product pTemplate="item">
+                <div class="product-item">
+                    <div class="product-item-content hover-pointer" [routerLink]="['/product/', product.id]">
+                        <div class="mb-3">
+                            <img style="height: 50px;" src="{{product.image_url}}" [alt]="product.name"
+                                class="product-image" />
+                        </div>
+                        <div>
+                            <h4 class="mb-1">{{product.name}}</h4>
+                            <h6 class="mt-0 mb-3" style="color: red;">{{product.price | currency:'VND'}}</h6>
+                            <!-- <span
                             [class]="'product-badge status-'+product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span> -->
+                        </div>
                     </div>
                 </div>
-            </div>
-        </ng-template>
-    </p-carousel>
-</div>
-<!-- banner -->
-
-<!-- brands -->
-<div
-    style="border-radius: 5000px; background-color: beige; margin-left: 10%; margin-right: 10%; height:max-content; width: 80%; padding: 10px; display: flex; flex-wrap: wrap; justify-content: center; min-width: 1000px">
-    <div class="hover-pointer"
-    style="border-radius: 5000px; background-color: orange; width: 150px; orientation:portrait;
-    align-items: center; text-align: center;padding: 10px; margin: 10px; display: inline;
-    display: flex; align-items: center; justify-content: center;"
-        *ngFor="let b of category" [routerLink]="['category/', b.id]">
-        <!-- <img src="{{b.img}}" style="height: 30px;" /> -->
-        <h5 style="display: inline; vertical-align:middle;">{{b.name}}</h5>
+            </ng-template>
+        </p-carousel>
     </div>
+    <!-- banner -->
 
-</div>
-<!-- brands -->
+    <!-- brands -->
+    <div
+        style="border-radius: 5000px; background-color: beige; margin-left: 10%; margin-right: 10%; height:max-content; width: 80%; padding: 10px; display: flex; flex-wrap: wrap; justify-content: center; min-width: 1000px">
+        <div class="hover-pointer" style="border-radius: 5000px; background-color: orange; width: 150px; orientation:portrait;
+    align-items: center; text-align: center;padding: 10px; margin: 10px; display: inline;
+    display: flex; align-items: center; justify-content: center;" *ngFor="let b of category"
+            [routerLink]="['category/', b.id]">
+            <!-- <img src="{{b.img}}" style="height: 30px;" /> -->
+            <h5 style="display: inline; vertical-align:middle;">{{b.name}}</h5>
+        </div>
 
-<br />
+    </div>
+    <!-- brands -->
 
-<router-outlet></router-outlet>
+    <br />
+</ng-container>
+
+<router-outlet ></router-outlet>
