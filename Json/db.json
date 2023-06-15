@@ -1,221 +1,275 @@
 {
   "products": [
-    {"img": "https://cellphones.com.vn/sforum/wp-content/uploads/2022/02/MacBook-Pro-2020-cover.jpg",
-	"brand" : "MacBook",
-    "name": "MacBook Air M1 2020",
-    "body": "Laptop Apple MacBook Air M1 2020 thuộc dòng laptop cao cấp sang trọng có cấu hình mạnh mẽ, chinh phục được các tính năng văn phòng lẫn đồ hoạ mà bạn mong muốn, thời lượng pin dài, thiết kế mỏng nhẹ sẽ đáp ứng tốt các nhu cầu làm việc của bạn.", "price": 1000},
-
-    {"img": "https://9to5mac.com/wp-content/uploads/sites/6/2021/10/MacBook-Pro-2021.jpg?quality=82&strip=all&w=1024",
-	"brand" : "MacBook",
-    "name": "MacBook Air M2",
-    "body": "Sau 14 năm, ba lần sửa đổi và hai kiến trúc bộ vi xử lý khác nhau, kiểu dáng mỏng dần mang tính biểu tượng của MacBook Air đã đi vào lịch sử. Thay vào đó là một chiếc MacBook Air M2 với thiết kế hoàn toàn mới, độ dày không thay đổi tương tự như MacBook Pro, đánh bật mọi rào cản với con chip Apple M2 đầy mạnh mẽ.", "price": 2000},
-
-    {"img": "https://cellphones.com.vn/sforum/wp-content/uploads/2022/02/MacBook-Pro-2020-cover.jpg",
-	"brand" : "MacBook",
-    "name" :"MacBook Pro 14 inch",
-    "body": "Apple đã âm thầm tung ra thế hệ MacBook Pro 14 inch M2 Pro 2023 hoàn toàn mới, hứa hẹn hiệu suất cao hơn so với MacBook Pro đợt trước, có khả năng xử lý mượt mà các tác vụ khắt khe của người dùng chuyên nghiệp.", "price": 3000},
-
-    {"img": "https://cdn.tgdd.vn/Files/2021/06/27/1363660/giai-thich-ten-goi-cua-cac-dong-laptop-hp-va-dong--3.png",
-	"brand" : "HP",
-    "name": "HP 15s fq5078TTU i5 (6K798PA)",
-    "body": "Thiết kế thanh lịch, tao nhã tạo nên vẻ đẹp quyến rũ của chiếc laptop HP 15s fq5078TTU i5 (6K798PA), sở hữu dòng chip Intel thế hệ 12 sẵn sàng cân đối mọi tác vụ của laptop học tập - văn phòng phù hợp với sinh viên, học sinh, nhân viên văn phòng. Laptop Acer Aspire 7 Gaming A715 42G R05G (NH.QAYSV.007) sở hữu phong cách thiết kế độc đáo, thời thượng cùng hiệu năng mạnh mẽ, đáp ứng tối đa mọi nhu cầu của người dùng từ cơ bản đến nâng cao.", "price": 1500},
-
-    {"img": "https://cdn2.cellphones.com.vn/x,webp,q100/media/wysiwyg/laptop/HP/laptop-hp-1.jpg",
-	"brand" : "HP",
-    "name": "HP Pavilion 15 eg2056TU i5 (6K786PA)",
-    "body": "Laptop HP Pavilion 15 eg2056TU i5 (6K786PA) là phiên bản laptop học tập - văn phòng sở hữu hiệu năng vượt trội đến từ con chip Gen 12 mạnh mẽ cùng phong cách thiết kế đơn giản, sang trọng, đáp ứng tốt mọi nhu cầu sử dụng thiết yếu hằng ngày. ", "price": 1000},
-
-    {"img": "https://bizweb.dktcdn.net/100/033/226/files/0000-6461987cv1d.jpg?v=1640865061245",
-	"brand" : "HP",
-    "name": "HP VICTUS 15 fa0111TX i5 (7C0R4PA)",
-    "body": "Laptop HP VICTUS 15 fa0111TX i5 (7C0R4PA) hứa hẹn mang đến trải nghiệm làm việc và giải trí tuyệt vời nhờ bộ vi xử lý Intel Core i5 12500H mạnh mẽ, card đồ họa rời đến từ NVIDIA và màn hình 144 Hz siêu mượt mà.", "price": 3000},
-
-    {"img": "https://maytinhkimlong.com/uploads/product/640%20IMG/laptop_hp_15_dy2091wm_491d1ua_bc%20-%20Copy%201.jpg",
-	"brand" : "MacBook",
-    "name": "Laptop demo",
-    "body": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.", "price": 1000},
-
-    {"img": "https://cdn.tgdd.vn/Products/Images/44/305456/surface-pro-9-i5-glr-xam-1.jpg",
-	"brand" : "Surface",
-    "name": "Surface Pro 9 i5 1235U",
-    "body": "Laptop Surface Pro 9 i5 1235U là một chiếc máy tính 2 trong 1 kết hợp giữa laptop và máy tính bảng từ Microsoft, mang trong mình những thông số cấu hình ấn tượng nhằm đảm bảo vận hành mượt mà mọi tác vụ học tập, văn phòng.", "price": 2000},
-
-    {"img": "https://cdn.tgdd.vn/Products/Images/44/305459/surface-pro-9-i7-glr-2.jpg",
-	"brand" : "Surface",
-    "name": "Surface Pro 9 i7 1255U",
-    "body": "Laptop Surface Pro 9 i7 1255U không chỉ có cấu hình mạnh mẽ mà còn được thiết kế với ngoại hình hiện đại, gọn nhẹ để người dùng dễ dàng mang theo. Thiết bị đặc biệt phù hợp cho các chuyên gia và sinh viên cần xử lý các tác vụ yêu cầu hiệu suất cao và có nhu cầu giải trí mọi lúc, mọi nơi.", "price": 4000}
-
-    ],
-	"brands": [
-  {
-    "img": "https://www.freepnglogos.com/uploads/apple-logo-png/apple-logo-png-dallas-shootings-don-add-are-speech-zones-used-4.png",
-    "name": "MacBook"
-  },
-  {
-    "img": "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png",
-    "name": "HP"
-  },
-  {
-    "img": "https://www.freepnglogos.com/uploads/dell-png-logo/dell-png-logo-0.png",
-    "name": "Dell"
-  },
-  {
-    "img": "https://www.pngmart.com/files/22/Asus-Logo-Transparent-PNG.png",
-    "name": "Asus"
-  },
-  {
-    "img": "https://logos-world.net/wp-content/uploads/2022/11/Acer-Logo.png",
-    "name": "Acer"
-  },
-  {
-    "img": "https://storage-asset.msi.com/global/picture/image/feature/nb/AMD/Bravo15-5000/bravo-logo.png",
-    "name": "MSI"
-  },
-  {
-    "img": "https://logos-download.com/wp-content/uploads/2016/05/Xiaomi_Logo_2021.png",
-    "name": "Mi NoteBook"
-  },
-  {
-    "img": "https://p.kindpng.com/picc/s/349-3493264_high-resolution-leica-logo-hd-png-download.png",
-    "name": "Lenovo"
-  },
-  {
-    "img": "https://seeklogo.com/images/H/Huawei-logo-A8C7CBCAA8-seeklogo.com.png",
-    "name": "Huawei"
-  },
-  {
-    "img": "https://www.freepnglogos.com/uploads/lg-logo-png/lg-logo-logo-png-transparent-svg-vector-bie-supply-0.png",
-    "name": "LG"
-  },
-  {
-    "img": "https://download.logo.wine/logo/ThinkPad/ThinkPad-Logo.wine.png",
-    "name": "ThinkPad"
-  },
-  {
-    "img": "https://i.pinimg.com/736x/ba/45/24/ba452436d152a2a216c3058f7b2a7032--surface-pro--future-videos.jpg",
-    "name": "Surface"
-  }
-	],
-	"banner": [
-		{
-			"id": "1000",
-			"code": "f230fh0g3",
-			"name": "Bamboo Watch",
-			"description": "Product Description",
-			"image": "bamboo-watch.jpg",
-			"price": 65,
-			"category": "Accessories",
-			"quantity": 24,
-			"inventoryStatus": "INSTOCK",
-			"rating": 5
-		},
-		{
-			"id": "1001",
-			"code": "nvklal433",
-			"name": "Black Watch",
-			"description": "Product Description",
-			"image": "black-watch.jpg",
-			"price": 72,
-			"category": "Accessories",
-			"quantity": 61,
-			"inventoryStatus": "INSTOCK",
-			"rating": 4
-		},
-		{
-			"id": "1002",
-			"code": "zz21cz3c1",
-			"name": "Blue Band",
-			"description": "Product Description",
-			"image": "blue-band.jpg",
-			"price": 79,
-			"category": "Fitness",
-			"quantity": 2,
-			"inventoryStatus": "LOWSTOCK",
-			"rating": 3
-		},
-		{
-			"id": "1003",
-			"code": "244wgerg2",
-			"name": "Blue T-Shirt",
-			"description": "Product Description",
-			"image": "blue-t-shirt.jpg",
-			"price": 29,
-			"category": "Clothing",
-			"quantity": 25,
-			"inventoryStatus": "INSTOCK",
-			"rating": 5
-		},
-		{
-			"id": "1004",
-			"code": "h456wer53",
-			"name": "Bracelet",
-			"description": "Product Description",
-			"image": "bracelet.jpg",
-			"price": 15,
-			"category": "Accessories",
-			"quantity": 73,
-			"inventoryStatus": "INSTOCK",
-			"rating": 4
-		},
-		{
-			"id": "1005",
-			"code": "av2231fwg",
-			"name": "Brown Purse",
-			"description": "Product Description",
-			"image": "brown-purse.jpg",
-			"price": 120,
-			"category": "Accessories",
-			"quantity": 0,
-			"inventoryStatus": "OUTOFSTOCK",
-			"rating": 4
-		},
-		{
-			"id": "1006",
-			"code": "bib36pfvm",
-			"name": "Chakra Bracelet",
-			"description": "Product Description",
-			"image": "chakra-bracelet.jpg",
-			"price": 32,
-			"category": "Accessories",
-			"quantity": 5,
-			"inventoryStatus": "LOWSTOCK",
-			"rating": 3
-		},
-		{
-			"id": "1007",
-			"code": "mbvjkgip5",
-			"name": "Galaxy Earrings",
-			"description": "Product Description",
-			"image": "galaxy-earrings.jpg",
-			"price": 34,
-			"category": "Accessories",
-			"quantity": 23,
-			"inventoryStatus": "INSTOCK",
-			"rating": 5
-		},
-		{
-			"id": "1008",
-			"code": "vbb124btr",
-			"name": "Game Controller",
-			"description": "Product Description",
-			"image": "game-controller.jpg",
-			"price": 99,
-			"category": "Electronics",
-			"quantity": 2,
-			"inventoryStatus": "LOWSTOCK",
-			"rating": 4
-		},
-		{
-			"id": "1009",
-			"code": "cm230f032",
-			"name": "Gaming Set",
-			"description": "Product Description",
-			"image": "gaming-set.jpg",
-			"price": 299,
-			"category": "Electronics",
-			"quantity": 63,
-			"inventoryStatus": "INSTOCK",
-			"rating": 3
-		}
-	]
+    {
+      "img": "https://cellphones.com.vn/sforum/wp-content/uploads/2022/02/MacBook-Pro-2020-cover.jpg",
+      "rating": "2.5",
+      "inventoryStatus": "LOWSTOCK",
+      "id": 1,
+      "brand": "MacBook",
+      "name": "MacBook Air M1 2020",
+      "description": "Laptop Apple MacBook Air M1 2020 thuộc dòng laptop cao cấp sang trọng có cấu hình mạnh mẽ, chinh phục được các tính năng văn phòng lẫn đồ hoạ mà bạn mong muốn, thời lượng pin dài, thiết kế mỏng nhẹ sẽ đáp ứng tốt các nhu cầu làm việc của bạn.",
+      "price": 1000,
+      "details": "Chip Apple M1 tốc độ xử lý nhanh gấp 3.5 lần thế hệ trước<br/>Chiếc MacBook này được trang bị con chip Apple M1 được sản xuất độc quyền bởi Nhà Táo trên tiến trình 5 nm, 8 lõi bao gồm 4 lõi tiết kiệm điện và 4 lõi hiệu suất cao, mang đến một hiệu năng kinh ngạc, xử lý mọi tác vụ văn phòng một cách mượt mà như Word, Excel, Powerpoint,... thực hiện tốt các nhiệm vụ chỉnh sửa hình ảnh, kết xuất 2D trên các phần mềm Photoshop, AI,... máy còn hỗ trợ tiết kiệm được điện năng cao.<br/>Apple MacBook Air M1 2020 - Làm việc đa nhiệm<br/>Đi cùng CPU là card đồ họa tích hợp 7 nhân GPU có hiệu năng vượt trội sau nhiều bài thử nghiệm hiệu năng đồ họa của benchmark, bạn có thể sử dụng nhiều phần mềm đồ họa chuyên nghiệp, thoả sức sáng tạo nội dung, render video ổn định với chất lượng hình ảnh cao.<br/>Apple MacBook Air M1 2020 - Render video<br/>MacBook Air được trang bị RAM 8 GB cho khả năng đa nhiệm cao, bạn có thể mở cùng lúc nhiều cửa sổ hoặc ứng dụng để phục vụ cho công việc, giải trí của mình ví dụ như vừa mở Chrome tra cứu thông tin vừa mở Word để làm việc cực kỳ tiện lợi mà không cần lo lắng là máy sẽ bị đơ.<br/>MacBook sở hữu ổ cứng SSD 256 GB cho tốc độ xử lý nhanh chóng, thao tác cuộn trong Safari cực mượt, đánh thức máy đang trong chế độ ngủ chỉ mất vài giây và đem đến không gian lưu trữ rộng rãi bạn cứ thoải mái lưu lại những bộ phim hay mà không lo nó sẽ chiếm chỗ của các tệp tài liệu công việc.<br/>Apple MacBook Air M1 2020 - RAM <br/>Bên cạnh sử dụng con chip mới Apple còn ra mắt phiên bản hệ điều hành macOS Big Sur với giao diện hoàn hảo hơn, các chuyển động cuộn, phóng to và chuyển tiếp màn hình mượt mà. Ngoài đổi mới giao diện macOS Big Sur còn mang đến khả năng phản hồi nhanh chóng và kho ứng dụng khổng lồ.<br/>Xem thêm: Danh sách ứng dụng chạy được trên Macbook chip Apple M1.<br/>Thiết kế sang trọng, tinh tế<br/>MacBook Air M1 256GB 2020 không những thừa hưởng thiết kế mỏng nhẹ, hiện đại của các thế hệ trước mà còn học hỏi thêm phong cách hiện đại của các dòng Macbook Pro. Khối lượng máy chỉ vỏn vẹn 1.29 kg và mỏng của thân máy là 16.1 mm có tính cơ động cao, dễ đem theo xử lý công việc.<br/>Vỏ máy được thiết kế nguyên khối từ nguyên liệu nhôm tái chế 100% vừa góp phần bảo vệ môi trường vừa cho độ bền cao, chịu va đập tốt bảo vệ các linh kiện bên trong an toàn nếu có xảy ra va chạm mạnh.<br/>Apple MacBook Air M1 2020 - Thiết kế<br/>Magic Keyboard có hành trình phím 1 mm mang lại trải nghiệm gõ nhạy, thoải mái và yên tĩnh, bàn phím còn được trang bị thêm đèn nền vừa tạo cảm giác sang trọng vừa hỗ trợ bạn gõ phím chính xác hơn trong môi trường thiếu sáng.<br/>Laptop được trang bị 2 cổng kết nối Thunderbolt 3 với tốc độ truyền tải lên đến 40 Gb/s cho tốc độ truyền tải nhanh gấp 2 lần so với thế hệ Thunderbolt 2 trước đây. Bên cạnh Thunderbolt 3 máy còn được trang bị thêm kết nối không dây là Wi-Fi 6 cho tốc độ truyền tải dữ liệu nhanh chóng lên đến 10.000 Mbps cao hơn Wi-Fi 5 chỉ có 7.000 Mbps và Bluetooth v5.0 có tốc độ tối đa là 50 Mbps cho bạn trải nghiệm mượt mà hơn.<br/>Apple MacBook Air M1 2020 - Kết nối<br/>Apple trang bị cho chiếc Macbook M1 này bảo mật vân tay giúp bạn mở khóa nhanh chóng chỉ với một cái chạm nhẹ. Bên cạnh đó, vân tay của bạn sẽ được tích hợp vào việc xác nhận thông tin khi mua sắm online hay truy cập vào các tài liệu có bảo mật mà không cần phải nhập mật khẩu cực kỳ tiện lợi.<br/>Màu sắc chân thực, hình ảnh sắc nét <br/>Laptop màn hình Retina 13.3 inch cao cấp cho hình ảnh sắc nét màu sắc tự nhiên. Kết hợp cùng công nghệ True Tone giúp điều chỉnh cân bằng sắc trắng cũng như độ sáng để màu sắc hình ảnh hiển thị chính xác nhất.<br/>Ngoài ra, góc nhìn của máy cũng được mở rộng hơn nhờ có công nghệ IPS đem lại trải nghiệm nhìn đã mắt, dù bạn nhìn màn hình bằng góc nghiêng.<br/>Apple MacBook Air M1 2020 - Màn hình<br/>MacBook Air M1 được trang bị camera FaceTime HD giúp bạn gọi video cho người thân, bạn bè với chất lượng hiển thị cao. Tích hợp dãy 3 micro giúp truyền tải giọng nói của bạn chính xác hơn. <br/>Laptop Apple MacBook Air M1 2020 với hiệu năng mạnh mẽ đáp ứng tốt mọi công việc, thiết kế cực mỏng sẽ là sự lựa chọn tuyệt vời dành cho bạn."
+    },
+    {
+      "img": "https://9to5mac.com/wp-content/uploads/sites/6/2021/10/MacBook-Pro-2021.jpg?quality=82&strip=all&w=1024",
+      "rating": "4.3",
+      "inventoryStatus": "INSTOCK",
+      "id": 2,
+      "brand": "MacBook",
+      "name": "MacBook Air M2",
+      "description": "Sau 14 năm, ba lần sửa đổi và hai kiến trúc bộ vi xử lý khác nhau, kiểu dáng mỏng dần mang tính biểu tượng của MacBook Air đã đi vào lịch sử. Thay vào đó là một chiếc MacBook Air M2 với thiết kế hoàn toàn mới, độ dày không thay đổi tương tự như MacBook Pro, đánh bật mọi rào cản với con chip Apple M2 đầy mạnh mẽ.",
+      "price": 2000,
+      "details": "Lột xác ngoạn mục với thiết kế thời thượng, sang trọng <br/>Sự đẳng cấp đến từ ngoại hình của chiếc MacBook Air nhà Apple là điều không thể phủ nhận và khó có dòng sản phẩm cùng phân khúc nào có thể qua mặt được. Vẫn là lớp vỏ kim loại nguyên khối cứng cáp cùng các cạnh góc vuông vức, sang trọng nhưng chiếc MacBook Air 2022 năm nay đã thoát ra khỏi ngôn ngữ thiết kế nhẹ nhàng vốn có từ lâu và khoác lên diện mạo mới tương tự như “đàn anh” MacBook Pro.<br/>MacBook Air M2 - Thiết kế thời thượng<br/>Bề dày 11.3 mm cùng cân nặng ấn tượng 1.24 kg sẽ là một điểm cộng hoàn hảo cho khả năng di động, luôn sẵn sàng đồng hành cùng một người dùng là sinh viên, dân văn phòng như mình đến trường học, công ty hay cũng thoải mái cho người dùng sáng tạo và đặc biệt là những chuyến công tác xa của doanh nhân.<br/>MacBook Air M2 - Thiết kế sang trọng<br/>Mặc dù có ngoại hình mỏng và khối lượng nhẹ hơn song MacBook Air mới vẫn không kém phần chắc chắn, độ hoàn thiện tốt so với trước đây. Khung máy cứng, nắp máy gần như không uốn cong khi mình tác động lực và vẫn có thể mở lên bằng một ngón tay. Apple luôn đứng đầu khi nói đến chất lượng sản xuất và chiếc Air mới cũng không ngoại lệ.<br/>Cá nhân mình rất thích màu Midnight với lớp hoàn thiện màu xanh đen đậm có thể thay đổi tùy theo ánh sáng nhưng lại có điểm trừ khi dễ bám dấu vân tay, làm mất đi ngoại hình sang chảnh vốn có của một chiếc laptop cao cấp - sang trọng, bạn có thể chọn mua màu xám, bạc hoặc vàng sẽ không dễ bị bám dấu vân tay hoặc chịu khó lau chùi thường xuyên để giữ cho máy luôn sáng bóng.<br/>MacBook Air M2 - Midnight<br/>Một sự thay đổi rõ rệt trên chiếc bàn phím Magic Key của dòng laptop Apple M2 năm nay chính là kích thước của hàng phím chức năng F được gia tăng bằng với các dòng phím khác, cho mình thao tác sử dụng chuẩn xác, không bị nhầm lẫn. Hơn nữa trải nghiệm gõ phím cũng rất nhẹ nhàng, êm tay, tiếng ấn cũng nhẹ nhàng hơn so với bàn phím cánh bướm cũ. Kết hợp cùng đèn nền hỗ trợ mình làm việc dễ dàng hơn trong nhiều điều kiện ánh sáng tối khác nhau. <br/>MacBook Air M2 - Bàn phím<br/>Tính năng Touch ID (cảm biến vân tay) tích hợp nút nguồn thay cho mật khẩu cho phép mình mở khóa máy, truy cập các ứng dụng và thanh toán ứng dụng một cách nhanh chóng, không cần tốn nhiều thời gian hay phải nhớ mật khẩu như các kiểu bảo mật truyền thống.<br/>MacBook Air M2 - Touch ID<br/>Bàn di chuột không có khác nhiều so với các mẫu cũ mặc dù Apple đã làm rộng hơn một chút, hoạt động giống nhau về mặt chức năng với khả năng di vuốt tuyệt vời, hỗ trợ cử chỉ và từ chối lệnh khi mình lỡ đặt lòng bàn tay lên. Một trong những thay đổi thú vị khác trên chiếc Air mới chính là lưới loa đã được giấu đi, nằm ở bản lề giữa bàn phím và màn hình để giữ cho ngoại hình gọn gàng hơn.<br/>MacBook Air M2 - TouchPad<br/>MacBook Air M2 2022 sở hữu đầu sạc MagSafe tương tự như MacBook Pro 14 và 16, cho phép mình sạc mà không lo vấp phải dây cáp khiến máy tính rơi xuống sàn. Nhờ có cổng MagSafe mà mình thực sự có thêm một cổng USB-C so với các kiểu máy cũ. Thay vì phải sử dụng một cổng để sạc máy tính và cổng còn lại cho thiết bị ngoại vi, giờ đây mình có thể sử dụng cả hai cổng hỗ trợ Thunderbolt cho các phụ kiện.<br/>MacBook Air M2 - Cổng MagSafe<br/>Phá vỡ mọi giới hạn nhờ sức mạnh từ bộ vi xử lý Apple M2<br/>Bộ vi xử lý Apple M2 tuy có mặt cấu tạo tương đồng với M1 nhưng hiệu suất hoạt động cao hơn 18% và nhanh hơn 1.9 lần so với các dòng laptop sở hữu bộ vi xử lý 10 lõi khác, dư sức cân mọi tác vụ từ học tập, làm việc đến đồ họa đến kỹ thuật chuyên sâu. Đồ họa GPU 8 nhân cho khả năng hoạt động mạnh mẽ hơn 35%, xử lý lên đến 15.8 nghìn tỷ tác vụ trong 1 giây nên các công việc liên quan đến hình ảnh, đồ họa, video,... đều được giải quyết rất mượt mà.<br/>MacBook Air M2 - Hiệu năng<br/>Máy đáp ứng hoàn hảo việc chỉnh sửa video và ảnh nhẹ, đặc biệt nếu bạn sử dụng ứng dụng Ảnh hoặc iMovie của Apple cho các tác vụ đó. Laptop RAM 8 GB cho phép mình sử dụng cùng lúc nhiều cửa sổ ứng dụng khác nhau với độ đa nhiệm mượt mà đáng kể, vừa làm việc trên Photoshop vừa nghe nhạc vẫn rất trơn tru.<br/>MacBook Air M2 - Đa nhiệm<br/>Không gian ổ cứng SSD 256 GB vừa đủ cho các tài liệu, ứng dụng học tập nhưng do chỉ được trang bị một chip NAND duy nhất thay vì hai chip như trên các mẫu M1 hoặc M2 mới có ổ cứng 512 GB trở lên nên tốc độ đọc ghi đã bị giới hạn hơn đáng kể. Mình đã thử đo tốc độ đọc bằng công cụ Black Magic Speed Test được 1543 MB/s, thấp hơn gần một nửa so với con số 2982 MB/s của MacBook Air M1 256 GB.<br/>MacBook Air M2 - Tốc độ SSD<br/>Mình đã kiểm chứng nhiệt độ của máy bằng cách chạy các tác vụ nặng cùng lúc như render video, mở nhiều tab Safari và chạy thêm Photoshop thì sau thời gian dài máy đã nóng lên rõ rệt. Theo mình lý do một phần đến từ ngoại hình mỏng hơn, thêm vào đó là tản nhiệt không có quạt nên máy nóng lên nhanh cũng là điều dễ hiểu. Trên thực tế cũng có ít người sử dụng MacBook Air cho các tác vụ nặng như trên.<br/>MacBook Air M2 - Nhiệt độ<br/>Sở hữu pin 52.6 Wh nhưng do hiệu năng và nhiệt độ cao nên M2 Air có thời lượng pin tương tự như mẫu M1, cho phép mình sử dụng từ 8 đến 10 giờ ở mức độ sáng 200 nits và nhiều tác vụ làm việc văn phòng khác nhau. Vẫn thoải mái để mình có thể xách máy ra quán cà phê làm việc trong suốt cả ngày dài.<br/>MacBook Air M2 - Pin<br/>Trải nghiệm hình ảnh, âm thanh trên cả tuyệt vời <br/>Màn hình của chiếc Air lớn hơn một chút so với trước đây, 13.6 inch thay vì 13.3 inch nhưng phần lớn kích thước được gia tăng theo chiều dọc. Các viền xung quanh màn hình đã được làm mỏng hơn và các góc cũng được bo tròn, mang đến vẻ ngoài hiện đại hơn trước.<br/>Màn hình có độ sáng cao 500 nits khi sử dụng trong nhà mình thực sự không nhận ra sự khác biệt nhưng khi xách máy ra quán cà phê mới thấy rõ được sự khác biệt, nội dung luôn được hiển thị với độ sắc nét cao mà không hề bị hiện tượng hắt sáng gây khó chịu. Công nghệ True Tone sẽ tự động điều chỉnh mức độ ánh sáng phù hợp với môi trường, giúp cho nội dung thể hiện tự nhiên hơn và giảm thiểu hiện tượng mỏi mắt. <br/>MacBook Air M2 - Màn hình<br/>Độ phân giải Liquid Retina (2560 x 1664) kết hợp cùng dải màu rộng P3 và khả năng hiển thị 1 tỷ màu tạo nên một không gian hoàn chỉnh cho mọi trải nghiệm hình ảnh với màu sắc sinh động và chuẩn xác trên từng vật thể nhỏ nhất. Ngoài ra cũng đáp ứng được nhu cầu làm việc với đồ họa, hình ảnh của mình trên các ứng dụng nhà Adobe như Photoshop, Lightroom,...<br/>MacBook Air M2 - Màn hình<br/>Notch màn hình trên chiếc MacBook Air M2 tạo điểm mới mẻ và cũng là điểm nhận dạng thế hệ MacBook mới nhưng lại không cho mình trải nghiệm sử dụng tốt, phần notch không xấu hay gây mất tập trung mà chưa được tùy biến tốt, sẽ bị ẩn đi khi mình mở những ứng dụng làm việc và hiển thị trở lại khi sử dụng ở dạng cửa sổ. <br/>MacBook Air M2 - Notch<br/>Bù lại Camera Facetime HD 1080p bên trong chiếc notch có nhiều cải tiến cho hình ảnh sắc nét hơn, màu sắc và độ tương phản cũng tốt hơn. Kết hợp với dải ba micrô giúp cho quá trình học tập, làm việc trực tuyến hay gọi video của mình diễn ra suôn.<br/>Hệ thống bốn loa mới bao gồm hai loa tweeter, hai loa trầm cùng công nghệ Spatial Audio và Dolby Atmos cho mình trải nghiệm âm thanh to rõ, ít tiếng vang hơn khi chỉnh ở mức âm lượng tối đa. Chất lượng vượt xa so với các dòng máy tính khác, cung cấp âm thanh rõ ràng khi xem video, nghe nhạc, YouTube,...<br/>MacBook Air M2 - Loa<br/>MacBook Air M2 2022 chính là sự kết hợp hoàn hảo giữa phong cách thiết kế thời thượng, hiệu năng vượt trội cùng màn hình hiển thị sắc nét, là một cánh tay phải đắc lực cùng mình đối đầu mọi thách thức. "
+    },
+    {
+      "img": "https://cellphones.com.vn/sforum/wp-content/uploads/2022/02/MacBook-Pro-2020-cover.jpg",
+      "rating": "2.0",
+      "inventoryStatus": "INSTOCK",
+      "id": 3,
+      "brand": "MacBook",
+      "name": "MacBook Pro 14 inch",
+      "description": "Apple đã âm thầm tung ra thế hệ MacBook Pro 14 inch M2 Pro 2023 hoàn toàn mới, hứa hẹn hiệu suất cao hơn so với MacBook Pro đợt trước, có khả năng xử lý mượt mà các tác vụ khắt khe của người dùng chuyên nghiệp.",
+      "price": 3000,
+      "details": "Hiệu suất vô song, thời lượng pin dài chưa từng có<br/>Với bộ vi xử lý M2 Pro, MacBook Pro 14 inch có thể đáp ứng hoàn hảo nhu cầu làm việc chuyên nghiệp thuộc nhiều lĩnh vực khác nhau từ nghệ thuật, khoa học cho đến phát triển ứng dụng. Người dùng sẽ được trải nghiệm những cải tiến ấn tượng về hiệu suất, thời lượng pin, khả năng kết nối và năng suất tổng thể. <br/>MacBook Pro 14 inch M2 Pro - M2 Pro<br/>Được xây dựng bằng công nghệ xử lý 5 nm thế hệ thứ hai, M2 Pro chứa tổng cộng 40 tỷ bóng bán dẫn, nhiều hơn gần 20% so với M1 Pro và gấp đôi số lượng so với M2. Bộ vi xử lý mới có băng thông bộ nhớ lên đến 200 GB/giây, con số gấp đôi so với M2. CPU 10 lõi gồm 6 lõi hiệu năng cao và 4 lõi tiết kiệm điện, cho khả năng xử lý đa luồng nhanh hơn, nhờ đó mà người dùng có thể biên dịch code nhanh hơn 25% so với M1 Pro.<br/>MacBook Pro 14 inch M2 Pro - Bộ vi xử lý M2 Pro<br/>GPU trong M2 Pro được cấu hình với 16 nhân và có bộ nhớ đệm L2 lớn hơn. Apple hứa hẹn tốc độ xử lý đồ họa sẽ nhanh hơn tới 30% so với M1 Pro, giúp tăng đáng kể hiệu suất xử lý hình ảnh, đồng thời cho phép người dùng chơi game cấu hình cao. MacBook Pro có thể xử lý hình ảnh trong Adobe Photoshop nhanh hơn tới 40% so với M1 Pro.<br/>MacBook Pro 14 inch M2 Pro - Biên dịch code nhanh hơn<br/>Do M2 Pro sử dụng kiến ​​trúc hệ thống trên chip với bộ nhớ RAM 16 GB hợp nhất, băng thông lên đến 200 GB/giây khiến cho mọi tác vụ đều được phản hồi tức thì, thao tác chuyển qua lại giữa các ứng dụng nhanh đến không tưởng. Ổ cứng SSD 512 GB được thiết kế để thực hiện các tác vụ hàng ngày nhanh chóng và nhạy bén, đáp ứng hoàn hảo các tác vụ từ cơ bản đến khắt khe nhất.<br/>Apple cho biết sản phẩm mới của hãng có thời lượng pin ấn tượng, con số lên đến 18 giờ phát video hoặc 12 giờ duyệt web sử dụng kết nối không dây. MacBook Pro cũng duy trì hiệu năng kể cả khi người dùng cắm nguồn điện hay dùng pin.<br/>MacBook Pro 14 inch M2 Pro - Hiệu năng ổn định<br/>Thiết kế tinh tế, đầy đủ cổng kết nối cần thiết<br/>MacBook mới sở hữu thiết kế tương tự như chiếc Macbook Pro 14 inch M1 Pro 2021, với lớp vỏ kim loại nguyên khối bằng nhôm, kiểu dáng phẳng, viền màn hình mỏng với sự xuất hiện của chiếc notch tai thỏ quen thuộc, bàn phím toàn dải màu đen, bàn di chuột Force Touch lớn và có hai lưới loa ở hai cạnh bên bàn phím.<br/>MacBook Pro 14 inch M2 Pro - Thiết kế không đổi<br/>Sản phẩm được thiết kế để giảm thiểu tác động đối với môi trường, Apple cho biết đã sử dụng 100% vật liệu tái chế như: Nhôm tạo thành vỏ, các nguyên tố đất hiếm có trong nam châm, thiếc trong mối hàn của bảng mạch chính và vàng trong lớp mạ của nhiều bo mạch in.<br/>MacBook Pro 14 inch M2 Pro - Thiết kế<br/>MacBook Pro không chỉ được tích hợp Wi-Fi 6E cho kết nối không dây nhanh hơn mà còn được trang bị cổng HDMI tiên tiến hơn, hỗ trợ xuất nội dung lên màn hình 8K ở tần số quét 60 Hz hoặc màn hình 4K với tần số quét 240 Hz. <br/>Bên cạnh đó, thế hệ MacBook Pro mới cũng sở hữu đến 3 cổng Thunderbolt 4 để kết nối các thiết bị ngoại vi tốc độ cao, khe cắm thẻ SDXC, sạc MagSafe 3 và jack cắm 3.5 mm hỗ trợ tai nghe có trở kháng cao.<br/>MacBook Pro 14 inch M2 Pro - Cổng kết nối<br/>Màn hình tai thỏ hiển thị sống động<br/>MacBook Pro được trang bị màn hình Liquid Retina XDR sử dụng công nghệ LED mini đã có mặt trên iPad Pro 12.9 inch, kích thước lớn 14.2 inch với độ phân giải gốc 3024 x 1964, tương đương 254 pixel mỗi inch.<br/>MacBook Pro 14 inch M2 Pro - Màn hình<br/>Màn hình có độ sáng tối đa lên đến 1000 nits và tỷ lệ tương phản 1.000.000:1, đồng thời hỗ trợ dải màu P3 Wide cho màu sắc tươi sáng, trung thực. Một công nghệ màn hình đặc trưng trên MacBook Pro mới chính là True Tone - được thiết kế để cân bằng trắng sao cho phù hợp với ánh sáng của môi trường xung quanh.<br/>MacBook Pro 14 inch M2 Pro - Chất lượng hiển thị<br/>Bên cạnh đó, MacBook Pro cũng hỗ trợ công nghệ ProMotion cho tốc độ làm mới thích ứng từ 24 Hz đến 120 Hz tùy theo nội dung hiển thị. Khi xem trang web tĩnh không yêu cầu tốc độ làm mới cao, màn hình sẽ giảm tốc độ làm mới thấp để duy trì thời lượng pin, nhưng khi chơi game, cuộn hoặc thực hiện các hoạt động khác cần tốc độ làm mới cao hơn, tốc độ khung hình sẽ được đẩy lên cao. <br/>MacBook Pro 14 inch M2 Pro - Màn hình hiển thị<br/>Tóm lại, MacBook Pro với bộ vi xử lý M2 Pro đã thay đổi cuộc chơi, cho phép các chuyên gia vượt qua giới hạn khi có thể thực hiện công việc kể cả khi đang di chuyển. Với hiệu suất nhanh hơn, khả năng kết nối nâng cao, thời lượng pin dài cùng với màn hình hiển thị đẹp mắt, đơn giản là không có chiếc laptop nào khác có thể qua mặt được."
+    },
+    {
+      "img": "https://cdn.tgdd.vn/Files/2021/06/27/1363660/giai-thich-ten-goi-cua-cac-dong-laptop-hp-va-dong--3.png",
+      "rating": "3.3",
+      "inventoryStatus": "LOWSTOCK",
+      "id": 4,
+      "brand": "HP",
+      "name": "HP 15s fq5078TTU i5 (6K798PA)",
+      "description": "Thiết kế thanh lịch, tao nhã tạo nên vẻ đẹp quyến rũ của chiếc laptop HP 15s fq5078TTU i5 (6K798PA), sở hữu dòng chip Intel thế hệ 12 sẵn sàng cân đối mọi tác vụ của laptop học tập - văn phòng phù hợp với sinh viên, học sinh, nhân viên văn phòng. Laptop Acer Aspire 7 Gaming A715 42G R05G (NH.QAYSV.007) sở hữu phong cách thiết kế độc đáo, thời thượng cùng hiệu năng mạnh mẽ, đáp ứng tối đa mọi nhu cầu của người dùng từ cơ bản đến nâng cao.",
+      "price": 1500,
+      "details": "Mượt mà đa tác vụ với chip Gen 12 tân tiến<br/>Laptop HP được trang bị bộ vi xử lý Intel Core i5 1235U cho phép người dùng hoàn thành công việc với hiệu suất cao nhưng vẫn tiết kiệm được năng lượng. Qua đo đạc bằng công cụ Cinebench R23 máy đạt được 4867 điểm đa nhân và 1369 điểm đơn nhân, con số ổn áp cho một chiếc laptop phục vụ cho mục đích học tập, văn phòng.<br/>HP 15s fq5078TU i5 1235U/8GB/512GB/Win11 (6K798PA) - CPU<br/>Card đồ họa tích hợp Intel Iris Xe Graphics đáp ứng tốt nhu cầu chỉnh sửa hình ảnh cơ bản trên Photoshop, Ai, Lightroom,... cũng như xem phim, lướt web của mình. Đối với tác vụ giải trí bằng tựa game Liên Minh Huyền Thoại ở mức cài đặt cấu hình cao nhất thì máy chạy ổn định và mượt mà, mức FPS dao động trong khoảng từ 90 - 100 FPS. Nếu bị giật trong lúc giao tranh bạn có thể chỉnh cài đặt trong game xuống mức trung bình để có được trải nghiệm tốt nhất.  <br/>HP 15s fq5078TU i5 1235U/8GB/512GB/Win11 (6K798PA) - Liên Minh Huyền Thoại<br/>Bộ nhớ RAM 8 GB của máy cho khả năng đa nhiệm tốt, mình vừa mở Photoshop để chỉnh sửa hình ảnh trong lúc chờ chọn tướng trong Liên Minh Huyền Thoại, cũng như mở thêm cửa sổ Chrome bật YouTube để nghe nhạc mà máy vẫn hoạt động ổn định. Trong hai tuần sử dụng mình cũng thường xuyên mở rất nhiều tab Chrome, đôi khi lên đến đến 10 - 20 tab mà không hề gặp phải hiện tượng giật lag. Đối với một người dùng là sinh viên như mình thì 8 GB là quá đủ rồi, nhưng nếu bạn cần chạy nhiều ứng dụng nặng hơn có thể nâng cấp RAM lên tối đa 32 GB.<br/>HP 15s fq5078TU i5 1235U/8GB/512GB/Win11 (6K798PA) - RAM<br/>Máy cũng đủ không gian cho mình lưu trữ các tài liệu học tập hay những tựa game cỡ nặng với ổ cứng SSD 512 GB NVMe PCIe, đồng thời chuẩn SSD cũng giúp khởi động máy hay mở ứng dụng nhanh chỉ trong vài giây.<br/>HP 15s sở hữu viên pin 41 Wh đối với các tác vụ văn phòng cơ bản máy trụ được khoảng 3 giờ, một con số không cao nhưng hoàn toàn có thể chấp nhận được và trên thực tế mình cũng thường sử dụng máy làm việc trong văn phòng, luôn cắm sạc để tối ưu hiệu năng. <br/>Ngoại hình nhã nhặn, thanh lịch<br/>HP 15s sở hữu ngôn ngữ thiết kế đẹp mắt với những nét đặc trưng mang thương hiệu riêng của HP, lớp vỏ nhựa cùng màu bạc nhã nhặn tạo nên vẻ ngoài đơn giản và hiện đại. Máy có khối lượng 1.69 kg và dày 17.9 mm, sẽ hơi nặng một chút so với các bạn nữ nhưng vẫn có thể bỏ vào balo đi theo bạn bất cứ đâu, trong cả công việc hay học tập.<br/>HP 15s fq5078TU i5 1235U/8GB/512GB/Win11 (6K798PA) - Thiết kế<br/>Bàn phím của HP 15s được thiết kế theo bố cục full-size có luôn bàn phím số giúp mình dễ dàng nhập liệu, độ nảy cao, hành trình phím sâu, tất cả đều mang đến một trải nghiệm gõ phím ấn tượng với cảm giác cực kỳ đã tay. Hơi tiếc khi em nó không được trang bị đèn nền bàn phím, thời gian đầu sẽ tương đối khó khăn khi soạn thảo văn bản nhưng sau một thời gian khi đã quen tay thì mình có thể chấp nhận được.<br/>HP 15s được trang bị đầy đủ các cổng giao tiếp để mình liên kết với thiết bị ngoại vi như chuột, bàn phím, loa hay máy chiếu. Bên cạnh trái thiết bị có 2 cổng USB 3.2, cạnh phải có cổng HDMI, Jack tai nghe 3.5 mm và cổng USB Type-C.<br/>HP 15s fq5078TU i5 1235U/8GB/512GB/Win11 (6K798PA) - Cổng kết nối<br/>Màn hình hiển thị rõ nét, chân thực<br/>Màn hình chiếc laptop HP Cơ bản có kích thước 15.6 inch với khả năng hiển thị sắc nét nhờ độ phân giải Full HD (1920 x 1080), công nghệ LED Backlit giúp tiết kiệm điện năng đi cùng công nghệ Anti Glare hạn chế tình trạng bóng gương, bóng loá. Viền hai bên màn hình được HP làm tương đối mỏng tạo cho mình một không gian hiển thị lớn hơn về mặt thị giác. Trong thời gian đầu sử dụng, màn hình của máy chưa cho mình trải nghiệm tốt khi bị ám xanh, khi làm việc trong thời gian dài cảm giác sẽ hơi bị đau mắt. Qua tìm hiểu mình biết được máy có chế độ lọc ánh sáng xanh, sau khi tinh chỉnh mắt mình đã cảm giác thoải mái và dễ chịu hơn nhiều.<br/>HP 15s fq5078TU i5 1235U/8GB/512GB/Win11 (6K798PA) - Màn hình<br/>Thông số màu sắc của màn hình đo đạc bằng công cụ Spyder 5 Pro được con số 65% không gian màu sRGB, 49% Adobe RGB, 49% P3 và độ sáng 250 nits. Với những thông số màn hình kể trên thì máy phù hợp để xem phim, làm việc khi hình ảnh được thể hiện với độ chi tiết cao. Nhưng nếu làm việc với hình ảnh mình khuyên bạn chỉ nên chỉnh bố cục hoặc layer, còn đối với những tác vụ chỉnh màu chuyên sâu bạn nên cân nhắc chọn những mẫu máy phù hợp hơn. <br/>HP 15s fq5078TU i5 1235U/8GB/512GB/Win11 (6K798PA) - Thông số màn hình<br/>Bên cạnh trải nghiệm về hình ảnh, chất lượng âm thanh của HP 15s cũng hoàn toàn đáp ứng tốt được nhu cầu của mình, âm thanh được tái tạo một cách chân thực và, sống động nhờ công nghệ Realtek High Definition Audio. Khi làm việc trong phòng riêng chỉ cần mở mức âm lượng 50% cũng đủ để tận hưởng âm nhạc rồi.<br/>HP 15s fq5078TU i5 1235U/8GB/512GB/Win11 (6K798PA) - Âm thanh<br/>Tổng kết lại, HP 15s fq5078TTU i5 (6K798PA) sẽ là một ứng cử viên sáng giá trong phân khúc học tập - văn phòng có mức giá nằm trong khoảng 18 triệu đồng mà bạn đang tìm kiếm. Laptop sở hữu phong cách thiết kế hiện đại cùng bộ vi xử lý Intel Gen 12 đầy mạnh mẽ."
+    },
+    {
+      "img": "https://cdn2.cellphones.com.vn/x,webp,q100/media/wysiwyg/laptop/HP/laptop-hp-1.jpg",
+      "rating": "3.1",
+      "inventoryStatus": "INSTOCK",
+      "id": 5,
+      "brand": "HP",
+      "name": "HP Pavilion 15 eg2056TU i5 (6K786PA)",
+      "description": "Laptop HP Pavilion 15 eg2056TU i5 (6K786PA) là phiên bản laptop học tập - văn phòng sở hữu hiệu năng vượt trội đến từ con chip Gen 12 mạnh mẽ cùng phong cách thiết kế đơn giản, sang trọng, đáp ứng tốt mọi nhu cầu sử dụng thiết yếu hằng ngày. ",
+      "price": 1000,
+      "details": "• Bộ vi xử lý chip Intel Gen 12 sở hữu kiến trúc Hybrid khi kết hợp các lõi hiệu năng P-core cùng với lõi tiết kiệm điện E-core, giúp người dùng xử lý mọi dữ liệu nhanh chóng, hiệu quả hơn nhưng vẫn tiết kiệm được nguồn điện năng đáng kể. <br/>• Không chỉ giải quyết nhẹ nhàng mọi tác vụ cơ bản hằng ngày trên Word, Excel, PowerPoint,... mà còn thiết kế đồ họa, chỉnh sửa ảnh hay giải trí với các tựa game nhẹ nhàng một cách trơn tru nhờ laptop Intel Core i5 Alder Lake 1240P cùng card đồ họa tích hợp Intel Iris Xe Graphics. <br/>• Laptop ổ cứng 512 GB cho tốc độ đọc ghi nhanh chóng cùng không gian lưu trữ ổn định, bên cạnh đó người dùng hoàn toàn có thể vừa nghe nhạc vừa đọc báo hay chạy nhiều tab Chrome cùng lúc một cách trơn tru nhờ bộ nhớ RAM 8 GB. <br/>• Laptop HP có lớp vỏ nhựa màu vàng và chiếu nghỉ tay bằng kim loại tạo nên vẻ ngoài tối giản nhưng không kém phần sang trọng, đồng thời linh hoạt cùng bạn đi đến khắp mọi nơi nhờ cân nặng 1.72 kg. <br/>• Hai bên laptop là các cổng kết nối cần thiết như USB 3.2, HDMI, Jack tai nghe và USB Type-C cho khả năng truy xuất và truyền tải dữ liệu nhanh chóng hơn.<br/>• Kích thước 15.6 inch cùng tấm nền IPS cho góc nhìn rộng rãi lên đến 178 độ, công nghệ BrightView kết hợp với độ phân giải Full HD giúp chất lượng hình ảnh cho ra được sắc nét, sống động và có chiều sâu hơn. <br/>• Công nghệ âm thanh Realtek High Definition được trang bị trên chiếc laptop HP Pavilion hòa mình vào những âm thanh sống động như thật, giúp bạn giải trí trọn vẹn hơn với những tập phim hấp dẫn. "
+    },
+    {
+      "img": "https://bizweb.dktcdn.net/100/033/226/files/0000-6461987cv1d.jpg?v=1640865061245",
+      "rating": "1.0",
+      "inventoryStatus": "INSTOCK",
+      "id": 6,
+      "brand": "HP",
+      "name": "HP VICTUS 15 fa0111TX i5 (7C0R4PA)",
+      "description": "Laptop HP VICTUS 15 fa0111TX i5 (7C0R4PA) hứa hẹn mang đến trải nghiệm làm việc và giải trí tuyệt vời nhờ bộ vi xử lý Intel Core i5 12500H mạnh mẽ, card đồ họa rời đến từ NVIDIA và màn hình 144 Hz siêu mượt mà.",
+      "price": 3000,
+      "details": "• Bộ vi xử lý Intel Core i5 12500H và card đồ họa NVIDIA GeForce RTX 3050Ti 4 GB được thiết kế để cung cấp hiệu suất cao và khả năng xử lý đồ họa tốt, đáp ứng mọi nhu cầu sử dụng như render video, chơi game, vận hành các phần mềm CAD và 3D.<br/>• Bộ nhớ RAM kênh đôi 16 GB cải thiện hiệu suất và cho phép bạn chạy nhiều chương trình hoặc tác vụ cùng một lúc mà không bị giật lag, đồng thời cũng giúp cho trải nghiệm chơi game và chỉnh sửa video mượt mà hơn.<br/>• Ổ cứng SSD 512 GB NVMe PCIe có tốc độ đọc và ghi dữ liệu nhanh, giúp laptop HP hoạt động trơn tru và mượt mà hơn, cải thiện hiệu suất, giảm thời gian chờ khi mở và chạy các chương trình nặng.<br/>• Màn hình 15.6 inch với độ phân giải Full HD (1920 x 1080) cung cấp hình ảnh rõ nét và chân thật, công nghệ Anti Glare giúp giảm tối đa tình trạng hắt sáng trên màn hình khi bạn sử dụng laptop trong môi trường có ánh sáng cao.<br/>• Tấm nền IPS với tần số quét 144 Hz hứa hẹn trải nghiệm hình ảnh mượt mà và sắc nét, cho bạn tận hưởng những giây phút chơi game và xem video mượt mà hơn bao giờ hết.<br/>• Công nghệ Audio by B&O kết hợp cùng HP Audio Boost cung cấp chất lượng âm thanh tuyệt vời với chất âm trung thực, độ chi tiết cao giúp cho bạn trải nghiệm nhạc hoặc video một cách tốt hơn.<br/>• Thiết kế vỏ nhựa sơn màu xanh đậm nam tính với những đường nét tinh tế đậm chất laptop gaming của dòng VICTUS sẽ khiến bạn nổi bật hơn bao giờ hết khi sử dụng máy ở những nơi đông người.<br/>• Đèn nền bàn phím cho phép bạn gõ phím, điều khiển nhân vật game được chuẩn xác hơn trong điều kiện ánh sáng tối. Nhiều cổng kết nối như: HDMI, Jack tai nghe 3.5 mm, SuperSpeed USB Type-C, LAN (RJ45), SuperSpeed USB A."
+    },
+    {
+      "img": "https://maytinhkimlong.com/uploads/product/640%20IMG/laptop_hp_15_dy2091wm_491d1ua_bc%20-%20Copy%201.jpg",
+      "rating": "2.2",
+      "inventoryStatus": "INSTOCK",
+      "id": 7,
+      "brand": "MacBook",
+      "name": "Laptop demo",
+      "description": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+      "price": 1000,
+      "details": "This is just a demo"
+    },
+    {
+      "img": "https://cdn.tgdd.vn/Products/Images/44/305456/surface-pro-9-i5-glr-xam-1.jpg",
+      "rating": "4.6",
+      "inventoryStatus": "INSTOCK",
+      "id": 8,
+      "brand": "Surface",
+      "name": "Surface Pro 9 i5 1235U",
+      "description": "Laptop Surface Pro 9 i5 1235U là một chiếc máy tính 2 trong 1 kết hợp giữa laptop và máy tính bảng từ Microsoft, mang trong mình những thông số cấu hình ấn tượng nhằm đảm bảo vận hành mượt mà mọi tác vụ học tập, văn phòng.",
+      "price": 2000,
+      "details": "• Laptop Surface sở hữu màn hình cảm ứng 13 inch với độ phân giải 2880 x 1920 và tốc độ làm mới 120 Hz, những thông số hoàn hảo cho các hoạt động giải trí chất lượng cao cũng như tạo sự mượt mà khi người dùng thực hiện cuộn hoặc lướt một trang web.<br/>• Màn hình của Surface Pro 9 cũng có độ chính xác màu sắc tuyệt vời, với độ phủ màu sRGB đạt 100%, kết hợp cùng tấm nền IPS mở rộng góc nhìn và công nghệ Dolby Vision giúp hiển thị hình ảnh sắc nét, màu sắc chân thực cùng độ chuẩn xác cao.<br/>• Máy cũng có hệ thống âm thanh tốt với loa kép tích hợp công nghệ Dolby Atmos và hệ thống microphone hỗ trợ tính năng khử tiếng ồn, giúp cải thiện trải nghiệm nghe nhạc, xem phim và tham gia các cuộc họp hoặc lớp học trực tuyến của người dùng.<br/>• Siêu phẩm laptop học tập - văn phòng đến từ nhà Microsoft được trang bị bộ xử lý mạnh mẽ Intel thế hệ thứ 12 - Intel Core i5 1235U cùng với 8 GB RAM LPDDR5 và ổ cứng SSD 256 GB, nhờ đó máy có khả năng xử lý hầu hết các tác vụ học tập, văn phòng hay thậm chí chơi game nhẹ.<br/>• Surface Pro 9 cũng có khả năng xử lý đồ họa ấn tượng nhờ vào card tích hợp Intel Iris Xe Graphics, hỗ trợ người dùng tạo dựng nội dung đơn giản trên các phần mềm đồ họa như Photoshop, Ai,... và chơi game nhẹ. Hơn nữa, máy còn được cài đặt hệ điều hành Windows 11 cung cấp giao diện hiện đại và trực quan.<br/>• Một trong những điểm thu hút người dùng nhất của Surface thế hệ 9 chính là tính linh hoạt khi có thể được sử dụng như một chiếc laptop hoặc máy tính bảng, nhờ vào bàn phím và bút cảm ứng có thể tách rời. Khiến thiết bị trở thành một sự lựa chọn tuyệt vời khi đáp ứng tốt nhu cầu sử dụng cho cả công việc và giải trí.<br/>• Laptop có thiết kế vô cùng nhỏ gọn với lớp vỏ kim loại nguyên khối cùng cân nặng chỉ vỏn vẹn 0.879 kg giúp người dùng dễ dàng mang theo và làm việc khi di chuyển.<br/>• Surface Pro 9 cũng được trang bị một camera trước 1080p và một camera sau 10 MP, cho phép người dùng chụp ảnh và quay video với chất lượng tốt. Máy còn hỗ trợ tính năng mở khóa bằng khuôn mặt thông qua Windows Hello, giúp người dùng mở khóa thiết bị nhanh chóng mà không cần nhập mật khẩu.<br/>• Thiết bị có 2 cổng USB-C giúp người dùng dễ dàng kết nối với các thiết bị khác như máy chiếu, ổ cứng ngoài,... trực tiếp hoặc thông qua một chiếc HUB rời.<br/>*Lưu ý: Sản phẩm chỉ bao gồm máy, không đi kèm bàn phím và bút."
+    },
+    {
+      "img": "https://cdn.tgdd.vn/Products/Images/44/305459/surface-pro-9-i7-glr-2.jpg",
+      "rating": "2.1",
+      "inventoryStatus": "INSTOCK",
+      "id": 9,
+      "brand": "Surface",
+      "name": "Surface Pro 9 i7 1255U",
+      "description": "Laptop Surface Pro 9 i7 1255U không chỉ có cấu hình mạnh mẽ mà còn được thiết kế với ngoại hình hiện đại, gọn nhẹ để người dùng dễ dàng mang theo. Thiết bị đặc biệt phù hợp cho các chuyên gia và sinh viên cần xử lý các tác vụ yêu cầu hiệu suất cao và có nhu cầu giải trí mọi lúc, mọi nơi.",
+      "price": 4000,
+      "details": "Tận hưởng không gian hiển thị siêu sắc nét<br/>Màn hình cảm ứng 13 inch của Surface Pro 9 có độ phân giải 2880 x 1920 và tần số làm tươi 120 Hz rất phù hợp để làm việc cũng như giải trí, hơn nữa màn hình có khả năng tái tạo màu sắc tuyệt vời với dải màu sRGB đạt 100%, đi cùng công nghệ Dolby Vision mang lại cho người dùng trải nghiệm giải trí thêm chất lượng hơn.<br/>Laptop Surface được trang bị công nghệ âm thanh Dolby Atmos cung cấp trải nghiệm âm thanh vòm 3D sống động với âm lượng to rõ. Máy cũng có hệ thống micro nằm ở cả mặt trước và sau để giúp thu âm giúp người dùng thực hiện cuộc họp một cách rõ ràng.<br/>Vận hành đa tác vụ mượt mà<br/>Bên trong, Surface Pro 9 được trang bị bộ vi xử lý Intel Core i7 1255U thế hệ thứ 12 và đồ họa Intel Iris Xe, cho phép người dùng vận hành các tác vụ nặng như thiết kế đồ họa, lập trình, xử lý âm thanh và video, cũng như các tác vụ thông thường như lướt web, xử lý văn bản và email.<br/>Với bộ nhớ RAM LPDDR5 16 GB và ổ cứng SSD 256 GB, Surface Pro 9 có thể xử lý các tác vụ yêu cầu hiệu suất cao như thiết kế đồ họa, video và âm thanh, bên cạnh đó cũng giúp máy hoạt động nhanh và mượt mà, giúp tăng hiệu suất làm việc cũng như giải trí.<br/>Máy chạy trên hệ điều hành Windows 11, được tối ưu hóa cho màn hình cảm ứng, đồng thời được cải thiện hiệu suất và bảo mật, cùng với các tính năng giải trí và sáng tạo mới. Từ đó đem đến cho người dùng trải nghiệm mượt mà, đồng bộ hóa tốt với các thiết bị tương thích khác.<br/>Ngoại hình mỏng nhẹ, đẳng cấp<br/>Thiết kế mỏng nhẹ với khối lượng chỉ 0.879 kg đúng chuẩn một chiếc laptop cao cấp - sang trọng cho phép người dùng dễ dàng mang theo máy bất cứ khi nào cần mà không cần cảm thấy cồng kềnh hay khó di chuyển. Vỏ kim loại nguyên khối giúp tăng tính thẩm mỹ cũng như tính bền bỉ trong quá trình sử dụng.<br/>Surface Pro 9 được tích hợp camera trước 1080p và camera sau 10 MP, hoàn hảo để thực hiện các cuộc gọi video chất lượng cao. Bên cạnh đó, máy còn được tích hợp tính năng mở khóa khuôn mặt thông qua Windows Hello, cho phép người dùng mở khóa máy tính chỉ bằng cách nhìn vào camera trước.<br/>Một trong những điểm thu hút nhất của Surface Pro 9 chính là tính linh hoạt khi có thể được sử dụng như một chiếc laptop hoặc máy tính bảng, nhờ vào bàn phím và bút cảm ứng có thể tách rời. Khiến thiết bị trở thành một sự lựa chọn tuyệt vời khi đáp ứng tốt nhu cầu sử dụng cho cả công việc và giải trí.<br/>Laptop cũng được trang bị cổng USB-C, cổng Surface Connect và jack tai nghe để người dùng dễ dàng kết nối với các thiết bị ngoại vi.<br/>*Lưu ý: Sản phẩm chỉ bao gồm máy, không đi kèm bàn phím và bút."
+    }
+  ],
+  "brands": [
+    {
+      "img": "https://www.freepnglogos.com/uploads/apple-logo-png/apple-logo-png-dallas-shootings-don-add-are-speech-zones-used-4.png",
+      "name": "MacBook"
+    },
+    {
+      "img": "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png",
+      "name": "HP"
+    },
+    {
+      "img": "https://www.freepnglogos.com/uploads/dell-png-logo/dell-png-logo-0.png",
+      "name": "Dell"
+    },
+    {
+      "img": "https://www.pngmart.com/files/22/Asus-Logo-Transparent-PNG.png",
+      "name": "Asus"
+    },
+    {
+      "img": "https://logos-world.net/wp-content/uploads/2022/11/Acer-Logo.png",
+      "name": "Acer"
+    },
+    {
+      "img": "https://storage-asset.msi.com/global/picture/image/feature/nb/AMD/Bravo15-5000/bravo-logo.png",
+      "name": "MSI"
+    },
+    {
+      "img": "https://logos-download.com/wp-content/uploads/2016/05/Xiaomi_Logo_2021.png",
+      "name": "Mi NoteBook"
+    },
+    {
+      "img": "https://p.kindpng.com/picc/s/349-3493264_high-resolution-leica-logo-hd-png-download.png",
+      "name": "Lenovo"
+    },
+    {
+      "img": "https://seeklogo.com/images/H/Huawei-logo-A8C7CBCAA8-seeklogo.com.png",
+      "name": "Huawei"
+    },
+    {
+      "img": "https://www.freepnglogos.com/uploads/lg-logo-png/lg-logo-logo-png-transparent-svg-vector-bie-supply-0.png",
+      "name": "LG"
+    },
+    {
+      "img": "https://download.logo.wine/logo/ThinkPad/ThinkPad-Logo.wine.png",
+      "name": "ThinkPad"
+    },
+    {
+      "img": "https://i.pinimg.com/736x/ba/45/24/ba452436d152a2a216c3058f7b2a7032--surface-pro--future-videos.jpg",
+      "name": "Surface"
+    }
+  ],
+  "banner": [
+    {
+      "id": "1000",
+      "code": "f230fh0g3",
+      "name": "Bamboo Watch",
+      "description": "Product Description",
+      "image": "bamboo-watch.jpg",
+      "price": 65,
+      "category": "Accessories",
+      "quantity": 24,
+      "inventoryStatus": "INSTOCK",
+      "rating": 5
+    },
+    {
+      "id": "1001",
+      "code": "nvklal433",
+      "name": "Black Watch",
+      "description": "Product Description",
+      "image": "black-watch.jpg",
+      "price": 72,
+      "category": "Accessories",
+      "quantity": 61,
+      "inventoryStatus": "INSTOCK",
+      "rating": 4
+    },
+    {
+      "id": "1002",
+      "code": "zz21cz3c1",
+      "name": "Blue Band",
+      "description": "Product Description",
+      "image": "blue-band.jpg",
+      "price": 79,
+      "category": "Fitness",
+      "quantity": 2,
+      "inventoryStatus": "LOWSTOCK",
+      "rating": 3
+    },
+    {
+      "id": "1003",
+      "code": "244wgerg2",
+      "name": "Blue T-Shirt",
+      "description": "Product Description",
+      "image": "blue-t-shirt.jpg",
+      "price": 29,
+      "category": "Clothing",
+      "quantity": 25,
+      "inventoryStatus": "INSTOCK",
+      "rating": 5
+    },
+    {
+      "id": "1004",
+      "code": "h456wer53",
+      "name": "Bracelet",
+      "description": "Product Description",
+      "image": "bracelet.jpg",
+      "price": 15,
+      "category": "Accessories",
+      "quantity": 73,
+      "inventoryStatus": "INSTOCK",
+      "rating": 4
+    },
+    {
+      "id": "1005",
+      "code": "av2231fwg",
+      "name": "Brown Purse",
+      "description": "Product Description",
+      "image": "brown-purse.jpg",
+      "price": 120,
+      "category": "Accessories",
+      "quantity": 0,
+      "inventoryStatus": "OUTOFSTOCK",
+      "rating": 4
+    },
+    {
+      "id": "1006",
+      "code": "bib36pfvm",
+      "name": "Chakra Bracelet",
+      "description": "Product Description",
+      "image": "chakra-bracelet.jpg",
+      "price": 32,
+      "category": "Accessories",
+      "quantity": 5,
+      "inventoryStatus": "LOWSTOCK",
+      "rating": 3
+    },
+    {
+      "id": "1007",
+      "code": "mbvjkgip5",
+      "name": "Galaxy Earrings",
+      "description": "Product Description",
+      "image": "galaxy-earrings.jpg",
+      "price": 34,
+      "category": "Accessories",
+      "quantity": 23,
+      "inventoryStatus": "INSTOCK",
+      "rating": 5
+    },
+    {
+      "id": "1008",
+      "code": "vbb124btr",
+      "name": "Game Controller",
+      "description": "Product Description",
+      "image": "game-controller.jpg",
+      "price": 99,
+      "category": "Electronics",
+      "quantity": 2,
+      "inventoryStatus": "LOWSTOCK",
+      "rating": 4
+    },
+    {
+      "id": "1009",
+      "code": "cm230f032",
+      "name": "Gaming Set",
+      "description": "Product Description",
+      "image": "gaming-set.jpg",
+      "price": 299,
+      "category": "Electronics",
+      "quantity": 63,
+      "inventoryStatus": "INSTOCK",
+      "rating": 3
+    }
+  ]
 }

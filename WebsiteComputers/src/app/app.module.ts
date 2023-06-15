@@ -21,6 +21,11 @@ import {FormsModule} from '@angular/forms';
 import {RatingModule} from 'primeng/rating';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './components/search/search.component';
+import { ProductComponent } from './components/product/product.component';
+import { TableProductComponent } from './components/table-product/table-product.component';
+import { TabViewModule } from 'primeng/tabview';
+import { UserComponent } from './components/user/user.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -30,6 +35,9 @@ import { SearchComponent } from './components/search/search.component';
     BrandComponent,
     NotFoundComponent,
     SearchComponent,
+    ProductComponent,
+    TableProductComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,9 +55,14 @@ import { SearchComponent } from './components/search/search.component';
     DropdownModule,
     FormsModule,
     RatingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TabViewModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    //my imports
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
