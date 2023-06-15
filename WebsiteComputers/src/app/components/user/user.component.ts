@@ -15,11 +15,11 @@ import { ApiServiceService } from 'src/app/services/api-service.service';
 })
 export class UserComponent {
   public formUser = this.formBuilder.group({
-    firstName: ['', Validators.required],
-    lastName: ['', Validators.required],
+    first_name: ['', Validators.required],
+    last_name: ['', Validators.required],
     email: ['', Validators.compose([Validators.required, Validators.email])],
-    phone: ['', Validators.required],
-    birthdate: ['', Validators.required],
+    phone_number: ['', Validators.required],
+    date_of_birth: ['', Validators.required],
     gender: ['', Validators.required],
   });
 
@@ -37,11 +37,11 @@ export class UserComponent {
   attributes = [
     'id',
     'username',
-    'firstName',
-    'lastName',
-    'birthdate',
+    'first_name',
+    'last_name',
+    'date_of_birth',
     'email',
-    'phone',
+    'phone_number',
     'password',
     'gender',
   ];
@@ -55,8 +55,8 @@ export class UserComponent {
   ) {
     pageTitle.setTitle('User');
     this.getDataFromSessionStorage();
-    console.log(this.userData, 'This is user data');
   }
+
 
   getDataFromSessionStorage() {
     for (const attribute of this.attributes) {
@@ -66,11 +66,11 @@ export class UserComponent {
 
   onSaveUser() {
     if (this.formUser.valid) {
-      sessionStorage.setItem('firstName', this.userData.firstName);
-      sessionStorage.setItem('lastName', this.userData.lastName);
+      sessionStorage.setItem('first_name', this.userData.first_name);
+      sessionStorage.setItem('last_name', this.userData.last_name);
       sessionStorage.setItem('email', this.userData.email);
-      sessionStorage.setItem('phone', this.userData.phone);
-      sessionStorage.setItem('birthdate', this.userData.birthdate);
+      sessionStorage.setItem('phone_number', this.userData.phone_number);
+      sessionStorage.setItem('date_of_birth', this.userData.date_of_birth);
       sessionStorage.setItem('gender', this.userData.gender);
       this.updateInfo();
     } else {

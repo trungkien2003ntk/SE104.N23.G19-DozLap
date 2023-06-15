@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { ApiServiceService } from 'src/app/services/api-service.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class CartComponent {
   newItems:any;
   total = 0;
 
-  constructor(private service: ApiServiceService, private pageTitle: Title) {
+  constructor(private service: ApiServiceService, private pageTitle: Title, private router: Router) {
     pageTitle.setTitle('Cart');
     this.initResponsive();
   }
@@ -43,18 +44,17 @@ export class CartComponent {
     this.getCartItems();
 
     this.getProducts();
-    
   }
 
   combineTables(){
     this.newItems = this.products.map((product:any) => {
-      const cartItem = this.cartItems.find((cartItem:any) => cartItem.productId === product.id);
+      const cartItem = this.cartItems.find((cartItem:any) => cartItem.product_id === product.id);
       return {
         id: product.id,
         name: product.name,
         image_url: product.image_url,
         price: product.price,
-        cartItemId: cartItem.id,
+        cart_item_id: cartItem.id,
         quantity: cartItem ? cartItem.quantity : 0,
       };
     });
@@ -62,54 +62,45 @@ export class CartComponent {
   }
 
   getCartItems() {
-    this.service.getData('cart').subscribe((result) => {
-      this.cartItems = result;
+    const customerId = sessionStorage.getItem('id');
+    this.service.getData('shopping_cart_item').subscribe((result) => {
+      this.cartItems = result.filter((item:any) => item.customer_id === customerId);
+      // console.log('This is current id', customerId);
+      // console.log('This is all cartItems', result);
+      // console.log('This is all items got', this.cartItems);
     });
-    
   }
+  
 
   getProducts() {
     this.service.getData('product').subscribe((result) => {
       this.products = result
         .filter((product: any) =>
-          this.cartItems.some((item: any) => item.productId === product.id)
+          this.cartItems.some((item: any) => item.product_id === product.id)
         )
         .map((product: any) => {
           const cartItem = this.cartItems.find(
-            (item: any) => item.productId === product.id
+            (item: any) => item.product_id === product.id
           );
-          return { ...product, cartItemId: cartItem.id };
+          return { ...product, cart_item_id: cartItem.id };
         });
         this.combineTables();
     });
   }
 
   deleteProduct(product: any): void {
-    this.service.deleteData('cart', product.cartItemId).subscribe(
+    this.service.deleteData('shopping_cart_item', product.cart_item_id).subscribe(
       () => {
         const index = this.newItems.findIndex((p: any) => p.id === product.id);
         if (index > -1) {
           this.newItems.splice(index, 1);
+          this.onInputChange(null, 0);
         }
       },
       (error) => {
         console.error('Error deleting product:', error);
       }
     );
-  }
-
-  updateQuantity(product: any, newQuantity: number): void {
-    const cartItem = this.cartItems.find((item: any) => item.productId === product.id);
-    const updatedCartItem = { ...cartItem, quantity: newQuantity };
-
-    this.service.putData('shopping_cart_item', cartItem.id, updatedCartItem).subscribe({
-        next: () => {
-            console.log('Quantity updated successfully');
-        },
-        error: (error) => {
-            console.error('Error updating quantity:', error);
-        }
-    });
   }
 
   onInputChange(item:any, quantity: number){
@@ -122,10 +113,23 @@ export class CartComponent {
           p.quantity = quantity;
         }
       }
-      console.log('This is price', p.price);
-      console.log('This is quantity', p.quantity);
       this.total += p.price * p.quantity;
     }
-    console.log('This is total!', this.total);
+  }
+
+  checkOut(){
+    const newCartItems = this.newItems.map((item: any) => {
+      return {
+        id: item.cart_item_id,
+        customer_id: sessionStorage.getItem('id'),
+        product_id: item.id,
+        quantity: item.quantity,
+      };
+    });
+
+    for (let item of newCartItems){
+      this.service.putData('shopping_cart_item', item.id, item).subscribe();
+    }
+    this.router.navigate(['order']);
   }
 }

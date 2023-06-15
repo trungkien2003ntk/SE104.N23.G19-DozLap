@@ -32,6 +32,8 @@ import { TableModule } from 'primeng/table';
 import { TagModule } from 'primeng/tag';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { OrderComponent } from './components/order/order.component';
+import { HistoryComponent } from './components/history/history.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { RegisterComponent } from './components/register/register.component';
     CartComponent,
     LoginComponent,
     RegisterComponent,
+    OrderComponent,
+    HistoryComponent,
   ],
   imports: [
     BrowserModule,

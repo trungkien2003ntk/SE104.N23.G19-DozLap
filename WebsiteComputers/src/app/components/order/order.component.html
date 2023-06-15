@@ -1,0 +1,72 @@
+<div class="row-root">
+    <div class="col-75">
+        <div class="container">
+            <form [formGroup]="formOrder">
+                <div class="row">
+                    <div class="col-50">
+                        <h3>Billing Information</h3>
+                        <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                        <input disabled="true" type="text" id="fname" name="firstname" placeholder="{{customer.first_name + ' ' + customer.last_name}}">
+                        <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                        <input disabled="true" type="text" id="email" name="email" placeholder="{{customer.email}}">
+                        <label for="adr"><i class="fa fa-address-card-o"></i> Phone Number</label>
+                        <input disabled="true" type="text" id="adr" name="phone" placeholder="{{customer.phone_number}}">
+                        <label for="fname"><i class="fa fa-user"></i> Note</label>
+                        <input type="text" id="fname" name="firstname" formControlName="note" placeholder="Your note">
+                    </div>
+
+                    <div class="col-50">
+                        <h3>Address</h3>
+                        <label for="cname">Province</label>
+                        <p-dropdown [options]="provinces" optionLabel="name"
+                            (onChange)="onProvinceChange($event)">
+                        </p-dropdown>
+                        <label for="ccnum">Street</label>
+                        <input type="text" id="ccnum" name="cardnumber" formControlName="street" placeholder="Street">
+                        <label for="expmonth">House Number</label>
+                        <input type="text" id="expmonth" name="expmonth" formControlName="house_number" placeholder="House Number">
+                    </div>
+                </div>
+                <div id="datetime"></div>
+                <input type="submit" (click)="checkOut()" value="Continue to Checkout" class="btn">
+            </form>
+        </div>
+    </div>
+</div>
+
+<br />
+
+<div class="row-root">
+    <div class="container">
+        <h4>In Cart:
+            <span class="price" style="color:black">
+                <i class="fa fa-shopping-cart"></i>
+                <b>{{newItems ? newItems.length : 0 }}</b>
+            </span>
+        </h4>
+        <p-table [value]="newItems">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product>
+                <tr>
+                    <td [routerLink]="['/product/', product.id]" style="cursor: pointer;">{{product.name}}</td>
+                    <td>{{product.price | currency:'VND'}}</td>
+                    <td>{{product.quantity}}</td>
+                    <td>{{product.price * product.quantity | currency:'VND'}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+        <br/>
+        <p>Shipping Fee: {{selectedProvince.shipping_charge | currency:'VND'}}</p>
+        <hr>
+        <p>Total <span class="price" style="color:black"><b>{{total | currency:'VND'}}</b></span></p>
+    </div>
+</div>
+
+<br />

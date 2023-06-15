@@ -30,15 +30,6 @@ export class TableProductComponent {
   ngOnInit() {
   }
 
-  // updateContents() {
-  //   // update the contents array here
-  //   this.cdr.detectChanges(); // detect changes to the view
-  // }
-
-  // ngOnChanges(changes: SimpleChanges) {
-  //   this.updateContents();
-  // }
-
   initResponsive() {
     this.responsiveOptions = [
       {
@@ -73,7 +64,7 @@ export class TableProductComponent {
 
   async getCartItems(): Promise<any> {
     return new Promise<void>(resolve => {
-      this.service.getData('cart').subscribe((result) => {
+      this.service.getData('shopping_cart_item').subscribe((result) => {
         this.cartItems = result;
         resolve();
       });
@@ -82,7 +73,7 @@ export class TableProductComponent {
 
   isDifferentFromAll(data:any, allData:any){
     for (const otherData of allData) {
-      if (data.productId === otherData.productId && data.customerId === otherData.customerId) {
+      if (data.product_id === otherData.product_id && data.customer_id === otherData.customer_id) {
         return false;
       }
     }
@@ -92,13 +83,12 @@ export class TableProductComponent {
   async addToCart(id: any) {
     await this.getCartItems();
     const data = {
-      "id" : Math.floor(Math.random() * 1000000),
-      "productId": id,
-      "customerId": sessionStorage.getItem('id'),
+      "product_id": id,
+      "customer_id": sessionStorage.getItem('id'),
       "quantity": 1
     };
     if (this.isDifferentFromAll(data, this.cartItems)) {
-      this.service.postData("cart", data).subscribe((result) =>
+      this.service.postData("shopping_cart_item", data).subscribe((result) =>
       {
         console.log(result, "This is postData");
       });

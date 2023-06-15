@@ -1218,52 +1218,55 @@
   ],
   "customer": [
     {
-      "id": 1,
       "username": "bowjaro",
-      "firstName": "Báo Thủ",
-      "lastName": "Đầu Lâm",
-      "birthdate": "2023-05-05",
-      "email": "bom@gma.com",
-      "phone": "0123456788",
-      "password": "bow",
-      "gender": "female"
-    },
-    {
-      "username": "yasuo",
-      "firstName": "Báo",
-      "lastName": "Thủ",
+      "first_name": "bow",
+      "last_name": "jaro",
       "password": "bowjaro3",
-      "email": "bm@gm.com",
-      "phone": "0123456798",
-      "birthdate": "2023-05-12",
+      "email": "bo@gm.com",
+      "phone_number": "0123456789",
+      "date_of_birth": "2023-05-18",
       "gender": "male",
-      "id": 2
+      "id": 1
     }
   ],
-  "shopping_cart_item": [
-    {
-      "id": 607467,
-      "productId": 3,
-      "customerId": "1",
-      "quantity": 1
-    },
-    {
-      "id": 46757,
-      "productId": 21,
-      "customerId": "1",
-      "quantity": 1
-    },
-    {
-      "id": 740216,
-      "productId": 36,
-      "customerId": "1",
-      "quantity": 1
-    }
-  ],
+  "shopping_cart_item": [],
   "orders": [
+    {
+      "note": "No need to note",
+      "created_on_utc": "2023-05-15T14:12:01.529Z",
+      "customer_id": "1",
+      "shipping_address_id": 1,
+      "total_price": 270428000,
+      "status": "PENDING",
+      "id": 1
+    }
   ],
   "order_item": [
+    {
+      "order_id": 1,
+      "product_id": 11,
+      "quantity": 2,
+      "id": 1
+    },
+    {
+      "order_id": 1,
+      "product_id": 12,
+      "quantity": 3,
+      "id": 2
+    },
+    {
+      "order_id": 1,
+      "product_id": 13,
+      "quantity": 4,
+      "id": 3
+    }
   ],
   "address": [
+    {
+      "house_number": "12A",
+      "street": "New Street",
+      "province_id": 2,
+      "id": 1
+    }
   ]
 }
