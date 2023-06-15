@@ -36,6 +36,13 @@ export class RegisterComponent {
             this.router.navigate(['login']);
           });
         } else {
+          console.log('username', this.registerform.value.username);
+          console.log('firstname', this.registerform.value.firstName);
+          console.log('last name', this.registerform.value.lastName);
+          console.log('email', this.registerform.value.email);
+          console.log('date', this.registerform.value.birthdate);
+          console.log('phone', this.registerform.value.phone);
+          console.log('gender', this.registerform.value.gender);
           alert('Please enter valid data.');
         }
       } else {

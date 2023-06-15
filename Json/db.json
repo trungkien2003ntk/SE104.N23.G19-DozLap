@@ -1227,6 +1227,43 @@
       "phone": "0123456788",
       "password": "bow",
       "gender": "female"
+    },
+    {
+      "username": "yasuo",
+      "firstName": "Báo",
+      "lastName": "Thủ",
+      "password": "bowjaro3",
+      "email": "bm@gm.com",
+      "phone": "0123456798",
+      "birthdate": "2023-05-12",
+      "gender": "male",
+      "id": 2
     }
+  ],
+  "shopping_cart_item": [
+    {
+      "id": 607467,
+      "productId": 3,
+      "customerId": "1",
+      "quantity": 1
+    },
+    {
+      "id": 46757,
+      "productId": 21,
+      "customerId": "1",
+      "quantity": 1
+    },
+    {
+      "id": 740216,
+      "productId": 36,
+      "customerId": "1",
+      "quantity": 1
+    }
+  ],
+  "orders": [
+  ],
+  "order_item": [
+  ],
+  "address": [
   ]
 }

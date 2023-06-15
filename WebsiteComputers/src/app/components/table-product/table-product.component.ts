@@ -94,7 +94,7 @@ export class TableProductComponent {
     const data = {
       "id" : Math.floor(Math.random() * 1000000),
       "productId": id,
-      "customerId": 1,
+      "customerId": sessionStorage.getItem('id'),
       "quantity": 1
     };
     if (this.isDifferentFromAll(data, this.cartItems)) {

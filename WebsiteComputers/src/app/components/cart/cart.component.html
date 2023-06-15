@@ -1,6 +1,5 @@
 <p-card header="Shopping Cart">
-
-    <p-table [value]="products" [tableStyle]="{'min-width': '60rem'}">
+    <p-table [value]="newItems" [tableStyle]="{'min-width': '60rem'}">
         <ng-template pTemplate="header">
             <tr>
                 <th>Name</th>
@@ -14,16 +13,15 @@
         <ng-template pTemplate="body" let-product>
             <tr>
                 <td [routerLink]="['/product/', product.id]" style="cursor: pointer;">{{product.name}}</td>
-                <td [routerLink]="['/product/', product.id]" style="cursor: pointer;"><img [src]="product.img" [alt]="product.name" width="100" class="shadow-4" /></td>
-                <td>{{product.price | currency:'USD'}}</td>
+                <td [routerLink]="['/product/', product.id]" style="cursor: pointer;"><img [src]="product.image_url" [alt]="product.name" width="100" class="shadow-4" /></td>
+                <td>{{product.price | currency:'VND'}}</td>
                 <td>
                     <div>
-                        <input #quantityInput type="number" style="width: 50px;">
-                        <p-button icon="pi pi-check" style="margin-left: 10px;" (click)="updateQuantity(product, quantityInput.valueAsNumber)"></p-button>
-                    
+                        <input #quantityInput type="number" (change)="onInputChange(product, quantityInput.valueAsNumber)" [ngModel]="product.quantity" style="width: 50px;">
+                        <!-- <p-button icon="pi pi-check" style="margin-left: 10px;" (click)="updateQuantity(product, quantityInput.valueAsNumber)"></p-button> -->
                     </div> 
                 </td>
-                <td>{{(product.price * quantityInput.valueAsNumber) | currency:'USD'}}</td>
+                <td>{{(product.price * quantityInput.valueAsNumber) | currency:'VND'}}</td>
                 <td>
                     <p-button icon="pi pi-trash" (click)="deleteProduct(product)"></p-button>
                 </td>
@@ -45,7 +43,7 @@
             Total Price:
         </h2>
         <h4 style="margin-left: auto; margin-right: 20px;">
-            {{1000000 | currency:'VND'}}
+            {{total | currency:'VND'}}
         </h4>
         <p-button label="Check Out" styleClass="p-button-danger"></p-button>
     </div>
