@@ -54,7 +54,7 @@ export class AppComponent {
   }
 
   getcategory() {
-    this.service.getData("category").subscribe((result) =>
+    this.service.getCategory().subscribe((result) =>
     {
       this.category = result;
     });
@@ -68,4 +68,5 @@ export class AppComponent {
     const searchButton = searchInput.nextElementSibling as HTMLElement;
     searchButton.click();
   }
+
 }

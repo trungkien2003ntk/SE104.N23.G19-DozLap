@@ -54,7 +54,7 @@
     style="border-radius: 5000px; background-color: orange; width: 150px; orientation:portrait;
     align-items: center; text-align: center;padding: 10px; margin: 10px; display: inline;
     display: flex; align-items: center; justify-content: center;"
-        *ngFor="let b of category" [routerLink]="['category/', b.name]">
+        *ngFor="let b of category" [routerLink]="['category/', b.id]">
         <!-- <img src="{{b.img}}" style="height: 30px;" /> -->
         <h5 style="display: inline; vertical-align:middle;">{{b.name}}</h5>
     </div>
