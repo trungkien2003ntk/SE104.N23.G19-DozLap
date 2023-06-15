@@ -26,7 +26,10 @@ import { TableProductComponent } from './components/table-product/table-product.
 import { TabViewModule } from 'primeng/tabview';
 import { UserComponent } from './components/user/user.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { CartComponent } from './components/cart/cart.component';
+import { CardModule } from 'primeng/card';
+import { TableModule } from 'primeng/table';
+import { TagModule } from 'primeng/tag';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductComponent,
     TableProductComponent,
     UserComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     RouterModule,
     AppRoutingModule,
-    // test
     DataViewModule,
     InputTextModule,
     DropdownModule,
@@ -57,7 +60,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     RatingModule,
     BrowserAnimationsModule,
     TabViewModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CardModule,
+    TableModule,
+    TagModule
   ],
   providers: [
     //my imports

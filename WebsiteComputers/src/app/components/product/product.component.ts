@@ -56,4 +56,17 @@ export class ProductComponent {
     });
     
   }
+
+  addToCart(id: any) {
+    console.log(id, 'This is value!!!');
+    const data = {
+      "id" : Math.floor(Math.random() * 1000000),
+      "productId": id,
+      "customerId": 1,
+    };
+    this.service.postData("cart", data).subscribe((result) =>
+    {
+      console.log(result, "This is postData");
+    });
+  }
 }

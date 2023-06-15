@@ -3,7 +3,7 @@
         <h1>{{product.name}}</h1>
         <div style="display: flex; align-items: center;">
             <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
-            <p-button icon="pi pi-shopping-cart"
+            <p-button icon="pi pi-shopping-cart" (onClick)="addToCart(product.id)"
             style="margin-left: 20px;"
             [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button>
         </div>

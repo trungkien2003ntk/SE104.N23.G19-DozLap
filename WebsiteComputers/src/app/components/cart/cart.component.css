@@ -1,0 +1,26 @@
+p-card{
+    margin-left: 10%;
+    margin-right: 10%;
+    display: block;
+    width: 80%;
+}
+
+h4{
+    color: red;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.check-out{
+    background-color: orange;
+    border-radius: 5px;
+    border: none;
+    font-size: 25px;
+}
