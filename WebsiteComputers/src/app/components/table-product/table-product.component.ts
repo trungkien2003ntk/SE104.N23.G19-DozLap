@@ -30,14 +30,14 @@ export class TableProductComponent {
   ngOnInit() {
   }
 
-  updateContents() {
-    // update the contents array here
-    this.cdr.detectChanges(); // detect changes to the view
-  }
+  // updateContents() {
+  //   // update the contents array here
+  //   this.cdr.detectChanges(); // detect changes to the view
+  // }
 
-  ngOnChanges(changes: SimpleChanges) {
-    this.updateContents();
-  }
+  // ngOnChanges(changes: SimpleChanges) {
+  //   this.updateContents();
+  // }
 
   initResponsive() {
     this.responsiveOptions = [

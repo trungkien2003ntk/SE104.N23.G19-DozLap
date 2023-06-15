@@ -1,64 +1,92 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ValidationErrors,
+  Validators,
+} from '@angular/forms';
+import { ApiServiceService } from 'src/app/services/api-service.service';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.css'],
 })
 export class UserComponent {
   public formUser = this.formBuilder.group({
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
-    email: ['', Validators.compose([Validators.required, Validators.email]) ],
+    email: ['', Validators.compose([Validators.required, Validators.email])],
     phone: ['', Validators.required],
-    birthday: ['', Validators.required],
+    birthdate: ['', Validators.required],
     gender: ['', Validators.required],
-    // address: ['', Validators.required]
   });
 
-  public formPassword = this.formBuilder.group({
-    currentPassword: ['', Validators.required],
-    newPassword: ['', Validators.required],
-    confirmPassword: ['', Validators.required],
-  },
-  {
-    validator: this.confirmValidator('newPassword', 'confirmPassword')
-  }
+  public formPassword = this.formBuilder.group(
+    {
+      currentPassword: ['', Validators.required],
+      newPassword: ['', Validators.required],
+      confirmPassword: ['', Validators.required],
+    },
+    {
+      validator: this.confirmValidator('newPassword', 'confirmPassword'),
+    }
   );
 
-  attributes = ['id', 'username', 'firstname', 'lastname', 'birthdate', 'email', 'phone', 'password', 'gender'];
-  userData :any = [];
+  attributes = [
+    'id',
+    'username',
+    'firstName',
+    'lastName',
+    'birthdate',
+    'email',
+    'phone',
+    'password',
+    'gender',
+  ];
 
-  constructor (private pageTitle: Title, private formBuilder: FormBuilder){
+  userData: any = {};
+
+  constructor(
+    private pageTitle: Title,
+    private formBuilder: FormBuilder,
+    private service: ApiServiceService
+  ) {
     pageTitle.setTitle('User');
     this.getDataFromSessionStorage();
+    console.log(this.userData, 'This is user data');
   }
 
   getDataFromSessionStorage() {
     for (const attribute of this.attributes) {
-      console.log(attribute, "This is attribute");
-      console.log(sessionStorage.getItem(attribute), "This is session");
       this.userData[attribute] = sessionStorage.getItem(attribute);
     }
   }
 
   onSaveUser() {
     if (this.formUser.valid) {
-      // Submit the form data to the server
-      console.log(this.formUser.value);
+      sessionStorage.setItem('firstName', this.userData.firstName);
+      sessionStorage.setItem('lastName', this.userData.lastName);
+      sessionStorage.setItem('email', this.userData.email);
+      sessionStorage.setItem('phone', this.userData.phone);
+      sessionStorage.setItem('birthdate', this.userData.birthdate);
+      sessionStorage.setItem('gender', this.userData.gender);
+      this.updateInfo();
     } else {
-      // Display error message or handle invalid form
+      alert('Invalid data.');
     }
   }
-  
+
   confirmValidator(controlName: string, matchingControlName: string) {
     return (formGroup: FormGroup) => {
       const control = formGroup.controls[controlName];
       const matchingControl = formGroup.controls[matchingControlName];
 
-      if (matchingControl.errors && !matchingControl.errors['passwordMismatch']) {
+      if (
+        matchingControl.errors &&
+        !matchingControl.errors['passwordMismatch']
+      ) {
         // return if another validator has already found an error on the matchingControl
         return;
       }
@@ -74,14 +102,39 @@ export class UserComponent {
 
   onSavePassword() {
     if (this.formPassword.valid) {
-      // Submit the form data to the server
-      console.log(this.formPassword.value);
+      // Get the current password, new password, and confirm password from the form
+      const currentPassword = this.formPassword.value.currentPassword;
+      const newPassword = this.formPassword.value.newPassword;
+      const confirmPassword = this.formPassword.value.confirmPassword;
+
+      // Check if the new password and confirm password match
+      if (newPassword !== confirmPassword) {
+        alert('New password and confirm password do not match.');
+        return;
+      }
+
+      if (this.userData.password !== currentPassword) {
+        alert('Current password is incorrect.');
+        return;
+      }
+
+      // Update the user's password in the user data
+      this.userData.password = newPassword;
+      this.updateInfo();
+      this.formPassword.reset();
+      sessionStorage.setItem('password', this.userData.password);
     } else {
-      // Display error message or handle invalid form
+      alert('Invalid password.');
     }
   }
 
-  save(){
-    
+  updateInfo() {
+    // Send the updated user data to the server
+    console.log('This is userData', this.userData);
+    this.service
+      .putData('customer', this.userData.id, this.userData)
+      .subscribe(() => {
+        alert('Update successfully.');
+      });
   }
 }

@@ -76,4 +76,11 @@ export class AppComponent {
     searchButton.click();
   }
 
+  logout() {
+    // Clear the session storage
+    sessionStorage.clear();
+
+    // Redirect the user to the login page
+    this.router.navigate(['login']);
+}
 }
