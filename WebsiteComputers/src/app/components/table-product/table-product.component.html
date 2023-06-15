@@ -1,7 +1,5 @@
-
-
 <!-- table content -->
-<!-- <div class="card">
+<div class="card">
     <p-dataView #dv [value]="contents" [paginator]="true" [rows]="15" filterBy="name" [sortField]="sortField"
         [sortOrder]="sortOrder" layout="grid">
         <ng-template pTemplate="header">
@@ -26,7 +24,7 @@
                         </div>
                         <span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
                     </div>
-                    <div class="product-grid-item-content">
+                    <div class="product-grid-item-content" [routerLink]="['/product/', product.id]">
                         <img class="hover-pointer" style="width: 100%; height: 250px;" src="{{product.img}}" [alt]="product.name" />
                         <div class="product-name hover-pointer">{{product.name}}</div>
                         <div class="product-description"
@@ -42,12 +40,9 @@
             </div>
         </ng-template>
     </p-dataView>
-</div> -->
+</div>
 
-<app-table-product [contents]="contents"></app-table-product>
 
 <!-- table content -->
 
 <br />
-
-<!-- <router-outlet></router-outlet> -->

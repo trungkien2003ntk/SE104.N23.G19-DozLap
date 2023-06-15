@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { MenuItem } from 'primeng/api';
 import { ApiServiceService } from 'src/app/services/api-service.service';
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  selector: 'app-product',
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.css']
 })
-export class SearchComponent {
-  contents:any =[];
+export class ProductComponent {
+  
   responsiveOptions: any;
-  keyword:any;
-  searchKeyword: any = '';
+  id:any;
+  product:any;
 
+  
   constructor(private service: ApiServiceService, private router: ActivatedRoute, private pageTitle: Title){
     this.initResponsive();
     
@@ -43,17 +43,17 @@ export class SearchComponent {
   ngOnInit() {
 
     this.router.paramMap.subscribe(params => {
-      this.keyword = params.get('keyword');
-      this.getProducts();
+      this.id = params.get('id');
+      this.getProductInfo();
     });
   }
 
-  getProducts() {
+  getProductInfo() {
     this.service.getData("products").subscribe((result) =>
     {
-      this.pageTitle.setTitle("search " + this.keyword);
-      this.contents = result.filter((product:any) => product.name.toLowerCase().indexOf(this.keyword.toLowerCase()) != -1);     
+      this.product = result.filter((data:any) => data.id == this.id)[0];
+      this.pageTitle.setTitle(this.product.name);
     });
+    
   }
-
 }

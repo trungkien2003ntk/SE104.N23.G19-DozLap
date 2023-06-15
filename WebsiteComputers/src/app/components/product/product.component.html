@@ -1,0 +1,88 @@
+<div class="product-details">
+    <div class="left">
+        <h1>{{product.name}}</h1>
+        <div style="display: flex; align-items: center;">
+            <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
+            <p-button icon="pi pi-shopping-cart"
+            style="margin-left: 20px;"
+            [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button>
+        </div>
+        <br />
+        <img src="{{product.img}}" />
+        <br />
+        <br />
+        <h3>Product details</h3>
+        <h5 style="text-align: justify;">{{product.description}}</h5>
+        <p style="text-align: justify;">{{product.details}}</p>
+    </div>
+    <div style="width: 20px;"></div>
+    <div class="right">
+        <h3>Specifications</h3>
+        <table class="table-specification">
+            <tbody>
+                <tr>
+                    <td class="title-specification">Screen Size</td>
+                    <td class="content-specification">Second string</td>
+                </tr>
+                <tr>
+                    <td class="title-specification">Screen Resolution</td>
+                    <td class="content-specification">Second string what if this is just a right text and if it is longer than
+                        expected, what should I do</td>
+                </tr>
+                <tr>
+                    <td class="title-specification">Touch Screen</td>
+                    <td class="content-specification">Sixth string</td>
+                </tr>
+                <tr>
+                    <td class="title-specification">Processor Model</td>
+                    <td class="content-specification">Second string</td>
+                </tr>
+                <tr>
+                    <td class="title-specification">Processor Model Number</td>
+                    <td class="content-specification">Fourth string</td>
+                </tr>
+                <tr>
+                    <td class="title-specification">Processor Speed (up to)</td>
+                    <td class="content-specification">Sixth string</td>
+                </tr>
+                <tr>
+                    <td class="title-specification">Storage Type</td>
+                    <td class="content-specification">Second string</td>
+                </tr>
+                <tr>
+                    <td class="title-specification">Total Storage Capacity</td>
+                    <td class="content-specification">Fourth string</td>
+                </tr>
+                <tr>
+                    <td class="title-specification">System Memory (RAM)</td>
+                    <td class="content-specification">Sixth string</td>
+                </tr>
+                <tr>
+                    <td class="title-specification">Graphics</td>
+                    <td class="content-specification">Second string</td>
+                </tr>
+                <tr>
+                    <td class="title-specification">Operating System</td>
+                    <td class="content-specification">Fourth string</td>
+                </tr>
+                <tr>
+                    <td class="title-specification">Voice Assistant Built-in</td>
+                    <td class="content-specification">Sixth string</td>
+                </tr>
+                <tr>
+                    <td class="title-specification">Battery Life (up to)</td>
+                    <td class="content-specification">Fourth string</td>
+                </tr>
+                <tr>
+                    <td class="title-specification">Battery Type</td>
+                    <td class="content-specification">Sixth string</td>
+                </tr>
+                <tr>
+                    <td class="title-specification">Backlit Keyboard</td>
+                    <td class="content-specification">Second string</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<br />
