@@ -5,26 +5,30 @@
             <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
             <p-button icon="pi pi-shopping-cart" (onClick)="addToCart(product.id)"
             style="margin-left: 20px;"
-            [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button>
+            [disabled]="product.status === 'OUTOFSTOCK'"></p-button>
         </div>
         <br />
-        <img src="{{product.img}}" />
+        <img src="{{product.image_url}}" />
         <br />
         <br />
-        <h3>Product details</h3>
-        <h5 style="text-align: justify;">{{product.description}}</h5>
-        <p style="text-align: justify;">{{product.details}}</p>
+        <h3 *ngIf="product.description.length > 1">Description</h3>
+        <p style="text-align: justify;" [innerHTML]="formatJsonString(product.description)"></p>
+        <!-- <p style="text-align: justify;">{{product.details}}</p> -->
     </div>
     <div style="width: 20px;"></div>
     <div class="right">
         <h3>Specifications</h3>
         <table class="table-specification">
             <tbody>
-                <tr>
+                <tr *ngFor="let spec of specification">
+                    <td class="title-specification">{{ spec[0] }}</td>
+                    <td class="content-specification">{{ spec[1] }}</td>
+                </tr>
+                <!-- <tr>
                     <td class="title-specification">Screen Size</td>
                     <td class="content-specification">Second string</td>
-                </tr>
-                <tr>
+                </tr> -->
+                <!-- <tr>
                     <td class="title-specification">Screen Resolution</td>
                     <td class="content-specification">Second string what if this is just a right text and if it is longer than
                         expected, what should I do</td>
@@ -80,7 +84,7 @@
                 <tr>
                     <td class="title-specification">Backlit Keyboard</td>
                     <td class="content-specification">Second string</td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
     </div>

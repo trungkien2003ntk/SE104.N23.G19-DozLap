@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import { ApiServiceService } from 'src/app/services/api-service.service';
 
 @Component({
@@ -8,7 +9,9 @@ import { ApiServiceService } from 'src/app/services/api-service.service';
 })
 export class TableProductComponent {
   @Input() contents: any = [];
+
   responsiveOptions: any;
+  cartItems: any = [];
 
   //test
   sortOptions = [
@@ -20,8 +23,22 @@ export class TableProductComponent {
   sortField: string = '';
   sortKey: any;
 
-  constructor(private service: ApiServiceService) {
+  constructor(private service: ApiServiceService, private cdr: ChangeDetectorRef) {
     this.initResponsive();
+  }
+
+  ngOnInit() {
+  }
+
+  updateContents() {
+    // update the contents array here
+    this.cdr.detectChanges(); // detect changes to the view
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('this is content passed from home', this.contents);
+    this.contents = [...this.contents];
+    this.updateContents();
   }
 
   initResponsive() {
@@ -56,16 +73,39 @@ export class TableProductComponent {
     }
   }
 
-  addToCart(id: any) {
-    console.log(id, 'This is value!!!');
+  async getCartItems(): Promise<any> {
+    return new Promise<void>(resolve => {
+      this.service.getData('cart').subscribe((result) => {
+        this.cartItems = result;
+        resolve();
+      });
+    });
+  }
+
+  isDifferentFromAll(data:any, allData:any){
+    for (const otherData of allData) {
+      if (data.productId === otherData.productId && data.customerId === otherData.customerId) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  async addToCart(id: any) {
+    await this.getCartItems();
     const data = {
       "id" : Math.floor(Math.random() * 1000000),
       "productId": id,
       "customerId": 1,
     };
-    this.service.postData("cart", data).subscribe((result) =>
-    {
-      console.log(result, "This is postData");
-    });
+    if (this.isDifferentFromAll(data, this.cartItems)) {
+      this.service.postData("cart", data).subscribe((result) =>
+      {
+        console.log(result, "This is postData");
+      });
+    }
+    else{
+      console.log("Duplicate id!");
+    }
   }
 }

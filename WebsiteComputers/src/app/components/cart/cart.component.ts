@@ -13,7 +13,7 @@ export class CartComponent {
   cartItems: any = [];
 
   constructor(private service: ApiServiceService, private pageTitle: Title) {
-    pageTitle.setTitle('Home');
+    pageTitle.setTitle('Cart');
     this.initResponsive();
   }
 
@@ -70,7 +70,7 @@ export class CartComponent {
   //   });
   // }
   getProducts() {
-    this.service.getData('products').subscribe((result) => {
+    this.service.getData('product').subscribe((result) => {
       this.products = result
         .filter((product: any) =>
           this.cartItems.some((item: any) => item.productId === product.id)
@@ -84,39 +84,6 @@ export class CartComponent {
     });
   }
 
-  // deleteProduct(product: any): void {
-  //   const index = this.products.findIndex((p:any) => p.id === product.id);
-  //   if (index > -1) {
-  //     this.products.splice(index, 1);
-  //   }
-  // }
-  // deleteProduct(product: any): void {
-  //   this.service.deleteData('cart', product.id).subscribe(
-  //     () => {
-  //       const index = this.products.findIndex((p: any) => p.id === product.id);
-  //       if (index > -1) {
-  //         this.products.splice(index, 1);
-  //       }
-  //     },
-  //     (error) => {
-  //       console.error('Error deleting product:', error);
-  //     }
-  //   );
-  // }
-
-  // deleteProduct(product: any): void {
-  //   this.service.deleteData('cart', product.cartItemId).subscribe(
-  //     () => {
-  //       const index = this.products.findIndex((p: any) => p.id === product.id);
-  //       if (index > -1) {
-  //         this.products.splice(index, 1);
-  //       }
-  //     },
-  //     (error) => {
-  //       console.error('Error deleting product:', error);
-  //     }
-  //   );
-  // }
   deleteProduct(product: any): void {
     this.service.deleteData('cart', product.cartItemId).subscribe(
       () => {
@@ -131,5 +98,17 @@ export class CartComponent {
     );
   }
 
-  
+  updateQuantity(product: any, newQuantity: number): void {
+    const cartItem = this.cartItems.find((item: any) => item.productId === product.id);
+    const updatedCartItem = { ...cartItem, quantity: newQuantity };
+
+    this.service.putData('cart', cartItem.id, updatedCartItem).subscribe({
+        next: () => {
+            console.log('Quantity updated successfully');
+        },
+        error: (error) => {
+            console.error('Error updating quantity:', error);
+        }
+    });
+  }
 }

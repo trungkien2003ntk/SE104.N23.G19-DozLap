@@ -9,7 +9,7 @@ import { ApiServiceService } from './services/api-service.service';
 export class AppComponent {
 
   banner: any = [];
-  brands:any = [];
+  category:any = [];
   contents:any =[];
   responsiveOptions: any;
 
@@ -41,22 +41,22 @@ export class AppComponent {
 
     this.getBanner();
 
-    this.getBrands();
+    this.getcategory();
 
     //test
   }
 
   getBanner(){
-    this.service.getData("products").subscribe((result) =>
+    this.service.getData("product").subscribe((result) =>
     {
       this.banner = result.slice(0, 5);
     });
   }
 
-  getBrands() {
-    this.service.getData("brands").subscribe((result) =>
+  getcategory() {
+    this.service.getData("category").subscribe((result) =>
     {
-      this.brands = result;
+      this.category = result;
     });
   }
 

@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, SimpleChanges } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { MenuItem } from 'primeng/api';
 import { ApiServiceService } from 'src/app/services/api-service.service';
 
 
@@ -39,15 +38,17 @@ export class HomeComponent {
   }
 
   ngOnInit() {
-
     this.getProducts();
-
   }
+  
+
 
   getProducts() {
-    this.service.getData("products").subscribe((result) =>
-    {
-      this.contents = result;
+    this.service.getProduct().subscribe((products:any) => {
+      if (products) {
+        this.contents = products;
+      }
     });
   }
+
 }

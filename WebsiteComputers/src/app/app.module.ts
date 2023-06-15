@@ -6,7 +6,7 @@ import {ButtonModule} from 'primeng/button';
 import {CarouselModule} from 'primeng/carousel';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
-import { BrandComponent } from './components/brand/brand.component';
+import { CategoryComponent } from './components/category/category.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
@@ -35,7 +35,7 @@ import { TagModule } from 'primeng/tag';
   declarations: [
     AppComponent,
     HomeComponent,
-    BrandComponent,
+    CategoryComponent,
     NotFoundComponent,
     SearchComponent,
     ProductComponent,

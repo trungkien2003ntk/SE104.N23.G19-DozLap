@@ -5,19 +5,18 @@ import { MenuItem } from 'primeng/api';
 import { ApiServiceService } from 'src/app/services/api-service.service';
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  selector: 'app-category',
+  templateUrl: './category.component.html',
+  styleUrls: ['./category.component.css']
 })
-export class SearchComponent {
+export class CategoryComponent {
   contents:any =[];
   responsiveOptions: any;
-  keyword:any;
-  searchKeyword: any = '';
+	getParamCategory: any;
+  selectedCategory:any;
 
   constructor(private service: ApiServiceService, private router: ActivatedRoute, private pageTitle: Title){
     this.initResponsive();
-    
   }
 
   initResponsive() {
@@ -43,17 +42,17 @@ export class SearchComponent {
   ngOnInit() {
 
     this.router.paramMap.subscribe(params => {
-      this.keyword = params.get('keyword');
+      this.selectedCategory = params.get('category');
+      this.pageTitle.setTitle(this.selectedCategory);
       this.getProducts();
     });
-  }
 
+  }
+  
   getProducts() {
-    this.service.getProduct().subscribe((result) =>
+    this.service.getData("product").subscribe((result) =>
     {
-      this.pageTitle.setTitle("search " + this.keyword);
-      this.contents = result.filter((product:any) => product.name.toLowerCase().indexOf(this.keyword.toLowerCase()) != -1);     
+      this.contents = result.filter((product:any) => product.category === this.selectedCategory);
     });
   }
-
 }

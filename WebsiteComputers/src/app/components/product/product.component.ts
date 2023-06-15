@@ -13,7 +13,8 @@ export class ProductComponent {
   responsiveOptions: any;
   id:any;
   product:any;
-
+  specs:any;
+  specification:any = [];
   
   constructor(private service: ApiServiceService, private router: ActivatedRoute, private pageTitle: Title){
     this.initResponsive();
@@ -48,11 +49,28 @@ export class ProductComponent {
     });
   }
 
+  formatJsonString(inputString: string): string {
+    return inputString.replace(/\|/g, '').replace(/\r\n/g, '<br>');
+  }
+
+  convertSpecs()
+  {
+    let len = this.specs.length;
+    for (let i = 0; i < len; i++) {
+      this.specification.push(this.specs[i].split('    '));
+    }
+  }
+
   getProductInfo() {
-    this.service.getData("products").subscribe((result) =>
+    this.service.getData("product").subscribe((result) =>
     {
       this.product = result.filter((data:any) => data.id == this.id)[0];
       this.pageTitle.setTitle(this.product.name);
+      this.product.description = this.formatJsonString(this.product.description);
+      this.specs = this.product.specs.split("|\r\n");
+      this.specs.pop();
+      this.convertSpecs();
+      console.log("This is specs", this.specification);
     });
     
   }
@@ -63,6 +81,7 @@ export class ProductComponent {
       "id" : Math.floor(Math.random() * 1000000),
       "productId": id,
       "customerId": 1,
+      "quantity": 1
     };
     this.service.postData("cart", data).subscribe((result) =>
     {

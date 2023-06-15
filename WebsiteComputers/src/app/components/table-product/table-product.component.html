@@ -17,24 +17,24 @@
         <ng-template let-product pTemplate="gridItem">
             <div class="col-12 md:col-4" style="width: 470px;">
                 <div class="product-grid-item card">
-                    <div class="product-grid-item-top">
+                    <!-- <div class="product-grid-item-top">
                         <div>
                             <i class="pi pi-tag product-category-icon"></i>
-                            <span class="product-category">{{product.category}}</span>
+                            <span class="product-category">{{product.categoryId}}</span>
                         </div>
-                        <span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
-                    </div>
+                        <span [class]="'product-badge status-' + product.status.toLowerCase()">{{product.inventoryStatus}}</span>
+                    </div> -->
                     <div class="product-grid-item-content" [routerLink]="['/product/', product.id]">
-                        <img class="hover-pointer" style="width: 100%; height: 250px;" src="{{product.img}}" [alt]="product.name" />
+                        <img class="hover-pointer" style="width: 100%; height: 250px;" src="{{product.image_url}}" [alt]="product.name" />
                         <div class="product-name hover-pointer">{{product.name}}</div>
                         <div class="product-description"
                             style="height: 150px; overflow: hidden; text-overflow: ellipsis;">{{product.description}}</div>
-                        <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
+                        <!-- <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating> -->
                     </div>
                     <div class="product-grid-item-bottom">
-                        <h2 class="product-price">${{product.price}}</h2>
+                        <h2 class="product-price" style="color: red;">{{product.price | currency:'VND'}}</h2>
                         <p-button icon="pi pi-shopping-cart" (onClick)="addToCart(product.id)"
-                            [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button>
+                            [disabled]="product.status === 'OUTOFSTOCK'"></p-button>
                     </div>
                 </div>
             </div>

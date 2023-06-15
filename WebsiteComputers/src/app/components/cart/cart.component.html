@@ -18,10 +18,12 @@
                 <td>{{product.price | currency:'USD'}}</td>
                 <td>
                     <div>
-                        <input type="number" >
+                        <input #quantityInput type="number" style="width: 50px;">
+                        <p-button icon="pi pi-check" style="margin-left: 10px;" (click)="updateQuantity(product, quantityInput.valueAsNumber)"></p-button>
+                    
                     </div> 
                 </td>
-                <td>{{product.price*10 | currency:'USD'}}</td>
+                <td>{{(product.price * quantityInput.valueAsNumber) | currency:'USD'}}</td>
                 <td>
                     <p-button icon="pi pi-trash" (click)="deleteProduct(product)"></p-button>
                 </td>
@@ -43,9 +45,9 @@
             Total Price:
         </h2>
         <h4 style="margin-left: auto; margin-right: 20px;">
-            {{1000000 | currency:'USD'}}
+            {{1000000 | currency:'VND'}}
         </h4>
-        <button class="check-out" label="Check Out"> Check Out </button>
+        <p-button label="Check Out" styleClass="p-button-danger"></p-button>
     </div>
 </p-card>
 <br />
