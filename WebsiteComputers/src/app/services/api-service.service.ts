@@ -14,23 +14,13 @@ export class ApiServiceService {
 
   // public products:any;
   public products$: BehaviorSubject<any> = new BehaviorSubject(null);
-  
+  public category$: BehaviorSubject<any> = new BehaviorSubject(null);
   baseUrl = "http://localhost:3000/";
 
   constructor(private http: HttpClient) { 
     this.initProduct();
+    this.initCategory();
   }
-
-  // initProduct()
-  // {
-  //   const url = `${this.baseUrl}`+ 'product';
-  //   this.http.get(url).subscribe((result:any) =>
-  //     {
-  //       this.products = result;
-  //       console.log('this is all products!', this.products);
-  //     }
-  //   )
-  // }
 
   initProduct() {
     const url = `${this.baseUrl}product`;
@@ -42,14 +32,30 @@ export class ApiServiceService {
         })
       )
       .subscribe((result: any) => {
-        console.log('this is all products!', result);
+      });
+  }
+
+  initCategory() {
+    const url = `${this.baseUrl}category`;
+    this.http
+      .get(url)
+      .pipe(
+        tap((result: any) => {
+          this.category$.next(result);
+        })
+      )
+      .subscribe((result: any) => {
       });
   }
 
   getProduct()
   {
-    // return this.products;
     return this.products$.asObservable();
+  }
+
+  getCategory()
+  {
+    return this.category$.asObservable();
   }
 
   getData(link:any): Observable<any> {

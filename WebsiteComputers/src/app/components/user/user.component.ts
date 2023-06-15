@@ -11,11 +11,11 @@ export class UserComponent {
   public formUser = this.formBuilder.group({
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
-    email: ['', Validators.required],
+    email: ['', Validators.compose([Validators.required, Validators.email]) ],
     phone: ['', Validators.required],
     birthday: ['', Validators.required],
     gender: ['', Validators.required],
-    address: ['', Validators.required]
+    // address: ['', Validators.required]
   });
 
   public formPassword = this.formBuilder.group({
@@ -28,8 +28,20 @@ export class UserComponent {
   }
   );
 
+  attributes = ['id', 'username', 'firstname', 'lastname', 'birthdate', 'email', 'phone', 'password', 'gender'];
+  userData :any = [];
+
   constructor (private pageTitle: Title, private formBuilder: FormBuilder){
     pageTitle.setTitle('User');
+    this.getDataFromSessionStorage();
+  }
+
+  getDataFromSessionStorage() {
+    for (const attribute of this.attributes) {
+      console.log(attribute, "This is attribute");
+      console.log(sessionStorage.getItem(attribute), "This is session");
+      this.userData[attribute] = sessionStorage.getItem(attribute);
+    }
   }
 
   onSaveUser() {
@@ -67,5 +79,9 @@ export class UserComponent {
     } else {
       // Display error message or handle invalid form
     }
+  }
+
+  save(){
+    
   }
 }

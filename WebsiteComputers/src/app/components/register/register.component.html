@@ -1,0 +1,22 @@
+<div class="login-page">
+    <div class="form">
+        <h5>Registration</h5>
+        <form class="register-form" [formGroup]="registerform" (ngSubmit)="proceedRegister()">
+            <input type="text" placeholder="username" formControlName="username"/>
+            <input type="text" placeholder="first name" formControlName="firstname"/>
+            <input type="text" placeholder="last name" formControlName="lastname"/>
+            <input type="password" placeholder="password" formControlName="password"/>
+            <input type="text" placeholder="email" formControlName="email"/>
+            <input type="tel" placeholder="phone number" formControlName="phone"/>
+            <input type="date" placeholder="birthdate" formControlName="birthdate"/>
+            <div class="radio-group" formControlName="gender">
+                <p>Gender</p>
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female"> Female
+                <input type="radio" name="gender" value="unknown"> Unknown
+            </div>
+            <button>create</button>
+            <p class="message">Already registered? <a routerLink="/login">Sign In</a></p>
+        </form>
+    </div>
+</div>

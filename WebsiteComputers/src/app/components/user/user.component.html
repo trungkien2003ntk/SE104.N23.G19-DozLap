@@ -7,119 +7,20 @@
             </div>
             <div class="content-bar">
                 <div class="main-content">
-                    <form [formGroup]="formUser" class="content-form">
-                        <table class="table-content">
-                            <tr>
-                                <td class="td-left">
-                                    <label>
-                                        First Name
-                                    </label>
-                                </td>
-                                <td class="td-right">
-                                    <input type="text" formControlName="firstName" />
-
-                                </td>
-                                <div *ngIf="!formUser.controls.firstName.valid" style="color: red;">
-                                    First name is required!
-                                </div>
-                            </tr>
-                            <tr>
-                                <td class="td-left">
-                                    <label>
-                                        Last Name
-                                    </label>
-                                </td>
-                                <td class="td-right">
-                                    <input type="text" formControlName="lastName" />
-
-                                </td>
-                                <div *ngIf="!formUser.controls.lastName.valid" style="color: red;">
-                                    Last name is required!
-                                </div>
-                            </tr>
-                            <tr>
-                                <td class="td-left">
-                                    <label>
-                                        Email
-                                    </label>
-                                </td>
-                                <td class="td-right">
-                                    <input type="email" formControlName="email" />
-
-                                </td>
-                                <div *ngIf="!formUser.controls.email.valid" style="color: red;">
-                                    Email is required!
-                                </div>
-                            </tr>
-                            <tr>
-                                <td class="td-left">
-                                    <label>
-                                        Phone Number
-                                    </label>
-                                </td>
-                                <td class="td-right">
-                                    <input type="tel" formControlName="phone" />
-
-                                </td>
-                                <div *ngIf="!formUser.controls.phone.valid" style="color: red;">
-                                    Phone number is required!
-                                </div>
-                            </tr>
-                            <tr>
-                                <td class="td-left">
-                                    <label>
-                                        Address
-                                    </label>
-                                </td>
-                                <td class="td-right">
-                                    <input type="text" formControlName="address" />
-
-                                </td>
-                                <div *ngIf="!formUser.controls.address.valid" style="color: red;">
-                                    Address is required!
-                                </div>
-                            </tr>
-                            <tr>
-                                <td class="td-left">
-                                    <label>
-                                        Gender
-                                    </label>
-                                </td>
-                                <td class="td-right">
-                                    <div class="radio-group">
-                                        <label>
-                                            <input type="radio" name="gender" value="male" formControlName="gender">
-                                            Male
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="gender" value="female" formControlName="gender">
-                                            Female
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="gender" value="other" formControlName="gender">
-                                            Other
-                                        </label>
-                                    </div>
-
-                                </td>
-                                <div *ngIf="!formUser.controls.gender.valid" style="color: red;">
-                                    Gender is required!
-                                </div>
-                            </tr>
-
-                            <tr>
-                                <td class="td-left">
-                                    <label for="birthday">Birthday</label>
-                                </td>
-                                <td class="td-right">
-                                    <input type="date" id="birthday" name="birthday" formControlName="birthday">
-                                </td>
-                                <div *ngIf="!formUser.controls.birthday.valid" style="color: red;">
-                                    Birthday is required!
-                                </div>
-                            </tr>
-                        </table>
-                        <p-button label="Save" (onClick)="onSaveUser()" style="margin-left: 40%;"></p-button>
+                    <form class="register-form form" [formGroup]="formUser" (ngSubmit)="save()">
+                        <input type="text" placeholder="{{userData.username}}" formControlName="username"/>
+                        <input type="text" placeholder="{{userData.firstname}}" formControlName="firstname"/>
+                        <input type="text" placeholder="{{userData.lastname}}" formControlName="lastname"/>
+                        <input type="text" placeholder="{{userData.email}}" formControlName="email"/>
+                        <input type="tel" placeholder="{{userData.phone}}" formControlName="phone"/>
+                        <input type="date" placeholder="{{userData.birthdate}}" formControlName="birthdate"/>
+                        <div class="radio-group" formControlName="gender">
+                            <p>Gender</p>
+                            <input type="radio" name="gender" value="male" checked="userData.gender === 'male'"> Male
+                            <input type="radio" name="gender" value="female" checked="userData.gender === 'female'"> Female
+                            <input type="radio" name="gender" value="unknown" checked="userData.gender === 'unknown'"> Unknown
+                        </div>
+                        <button>Save</button>
                     </form>
                 </div>
                 <div class="avt-content">
@@ -139,52 +40,13 @@
             </div>
             <div class="content-bar">
                 <div class="main-content">
-                    <form [formGroup]="formPassword" class="content-form">
-                        <table class="table-content">
-                            <tr>
-                                <td class="td-left">
-                                    <label>
-                                        Current Password
-                                    </label>
-                                </td>
-                                <td class="td-right">
-                                    <input type="password" formControlName="currentPassword" />
-
-                                </td>
-                                <div *ngIf="!formPassword.controls['currentPassword'].valid" style="color: red;">
-                                    Current password is required!
-                                </div>
-                            </tr>
-                            <tr>
-                                <td class="td-left">
-                                    <label>
-                                        New Password
-                                    </label>
-                                </td>
-                                <td class="td-right">
-                                    <input type="password" formControlName="newPassword"/>
-
-                                </td>
-                                <div *ngIf="!formPassword.controls['newPassword'].valid" style="color: red;">
-                                    New password is required!
-                                </div>
-                            </tr>
-                            <tr>
-                                <td class="td-left">
-                                    <label>
-                                        Confirm Password
-                                    </label>
-                                </td>
-                                <td class="td-right">
-                                    <input type="password" formControlName="confirmPassword" />
-
-                                </td>
-                                <div *ngIf="!formPassword.controls['confirmPassword'].valid" style="color: red;">
-                                    Confirm password is not the same as new password!
-                                </div>
-                        </table>
-                        <p-button label="Save" (onClick)="onSavePassword()" style="margin-left: 40%;"></p-button>
+                    <form class="register-form form" [formGroup]="formPassword" (ngSubmit)="save()">
+                        <input type="password" placeholder="current passwrod" formControlName="currentPassword" />
+                        <input type="password" placeholder="new password" formControlName="newPassword"/>
+                        <input type="password" placeholder="confirm password" formControlName="confirmPassword" />
+                        <button>Save</button>
                     </form>
+
                 </div>
                 <div class="avt-content">
 

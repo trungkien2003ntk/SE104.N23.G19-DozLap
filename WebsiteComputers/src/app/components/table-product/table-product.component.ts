@@ -36,8 +36,6 @@ export class TableProductComponent {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('this is content passed from home', this.contents);
-    this.contents = [...this.contents];
     this.updateContents();
   }
 
@@ -97,6 +95,7 @@ export class TableProductComponent {
       "id" : Math.floor(Math.random() * 1000000),
       "productId": id,
       "customerId": 1,
+      "quantity": 1
     };
     if (this.isDifferentFromAll(data, this.cartItems)) {
       this.service.postData("cart", data).subscribe((result) =>
