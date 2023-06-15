@@ -37,11 +37,11 @@ export class LoginComponent {
           if (this.result.password === this.loginform.value.password) {
               sessionStorage.setItem('id',this.result.id);
               sessionStorage.setItem('username',this.result.username);
-              sessionStorage.setItem('firstName',this.result.firstName);
-              sessionStorage.setItem('lastName',this.result.lastName);
-              sessionStorage.setItem('birthdate',this.result.birthdate);
+              sessionStorage.setItem('first_name',this.result.first_name);
+              sessionStorage.setItem('last_name',this.result.last_name);
+              sessionStorage.setItem('date_of_birth',this.result.date_of_birth);
               sessionStorage.setItem('email',this.result.email);
-              sessionStorage.setItem('phone',this.result.phone);
+              sessionStorage.setItem('phone_number',this.result.phone_number);
               sessionStorage.setItem('password',this.result.password);
               sessionStorage.setItem('gender',this.result.gender);
               this.router.navigate(['']);

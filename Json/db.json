@@ -1220,50 +1220,90 @@
     {
       "id": 1,
       "username": "bowjaro",
-      "firstName": "Báo Thủ",
-      "lastName": "Đầu Lâm",
-      "birthdate": "2023-05-05",
+      "first_name": "Báo Thủ",
+      "last_name": "Đầu Lâm",
+      "date_of_birth": "2023-05-05",
       "email": "bom@gma.com",
-      "phone": "0123456788",
+      "phone_number": "0123456788",
       "password": "bow",
       "gender": "female"
     },
     {
       "username": "yasuo",
-      "firstName": "Báo",
-      "lastName": "Thủ",
+      "first_name": "Báo",
+      "last_name": "Thủ",
       "password": "bowjaro3",
       "email": "bm@gm.com",
-      "phone": "0123456798",
-      "birthdate": "2023-05-12",
+      "phone_number": "0123456798",
+      "date_of_birth": "2023-05-12",
       "gender": "male",
       "id": 2
+    },
+    {
+      "username": "yasuonew",
+      "first_name": "YasuoVN",
+      "last_name": "20GG",
+      "password": "bowjaro3",
+      "email": "bow@gmc.com",
+      "phone_number": "0123456777",
+      "date_of_birth": "2023-05-26",
+      "gender": "male",
+      "id": 3
+    },
+    {
+      "username": "user1",
+      "first_name": "bow",
+      "last_name": "jaro",
+      "password": "bowjaro3",
+      "email": "bow@gm.com",
+      "phone_number": "0123456666",
+      "date_of_birth": "2023-05-25",
+      "gender": "male",
+      "id": 4
+    },
+    {
+      "username": "user2",
+      "first_name": "bowjaro",
+      "last_name": "bowjaro",
+      "password": "bowjaro3",
+      "email": "bowww@gm.com",
+      "phone_number": "0111111",
+      "date_of_birth": "2023-06-01",
+      "gender": "male",
+      "id": 5
+    },
+    {
+      "username": "user3",
+      "first_name": "bow",
+      "last_name": "bow",
+      "password": "bowjaro3",
+      "email": "bom@m.cm",
+      "phone_number": "011111233",
+      "date_of_birth": "2023-05-12",
+      "gender": "male",
+      "id": 6
+    },
+    {
+      "username": "user4",
+      "first_name": "bow",
+      "last_name": "bow",
+      "password": "bowjaro3",
+      "email": "bmn@c.com",
+      "phone_number": "0123123456",
+      "date_of_birth": "2023-06-08",
+      "gender": "male",
+      "id": 7
     }
   ],
   "shopping_cart_item": [
-    {
-      "id": 607467,
-      "productId": 3,
-      "customerId": "1",
-      "quantity": 1
-    },
-    {
-      "id": 46757,
-      "productId": 21,
-      "customerId": "1",
-      "quantity": 1
-    },
-    {
-      "id": 740216,
-      "productId": 36,
-      "customerId": "1",
-      "quantity": 1
-    }
+
   ],
   "orders": [
+
   ],
   "order_item": [
   ],
   "address": [
+
   ]
 }

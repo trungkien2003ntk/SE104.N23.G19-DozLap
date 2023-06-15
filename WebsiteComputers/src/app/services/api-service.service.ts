@@ -69,12 +69,12 @@ export class ApiServiceService {
 
   putData(link: any, id: number, payload: any): Observable<any> {
     const url = `${this.baseUrl}${link}/${id}`;
-    console.log('This is link', url);
+    console.log('This is put link', url);
     return this.http.put(url, payload, this.httpOptions);
   }
   
   deleteData(link: any, id: number): Observable<any> {
-    console.log("This is link!", this.baseUrl + link + '/' + id);
+    console.log("This is delete link!", this.baseUrl + link + '/' + id);
     return this.http.delete(this.baseUrl + link + '/' + id, this.httpOptions);
   }
 }

@@ -8,11 +8,11 @@
             <div class="content-bar">
                 <div class="main-content">
                     <form class="register-form form" [formGroup]="formUser" (ngSubmit)="onSaveUser()">
-                        <input type="text" placeholder="{{userData.firstName}}" formControlName="firstName" />
-                        <input type="text" placeholder="{{userData.lastName}}" formControlName="lastName" />
+                        <input type="text" placeholder="{{userData.first_name}}" formControlName="first_name" />
+                        <input type="text" placeholder="{{userData.last_name}}" formControlName="last_name" />
                         <input type="text" placeholder="{{userData.email}}" formControlName="email" />
-                        <input type="tel" placeholder="{{userData.phone}}" formControlName="phone" />
-                        <input type="text" placeholder="{{userData.birthdate}}" formControlName="birthdate"
+                        <input type="tel" placeholder="{{userData.phone_number}}" formControlName="phone_number" />
+                        <input type="text" placeholder="{{userData.date_of_birth}}" formControlName="date_of_birth"
                             onfocus="(this.type='date')" onblur="(this.type='text')">
                         <div class="radio-group" formControlName="gender">
                             <p>Gender</p>
