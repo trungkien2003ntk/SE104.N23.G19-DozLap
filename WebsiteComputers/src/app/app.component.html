@@ -10,7 +10,7 @@
             (click)="onSearchClick(searchInput)"></button>
         </div>
     </form>
-    <p-button icon="pi pi-shopping-cart"></p-button>
+    <p-button icon="pi pi-shopping-cart" routerLink="/cart"></p-button>
     <a routerLink="/user" class="profile">
         <img 
             src="https://vcdn1-vnexpress.vnecdn.net/2022/02/09/son-tung-mtp-8052-1632297031-2149-1644377166.jpg?w=0&h=0&q=100&dpr=1&fit=crop&s=B8_7p2IFO-Fug3eZuXPEBg">
@@ -32,13 +32,13 @@
             <div class="product-item">
                 <div class="product-item-content hover-pointer" [routerLink]="['/product/', product.id]">
                     <div class="mb-3">
-                        <img style="height: 50px;" src="{{product.img}}" [alt]="product.name" class="product-image" />
+                        <img style="height: 50px;" src="{{product.image_url}}" [alt]="product.name" class="product-image" />
                     </div>
                     <div>
                         <h4 class="mb-1">{{product.name}}</h4>
-                        <h6 class="mt-0 mb-3">${{product.price}}</h6>
-                        <span
-                            [class]="'product-badge status-'+product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
+                        <h6 class="mt-0 mb-3" style="color: red;">{{product.price | currency:'VND'}}</h6>
+                        <!-- <span
+                            [class]="'product-badge status-'+product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span> -->
                     </div>
                 </div>
             </div>
@@ -51,11 +51,12 @@
 <div
     style="border-radius: 5000px; background-color: beige; margin-left: 10%; margin-right: 10%; height:max-content; width: 80%; padding: 10px; display: flex; flex-wrap: wrap; justify-content: center; min-width: 1000px">
     <div class="hover-pointer"
-        style="border-radius: 5000px; background-color: orange; width: 150px; orientation:portrait; align-items: center; text-align: center;padding: 10px; margin: 10px; display: inline;"
-        *ngFor="let b of brands" [routerLink]="['brand/', b.name]">
-        <img src="{{b.img}}" style="height: 30px;" />
-
-        <p style="display: inline;">{{b.name}}</p>
+    style="border-radius: 5000px; background-color: orange; width: 150px; orientation:portrait;
+    align-items: center; text-align: center;padding: 10px; margin: 10px; display: inline;
+    display: flex; align-items: center; justify-content: center;"
+        *ngFor="let b of category" [routerLink]="['category/', b.name]">
+        <!-- <img src="{{b.img}}" style="height: 30px;" /> -->
+        <h5 style="display: inline; vertical-align:middle;">{{b.name}}</h5>
     </div>
 
 </div>
