@@ -11,6 +11,8 @@ export class CartComponent {
   products: any = [];
   responsiveOptions: any;
   cartItems: any = [];
+  newItems:any;
+  total = 0;
 
   constructor(private service: ApiServiceService, private pageTitle: Title) {
     pageTitle.setTitle('Cart');
@@ -41,34 +43,31 @@ export class CartComponent {
     this.getCartItems();
 
     this.getProducts();
+    
+  }
+
+  combineTables(){
+    this.newItems = this.products.map((product:any) => {
+      const cartItem = this.cartItems.find((cartItem:any) => cartItem.productId === product.id);
+      return {
+        id: product.id,
+        name: product.name,
+        image_url: product.image_url,
+        price: product.price,
+        cartItemId: cartItem.id,
+        quantity: cartItem ? cartItem.quantity : 0,
+      };
+    });
+    this.onInputChange(null, 0);
   }
 
   getCartItems() {
     this.service.getData('cart').subscribe((result) => {
       this.cartItems = result;
     });
+    
   }
 
-  // getProducts() {
-  //   this.service.getData("products").subscribe((result) =>
-  //   {
-  //     this.products = result.filter((product: any) => this.cartItems.some((item: any) => item.productId === product.id));
-  //   });
-  // }
-  // getProducts() {
-  //   this.service.getData('products').subscribe((result) => {
-  //     this.products = result.filter((product: any) => {
-  //       const cartItem = this.cartItems.find(
-  //         (item: any) => item.productId === product.id
-  //       );
-  //       if (cartItem) {
-  //         product.cartItemId = cartItem.id;
-  //         return true;
-  //       }
-  //       return false;
-  //     });
-  //   });
-  // }
   getProducts() {
     this.service.getData('product').subscribe((result) => {
       this.products = result
@@ -81,15 +80,16 @@ export class CartComponent {
           );
           return { ...product, cartItemId: cartItem.id };
         });
+        this.combineTables();
     });
   }
 
   deleteProduct(product: any): void {
     this.service.deleteData('cart', product.cartItemId).subscribe(
       () => {
-        const index = this.products.findIndex((p: any) => p.id === product.id);
+        const index = this.newItems.findIndex((p: any) => p.id === product.id);
         if (index > -1) {
-          this.products.splice(index, 1);
+          this.newItems.splice(index, 1);
         }
       },
       (error) => {
@@ -102,7 +102,7 @@ export class CartComponent {
     const cartItem = this.cartItems.find((item: any) => item.productId === product.id);
     const updatedCartItem = { ...cartItem, quantity: newQuantity };
 
-    this.service.putData('cart', cartItem.id, updatedCartItem).subscribe({
+    this.service.putData('shopping_cart_item', cartItem.id, updatedCartItem).subscribe({
         next: () => {
             console.log('Quantity updated successfully');
         },
@@ -110,5 +110,22 @@ export class CartComponent {
             console.error('Error updating quantity:', error);
         }
     });
+  }
+
+  onInputChange(item:any, quantity: number){
+    this.total = 0;
+    for (let p of this.newItems)
+    {
+      if (item != null){
+        if (p.id === item.id)
+        {
+          p.quantity = quantity;
+        }
+      }
+      console.log('This is price', p.price);
+      console.log('This is quantity', p.quantity);
+      this.total += p.price * p.quantity;
+    }
+    console.log('This is total!', this.total);
   }
 }

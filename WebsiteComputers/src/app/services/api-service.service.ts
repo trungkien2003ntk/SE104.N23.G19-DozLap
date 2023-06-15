@@ -69,6 +69,7 @@ export class ApiServiceService {
 
   putData(link: any, id: number, payload: any): Observable<any> {
     const url = `${this.baseUrl}${link}/${id}`;
+    console.log('This is link', url);
     return this.http.put(url, payload, this.httpOptions);
   }
   

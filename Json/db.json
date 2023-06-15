@@ -1218,59 +1218,52 @@
   ],
   "customer": [
     {
+      "id": 1,
       "username": "bowjaro",
-      "firstname": "bow",
-      "lastname": "jaro",
-      "password": "bowjaro3",
-      "email": "bowj@gmail.com",
-      "phone": "0123456798",
-      "birthdate": "2023-05-01",
-      "gender": "male",
-      "id": 1
+      "firstName": "Báo Thủ",
+      "lastName": "Đầu Lâm",
+      "birthdate": "2023-05-05",
+      "email": "bom@gma.com",
+      "phone": "0123456788",
+      "password": "bow",
+      "gender": "female"
     },
     {
-      "username": "bowjaro",
-      "firstname": "bow",
-      "lastname": "jaro",
+      "username": "yasuo",
+      "firstName": "Báo",
+      "lastName": "Thủ",
       "password": "bowjaro3",
-      "email": "bowj@gmail.com",
+      "email": "bm@gm.com",
       "phone": "0123456798",
-      "birthdate": "2023-05-01",
+      "birthdate": "2023-05-12",
       "gender": "male",
       "id": 2
-    },
-    {
-      "username": "bow2",
-      "firstname": "b1",
-      "lastname": "b2",
-      "password": "bowj2",
-      "email": "bow2@gmail.com",
-      "phone": "0123456780",
-      "birthdate": "2023-05-11",
-      "gender": "male",
-      "id": 3
-    },
-    {
-      "username": "bow2",
-      "firstname": "b1",
-      "lastname": "b2",
-      "password": "bowj2",
-      "email": "bow2@gmail.com",
-      "phone": "0123456780",
-      "birthdate": "2023-05-11",
-      "gender": "male",
-      "id": 4
-    },
-    {
-      "username": "bowjaro5",
-      "firstname": "bowjaro3",
-      "lastname": "bowjar",
-      "password": "bowjaro3",
-      "email": "bo@gmail.com",
-      "phone": "0123456700",
-      "birthdate": "2023-05-11",
-      "gender": "male",
-      "id": 5
     }
+  ],
+  "shopping_cart_item": [
+    {
+      "id": 607467,
+      "productId": 3,
+      "customerId": "1",
+      "quantity": 1
+    },
+    {
+      "id": 46757,
+      "productId": 21,
+      "customerId": "1",
+      "quantity": 1
+    },
+    {
+      "id": 740216,
+      "productId": 36,
+      "customerId": "1",
+      "quantity": 1
+    }
+  ],
+  "orders": [
+  ],
+  "order_item": [
+  ],
+  "address": [
   ]
 }

@@ -27,13 +27,18 @@ export class LoginComponent {
       this.users = result;
 
       if (this.loginform.valid) {
-        this.service.getUserbyCode(this.getUserIdByUsername(this.loginform.value.username)).subscribe(item => {
+        var tempId = this.getUserIdByUsername(this.loginform.value.username);
+        if (tempId == null){
+          alert('Wrong account!');
+          return;
+        }
+        this.service.getUserbyCode(tempId).subscribe(item => {
           this.result = item;
           if (this.result.password === this.loginform.value.password) {
               sessionStorage.setItem('id',this.result.id);
               sessionStorage.setItem('username',this.result.username);
-              sessionStorage.setItem('firstname',this.result.firstname);
-              sessionStorage.setItem('lastname',this.result.lastname);
+              sessionStorage.setItem('firstName',this.result.firstName);
+              sessionStorage.setItem('lastName',this.result.lastName);
               sessionStorage.setItem('birthdate',this.result.birthdate);
               sessionStorage.setItem('email',this.result.email);
               sessionStorage.setItem('phone',this.result.phone);

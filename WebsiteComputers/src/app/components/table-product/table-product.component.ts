@@ -30,14 +30,14 @@ export class TableProductComponent {
   ngOnInit() {
   }
 
-  updateContents() {
-    // update the contents array here
-    this.cdr.detectChanges(); // detect changes to the view
-  }
+  // updateContents() {
+  //   // update the contents array here
+  //   this.cdr.detectChanges(); // detect changes to the view
+  // }
 
-  ngOnChanges(changes: SimpleChanges) {
-    this.updateContents();
-  }
+  // ngOnChanges(changes: SimpleChanges) {
+  //   this.updateContents();
+  // }
 
   initResponsive() {
     this.responsiveOptions = [
@@ -94,7 +94,7 @@ export class TableProductComponent {
     const data = {
       "id" : Math.floor(Math.random() * 1000000),
       "productId": id,
-      "customerId": 1,
+      "customerId": sessionStorage.getItem('id'),
       "quantity": 1
     };
     if (this.isDifferentFromAll(data, this.cartItems)) {

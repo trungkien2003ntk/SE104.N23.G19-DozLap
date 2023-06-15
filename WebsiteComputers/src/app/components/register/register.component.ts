@@ -11,8 +11,8 @@ import { AuthService } from 'src/app/services/auth.service';
 export class RegisterComponent {
   registerform = this.builder.group({
     username: this.builder.control('', Validators.required),
-    firstname: this.builder.control('', Validators.required),
-    lastname: this.builder.control('', Validators.required),
+    firstName: this.builder.control('', Validators.required),
+    lastName: this.builder.control('', Validators.required),
     password: this.builder.control('', Validators.required),
     email: this.builder.control('', Validators.compose([Validators.required, Validators.email])),
     phone: this.builder.control('', Validators.required),
@@ -29,7 +29,6 @@ export class RegisterComponent {
   proceedRegister() {
     this.service.getAll().subscribe((result) => {
       this.users = result;
-      console.log('This is all users', this.users);
       const { username, email, phone } = this.registerform.value;
       if (!this.checkDuplicate(username, email, phone)) {
         if (this.registerform.valid) {
@@ -37,6 +36,13 @@ export class RegisterComponent {
             this.router.navigate(['login']);
           });
         } else {
+          console.log('username', this.registerform.value.username);
+          console.log('firstname', this.registerform.value.firstName);
+          console.log('last name', this.registerform.value.lastName);
+          console.log('email', this.registerform.value.email);
+          console.log('date', this.registerform.value.birthdate);
+          console.log('phone', this.registerform.value.phone);
+          console.log('gender', this.registerform.value.gender);
           alert('Please enter valid data.');
         }
       } else {
