@@ -1218,92 +1218,55 @@
   ],
   "customer": [
     {
-      "id": 1,
       "username": "bowjaro",
-      "first_name": "Báo Thủ",
-      "last_name": "Đầu Lâm",
-      "date_of_birth": "2023-05-05",
-      "email": "bom@gma.com",
-      "phone_number": "0123456788",
-      "password": "bow",
-      "gender": "female"
-    },
-    {
-      "username": "yasuo",
-      "first_name": "Báo",
-      "last_name": "Thủ",
-      "password": "bowjaro3",
-      "email": "bm@gm.com",
-      "phone_number": "0123456798",
-      "date_of_birth": "2023-05-12",
-      "gender": "male",
-      "id": 2
-    },
-    {
-      "username": "yasuonew",
-      "first_name": "YasuoVN",
-      "last_name": "20GG",
-      "password": "bowjaro3",
-      "email": "bow@gmc.com",
-      "phone_number": "0123456777",
-      "date_of_birth": "2023-05-26",
-      "gender": "male",
-      "id": 3
-    },
-    {
-      "username": "user1",
       "first_name": "bow",
       "last_name": "jaro",
       "password": "bowjaro3",
-      "email": "bow@gm.com",
-      "phone_number": "0123456666",
-      "date_of_birth": "2023-05-25",
+      "email": "bo@gm.com",
+      "phone_number": "0123456789",
+      "date_of_birth": "2023-05-18",
       "gender": "male",
-      "id": 4
-    },
-    {
-      "username": "user2",
-      "first_name": "bowjaro",
-      "last_name": "bowjaro",
-      "password": "bowjaro3",
-      "email": "bowww@gm.com",
-      "phone_number": "0111111",
-      "date_of_birth": "2023-06-01",
-      "gender": "male",
-      "id": 5
-    },
-    {
-      "username": "user3",
-      "first_name": "bow",
-      "last_name": "bow",
-      "password": "bowjaro3",
-      "email": "bom@m.cm",
-      "phone_number": "011111233",
-      "date_of_birth": "2023-05-12",
-      "gender": "male",
-      "id": 6
-    },
-    {
-      "username": "user4",
-      "first_name": "bow",
-      "last_name": "bow",
-      "password": "bowjaro3",
-      "email": "bmn@c.com",
-      "phone_number": "0123123456",
-      "date_of_birth": "2023-06-08",
-      "gender": "male",
-      "id": 7
+      "id": 1
     }
   ],
-  "shopping_cart_item": [
-
-  ],
+  "shopping_cart_item": [],
   "orders": [
-
+    {
+      "note": "No need to note",
+      "created_on_utc": "2023-05-15T14:12:01.529Z",
+      "customer_id": "1",
+      "shipping_address_id": 1,
+      "total_price": 270428000,
+      "status": "PENDING",
+      "id": 1
+    }
   ],
   "order_item": [
+    {
+      "order_id": 1,
+      "product_id": 11,
+      "quantity": 2,
+      "id": 1
+    },
+    {
+      "order_id": 1,
+      "product_id": 12,
+      "quantity": 3,
+      "id": 2
+    },
+    {
+      "order_id": 1,
+      "product_id": 13,
+      "quantity": 4,
+      "id": 3
+    }
   ],
   "address": [
-
+    {
+      "house_number": "12A",
+      "street": "New Street",
+      "province_id": 2,
+      "id": 1
+    }
   ]
 }

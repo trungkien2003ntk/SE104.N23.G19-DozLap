@@ -57,6 +57,7 @@ export class UserComponent {
     this.getDataFromSessionStorage();
   }
 
+
   getDataFromSessionStorage() {
     for (const attribute of this.attributes) {
       this.userData[attribute] = sessionStorage.getItem(attribute);
