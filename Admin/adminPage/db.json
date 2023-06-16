@@ -1,28 +1,198 @@
 {
-  "posts": [
+  "employees": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "firstName": "tam",
+      "lastName": "sdaf",
+      "email": "",
+      "dob": "",
+      "gender": "",
+      "education": "Intermediate",
+      "company": "google",
+      "experience": 7,
+      "package": 125,
+      "id": 2
+    },
+    {
+      "firstName": "tuyn",
+      "lastName": "",
+      "email": "",
+      "dob": "",
+      "gender": "",
+      "education": "Graduate",
+      "company": "",
+      "experience": "",
+      "package": 100,
+      "id": 3
+    },
+    {
+      "firstName": "kieu",
+      "lastName": "doan",
+      "email": "kieu@gmail.com",
+      "dob": "2023-04-13T17:00:00.000Z",
+      "gender": "",
+      "education": "Diploma",
+      "company": "Google",
+      "experience": 5,
+      "package": 5,
+      "id": 4
+    },
+    {
+      "firstName": "dat",
+      "lastName": "",
+      "email": "",
+      "dob": "",
+      "gender": "",
+      "education": "",
+      "company": "",
+      "experience": "",
+      "package": "",
+      "id": 7
+    },
+    {
+      "firstName": "",
+      "lastName": "bao",
+      "email": "",
+      "dob": "",
+      "gender": "",
+      "education": "",
+      "company": "",
+      "experience": "",
+      "package": "",
+      "id": 8
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "dob": "",
+      "gender": "",
+      "education": "Post Graduate",
+      "company": "",
+      "experience": "",
+      "package": "",
+      "id": 10
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "dob": "",
+      "gender": "others",
+      "education": "Matric",
+      "company": "",
+      "experience": "",
+      "package": "",
+      "id": 11
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "dob": "2023-04-10T17:00:00.000Z",
+      "gender": "female",
+      "education": "Post Graduate",
+      "company": "",
+      "experience": "",
+      "package": "",
+      "id": 12
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "dob": "2023-04-25T17:00:00.000Z",
+      "gender": "",
+      "education": "",
+      "company": "",
+      "experience": "",
+      "package": "",
+      "id": 14
+    },
+    {
+      "firstName": "",
+      "lastName": "ádf",
+      "email": "",
+      "dob": "",
+      "gender": "",
+      "education": "",
+      "company": "",
+      "experience": "",
+      "package": "",
+      "id": 15
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "dob": "",
+      "gender": "",
+      "education": "",
+      "company": "",
+      "experience": "",
+      "package": "",
+      "id": 16
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "dob": "",
+      "gender": "",
+      "education": "Intermediate",
+      "company": "ThanhTam",
+      "experience": "",
+      "package": "",
+      "id": 17
     }
   ],
-  "comments": [
+  "sales": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "year": 2015,
+      "amount": 5000,
+      "colorcode": "green"
+    },
+    {
+      "year": 2016,
+      "amount": 6000,
+      "colorcode": "yellow"
+    },
+    {
+      "year": 2017,
+      "amount": 2000,
+      "colorcode": "red"
+    },
+    {
+      "year": 2018,
+      "amount": 6500,
+      "colorcode": "blue"
+    },
+    {
+      "year": 2019,
+      "amount": 4000,
+      "colorcode": "grey"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  },
   "manufacturer": [
     {
-      "name": "samsung s23 ultra",
+      "name": "samsung galaxy",
       "description": "",
-      "displayOrder": 55,
+      "displayOrder": "",
       "picture": "",
       "id": 2
+    },
+    {
+      "name": "",
+      "description": "",
+      "displayOrder": 5,
+      "picture": "",
+      "id": 3
+    },
+    {
+      "name": "",
+      "description": "",
+      "displayOrder": "",
+      "picture": "",
+      "id": 4
     },
     {
       "name": "dfdfasfasd",
@@ -30,6 +200,27 @@
       "displayOrder": "",
       "picture": "",
       "id": 5
+    },
+    {
+      "name": "huewei",
+      "description": "",
+      "displayOrder": "",
+      "picture": "",
+      "id": 6
+    },
+    {
+      "name": "xiaomi",
+      "description": "",
+      "displayOrder": "",
+      "picture": "",
+      "id": 7
+    },
+    {
+      "name": "oppo",
+      "description": "ầdsdfsadfsf",
+      "displayOrder": 5,
+      "picture": "sầ",
+      "id": 8
     },
     {
       "name": "flip",
@@ -58,94 +249,80 @@
       "displayOrder": "",
       "picture": "",
       "id": 12
-    },
-    {
-      "name": "dfsafdasdfsadf",
-      "description": "",
-      "displayOrder": "",
-      "picture": "",
-      "id": 13
-    },
-    {
-      "name": "",
-      "description": "",
-      "displayOrder": "",
-      "picture": "",
-      "id": 14
     }
   ],
-  "user": [
-    {
-      "id": "admin",
-      "name": "NT Infotech",
-      "password": "Test$1234",
-      "email": "test@gmail.com",
-      "gender": "male",
-      "role": "admin",
-      "isactive": true,
-      "address": {
-        "area": "chennai"
-      }
-    },
-    {
-      "id": "testuser",
-      "name": "Test User",
-      "password": "Test@1234",
-      "email": "test@in.com",
-      "gender": "male",
-      "role": "",
-      "isactive": true
-    },
-    {
-      "id": "Jhon1",
-      "name": "NT Infotech",
-      "password": "Test@1233",
-      "email": "te@in.com",
-      "gender": "male",
-      "role": "tech",
-      "isactive": true
-    },
-    {
-      "id": "ntuser",
-      "name": "ramesh",
-      "password": "Test@1234",
-      "email": "te@in.com",
-      "gender": "male",
-      "role": "tech",
-      "isactive": true,
-      "address": {
-        "area": "banglore"
-      }
-    }
-  ],
-  "customer": [
+  "admin": [
     {
       "id": 1,
-      "name": "rakhesh",
-      "Creditlimit": 1000
+      "username": "DOZLAP",
+      "password": "BESTSERVICE",
+      "isactive": true
+    }
+  ],
+  "discount": [
+    {
+      "id": 1,
+      "name": "Giảm giá Laptop",
+      "discount_percentage": 15,
+      "start_date_utc": "2023-04-24T00:00:00",
+      "end_date_utc": "2023-04-26T00:00:00"
     },
     {
       "id": 2,
-      "name": "rahul",
-      "Creditlimit": 1000
+      "name": "Giảm giá PC",
+      "discount_percentage": 10,
+      "start_date_utc": "2023-06-15T00:00:00",
+      "end_date_utc": "2023-07-22T00:00:00"
     },
     {
       "id": 3,
-      "name": "ramesh",
-      "Creditlimit": 1000
+      "name": "Giảm giá màn hình",
+      "discount_percentage": 20,
+      "start_date_utc": "2023-06-01T00:00:00",
+      "end_date_utc": "2023-06-20T00:00:00"
     },
     {
       "id": 4,
-      "name": "rahim",
-      "Creditlimit": 1000
+      "name": "Giảm giá bàn phím",
+      "discount_percentage": 33,
+      "start_date_utc": "2023-04-30T00:00:00",
+      "end_date_utc": "2023-05-01T00:00:00"
     },
     {
       "id": 5,
-      "name": "robert",
-      "Creditlimit": 1000
+      "name": "Giảm giá chuột",
+      "discount_percentage": 20,
+      "start_date_utc": "2023-06-22T00:00:00",
+      "end_date_utc": "2023-07-01T00:00:00"
+    },
+    {
+      "id": 6,
+      "name": "Giảm giá loa & tai nghe",
+      "discount_percentage": 50,
+      "start_date_utc": "2023-05-16T00:00:00",
+      "end_date_utc": "2023-07-01T00:00:00"
+    },
+    {
+      "id": 7,
+      "name": "Giảm giá linh kiện PC",
+      "discount_percentage": 25,
+      "start_date_utc": "2023-05-10T00:00:00",
+      "end_date_utc": "2023-07-05T00:00:00"
+    },
+    {
+      "id": 8,
+      "name": "Giảm giá Apple",
+      "discount_percentage": 10,
+      "start_date_utc": "2023-05-02T00:00:00",
+      "end_date_utc": "2023-06-30T00:00:00"
     }
   ],
   "category": [
+    {
+      "id": 1,
+      "name": "Laptop",
+      "description": "A small, portable personal computer (PC)"
+    },
     {
       "id": 2,
       "name": "PC",
@@ -180,33 +357,415 @@
       "id": 8,
       "name": "Apple",
       "description": "A brand which specializes in making digital devices."
+    }
+  ],
+  "shipment_method": [
+    {
+      "id": 1,
+      "name": "Thường",
+      "description": "Chuyển hàng thông thường",
+      "ship_charge": 15000
     },
     {
-      "name": "",
-      "description": "",
-      "displayOrder": "",
-      "picture": "",
-      "id": 9
+      "id": 2,
+      "name": "Hỏa tốc",
+      "description": "Hàng sẽ giao trong khoảng 24-72h",
+      "ship_charge": 30000
     },
     {
-      "name": "",
-      "description": "daf",
-      "displayOrder": "",
-      "picture": "",
-      "id": 10
+      "id": 3,
+      "name": "Hỏa tốc trong ngày",
+      "description": "Hàng sẽ giao ngay trong ngày đặt hàng",
+      "ship_charge": 70000
+    }
+  ],
+  "payment_method": [
+    {
+      "id": 1,
+      "name": "Giao tiền khi nhận hàng (COD)"
     },
     {
-      "name": "Samsung",
-      "description": "hello this is popular brand\n",
-      "id": 11
+      "id": 2,
+      "name": "Thanh toán bằng chuyển khoản (thẻ tín dụng / ghi nợ)"
+    }
+  ],
+  "province": [
+    {
+      "id": 1,
+      "name": "An Giang",
+      "shipping_charge": 18000
+    },
+    {
+      "id": 2,
+      "name": "Bà Rịa-Vũng Tàu",
+      "shipping_charge": 88000
+    },
+    {
+      "id": 3,
+      "name": "Bạc Liêu",
+      "shipping_charge": 33000
+    },
+    {
+      "id": 4,
+      "name": "Bắc Giang",
+      "shipping_charge": 18000
+    },
+    {
+      "id": 5,
+      "name": "Bắc Kạn",
+      "shipping_charge": 61000
+    },
+    {
+      "id": 6,
+      "name": "Bắc Ninh",
+      "shipping_charge": 24000
+    },
+    {
+      "id": 7,
+      "name": "Bến Tre",
+      "shipping_charge": 21000
+    },
+    {
+      "id": 8,
+      "name": "Bình Dương",
+      "shipping_charge": 15000
+    },
+    {
+      "id": 9,
+      "name": "Bình Định",
+      "shipping_charge": 13000
+    },
+    {
+      "id": 10,
+      "name": "Bình Phước",
+      "shipping_charge": 2000
+    },
+    {
+      "id": 11,
+      "name": "Bình Thuận",
+      "shipping_charge": 43000
+    },
+    {
+      "id": 12,
+      "name": "Cà Mau",
+      "shipping_charge": 1000
+    },
+    {
+      "id": 13,
+      "name": "Cao Bằng",
+      "shipping_charge": 61000
+    },
+    {
+      "id": 14,
+      "name": "Cần Thơ",
+      "shipping_charge": 32000
+    },
+    {
+      "id": 15,
+      "name": "Đà Nẵng",
+      "shipping_charge": 70000
+    },
+    {
+      "id": 16,
+      "name": "Đắk Lắk",
+      "shipping_charge": 92000
+    },
+    {
+      "id": 17,
+      "name": "Đắk Nông",
+      "shipping_charge": 25000
+    },
+    {
+      "id": 18,
+      "name": "Điện Biên",
+      "shipping_charge": 65000
+    },
+    {
+      "id": 19,
+      "name": "Đồng Nai",
+      "shipping_charge": 68000
+    },
+    {
+      "id": 20,
+      "name": "Đồng Tháp",
+      "shipping_charge": 32000
+    },
+    {
+      "id": 21,
+      "name": "Gia Lai",
+      "shipping_charge": 90000
+    },
+    {
+      "id": 22,
+      "name": "NHà Giang",
+      "shipping_charge": 94000
+    },
+    {
+      "id": 23,
+      "name": "Hà Nam",
+      "shipping_charge": 35000
+    },
+    {
+      "id": 24,
+      "name": "Hà Nội",
+      "shipping_charge": 50000
+    },
+    {
+      "id": 25,
+      "name": "Hà Tĩnh",
+      "shipping_charge": 12000
+    },
+    {
+      "id": 26,
+      "name": "Hải Dương",
+      "shipping_charge": 72000
+    },
+    {
+      "id": 27,
+      "name": "Hải Phòng",
+      "shipping_charge": 95000
+    },
+    {
+      "id": 28,
+      "name": "Hậu Giang",
+      "shipping_charge": 96000
+    },
+    {
+      "id": 29,
+      "name": "Hòa Bình",
+      "shipping_charge": 18000
+    },
+    {
+      "id": 30,
+      "name": "Hưng Yên",
+      "shipping_charge": 24000
+    },
+    {
+      "id": 31,
+      "name": "Khánh Hòa",
+      "shipping_charge": 75000
+    },
+    {
+      "id": 32,
+      "name": "Kiên Giang",
+      "shipping_charge": 86000
+    },
+    {
+      "id": 33,
+      "name": "Kon Tum",
+      "shipping_charge": 70000
+    },
+    {
+      "id": 34,
+      "name": "Lai Châu",
+      "shipping_charge": 71000
+    },
+    {
+      "id": 35,
+      "name": "Lạng Sơn",
+      "shipping_charge": 73000
+    },
+    {
+      "id": 36,
+      "name": "Lào Cai",
+      "shipping_charge": 78000
+    },
+    {
+      "id": 37,
+      "name": "Lâm Đồng",
+      "shipping_charge": 73000
+    },
+    {
+      "id": 38,
+      "name": "Long An",
+      "shipping_charge": 32000
+    },
+    {
+      "id": 39,
+      "name": "Nam Định",
+      "shipping_charge": 77000
+    },
+    {
+      "id": 40,
+      "name": "Nghệ An",
+      "shipping_charge": 21000
+    },
+    {
+      "id": 41,
+      "name": "Ninh Bình",
+      "shipping_charge": 32000
+    },
+    {
+      "id": 42,
+      "name": "Ninh Thuận",
+      "shipping_charge": 59000
+    },
+    {
+      "id": 43,
+      "name": "Phú Thọ",
+      "shipping_charge": 66000
+    },
+    {
+      "id": 44,
+      "name": "Phú Yên",
+      "shipping_charge": 4000
+    },
+    {
+      "id": 45,
+      "name": "Quảng Bình",
+      "shipping_charge": 62000
+    },
+    {
+      "id": 46,
+      "name": "Quảng Nam",
+      "shipping_charge": 33000
+    },
+    {
+      "id": 47,
+      "name": "Quảng Ngãi",
+      "shipping_charge": 68000
+    },
+    {
+      "id": 48,
+      "name": "Quảng Ninh",
+      "shipping_charge": 97000
+    },
+    {
+      "id": 49,
+      "name": "Quảng Trị",
+      "shipping_charge": 61000
+    },
+    {
+      "id": 50,
+      "name": "Sóc Trăng",
+      "shipping_charge": 36000
+    },
+    {
+      "id": 51,
+      "name": "Sơn La",
+      "shipping_charge": 72000
+    },
+    {
+      "id": 52,
+      "name": "Tây Ninh",
+      "shipping_charge": 8000
+    },
+    {
+      "id": 53,
+      "name": "Thái Bình",
+      "shipping_charge": 9000
+    },
+    {
+      "id": 54,
+      "name": "Thái Nguyên",
+      "shipping_charge": 13000
+    },
+    {
+      "id": 55,
+      "name": "Thanh Hóa",
+      "shipping_charge": 35000
+    },
+    {
+      "id": 56,
+      "name": "Thừa Thiên Huế",
+      "shipping_charge": 16000
+    },
+    {
+      "id": 57,
+      "name": "Tiền Giang",
+      "shipping_charge": 53000
+    },
+    {
+      "id": 58,
+      "name": "TP Hồ Chí Minh",
+      "shipping_charge": 30000
+    },
+    {
+      "id": 59,
+      "name": "Trà Vinh",
+      "shipping_charge": 13000
+    },
+    {
+      "id": 60,
+      "name": "Tuyên Quang",
+      "shipping_charge": 7000
+    },
+    {
+      "id": 61,
+      "name": "Vĩnh Long",
+      "shipping_charge": 96000
+    },
+    {
+      "id": 62,
+      "name": "Vĩnh Phúc",
+      "shipping_charge": 72000
+    },
+    {
+      "id": 63,
+      "name": "Yên Bái",
+      "shipping_charge": 12000
+    }
+  ],
+  "credit_card_type": [
+    {
+      "id": 1,
+      "name": "ATM",
+      "charge": 0
+    },
+    {
+      "id": 2,
+      "name": "Thẻ ghi nợ (Debit)",
+      "charge": 0
+    },
+    {
+      "id": 3,
+      "name": "Thẻ tín dụng (Credit)",
+      "charge": 10000
+    }
+  ],
+  "discount_applied_category": [
+    {
+      "discount_id": 1,
+      "category_id": 1
+    },
+    {
+      "discount_id": 2,
+      "category_id": 2
+    },
+    {
+      "discount_id": 3,
+      "category_id": 3
+    },
+    {
+      "discount_id": 4,
+      "category_id": 4
+    },
+    {
+      "discount_id": 5,
+      "category_id": 5
+    },
+    {
+      "discount_id": 6,
+      "category_id": 6
+    },
+    {
+      "discount_id": 7,
+      "category_id": 7
+    },
+    {
+      "discount_id": 8,
+      "category_id": 8
     }
   ],
   "product": [
     {
       "name": "Laptop MSI Modern 14 B11MOU-1065VN",
+      "image_url": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/t/e/text_ng_n_5__1_68.png",
       "description": "Laptop học tập - văn phòng cực mỏng nhẹ với trọng lượng chỉ 1.3 kg|\r\nCPU Intel Core i7-1195G7 cân mọi tác vụ văn phòng như: Word, Excel, PowerPoint|\r\nCard đồ họa Intel Iris Xe Graphics thoải mái chạy các ứng dụng văn phòng cơ bản hay các phần mềm thiết kế đơn giản|\r\nRAM 8 GB chuẩn DDR4 giúp thao tác đa nhiệm mượt mà hơn|\r\nKhởi động máy, ứng dụng nhanh chóng chỉ trong vài giây nhờ ổ cứng SSD 512 GB PCIe NVMe|\r\nĐộ phủ màu 45% NTSC, 63% sRGB hỗ trợ thiết kế, làm việc với màu sắc chuẩn xác",
-      "displayOrder": 1000,
-      "picture": "",
+      "specs": "Loại card đồ họa    Intel Iris Xe Graphics|\r\nDung lượng RAM    8GB|\r\nLoại RAM    DDR4 3200MHz|\r\nSố khe ram    2 khe (Nâng cấp tối đa 64GB)|\r\nỔ cứng    512GB PCIe NVMe M.2 SSD (1 slot)|\r\nKích thước màn hình    14 inches|\r\nCông nghệ màn hình    Tần số quét 60Hz  Độ phủ màu 45% NTSC, 63% sRGB  Thin Bezel|\r\nPin    3 Cell, 39Whr|\r\nHệ điều hành    Windows 11 Home|\r\nĐộ phân giải màn hình    1920 x 1080 pixels (FullHD)|\r\nCổng giao tiếp    1x Type-C USB3.2 Gen 2  2x Type-A USB3.2 Gen 1 1x Micro SD 1x HDMI (4K @ 60Hz)|\r\n",
+      "price": 16100000,
+      "status": false,
+      "category_id": 1,
       "id": 1
     },
     {
@@ -910,74 +1469,298 @@
       "category_id": 8
     },
     {
-      "name": "",
-      "image": "",
-      "description": "",
-      "specs": "",
-      "price": "",
-      "status": "Out of Stock",
-      "category": "",
+      "name": "new lap",
+      "image_url": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/2/_/2.5_1.png",
+      "description": "Mỏng nhẹ là một trong những đặc điểm nổi bật của laptop Asus và Asus Zenbook 14X UM5401QA KN209W cũng không ngoại lệ. Chiếc laptop Asus Zenbook sở hữu một thiết kế sang trọng nhỏ gọn, cấu hình ổn định hứa hẹn mang lại trải nghiệm ấn tượng cho người dùng.",
+      "specs": "Xử lý tốt các tác vụ nặng nề, thoả sức giải trí với các tựa game Esport - AMD Ryzen 5-5600H Card đồ hoạ AMD Radeon™ Graphics\nRam 8GB, ổ cứng SSD 512GB mang đến tốc độ xử lý nhanh cùng đa nhiệm mượt mà, mở nhiều trang cùng lúc không bị giật, lag.\nĐộ phân giải cao 2.8K , màn hình 14.0 inch, tấm nền OLED, tần số quét 90Hz mang lại chất lượng hiển thị rõ nét, mượt mà.\nCổng kết nối đa dạng - Thuận tiện cho người dùng.\nNăng lượng bất tận cả ngày với viên pin 63WHrs, 3S1P, 3-cell Li-ion.\nThiết kế mỏng nhẹ, sang trọng thuận tiện di chuyển, mang theo trọng lượng chỉ 1.3 kg\nMáy đi kèm Windows 11 bản quyền.",
+      "price": "18490000",
+      "status": true,
+      "category_id": 1,
       "id": 72
+    }
+  ],
+  "customer": [
+    {
+      "id": 1,
+      "username": "bowjaro",
+      "password": "bowjaro3",
+      "email": "bo@gm.com",
+      "first_name": "bow",
+      "last_name": "jaro",
+      "gender": "female",
+      "phone_number": "0123456789",
+      "date_of_birth": "2023-05-18"
     },
     {
-      "name": "",
-      "image": "",
-      "description": "",
-      "specs": "",
-      "price": "",
-      "status": "In Stock",
-      "category": "",
-      "id": 73
+      "id": 2,
+      "username": "user1",
+      "password": "bowjaro3",
+      "email": "mn@gm.com",
+      "first_name": "Bow",
+      "last_name": "Jaro",
+      "gender": "male",
+      "phone_number": "0123456777",
+      "date_of_birth": "2023-05-24"
     },
     {
-      "name": "",
-      "image": "",
-      "description": "",
-      "specs": "",
-      "price": 4334,
-      "status": "",
-      "category": "",
-      "id": 74
+      "id": 3,
+      "username": "thanhtam",
+      "password": "1232312312",
+      "email": "tam@gm.com",
+      "first_name": "Tam",
+      "last_name": "Tran",
+      "gender": "female",
+      "phone_number": "123123123",
+      "date_of_birth": "2003-12-15T17:00:00.000Z"
+    }
+  ],
+  "shopping_cart_item": [
+    {
+      "product_id": 1,
+      "customer_id": null,
+      "quantity": 1,
+      "id": 1
     },
     {
-      "name": "",
-      "image": "",
-      "description": "",
-      "specs": "",
-      "price": "1000",
-      "status": "",
-      "category": "",
-      "id": 75
+      "product_id": 45,
+      "customer_id": null,
+      "quantity": 1,
+      "id": 2
     },
     {
-      "name": "",
-      "image": "",
-      "description": "",
-      "specs": "",
-      "price": "1000",
-      "status": "",
-      "category": "",
-      "id": 76
+      "id": 3,
+      "customer_id": "2",
+      "product_id": 35,
+      "quantity": 4
     },
     {
-      "name": "",
-      "image": "",
-      "description": "",
-      "specs": "",
-      "price": "1",
-      "status": "",
-      "category": "",
-      "id": 77
+      "product_id": 1,
+      "customer_id": "1",
+      "quantity": 1,
+      "id": 4
     },
     {
-      "name": "",
-      "image": "",
-      "description": "",
-      "specs": "",
-      "price": "1",
-      "status": "",
-      "category": "",
-      "id": 78
+      "product_id": 2,
+      "customer_id": "1",
+      "quantity": 1,
+      "id": 5
+    },
+    {
+      "product_id": 3,
+      "customer_id": "1",
+      "quantity": 1,
+      "id": 6
+    },
+    {
+      "product_id": 6,
+      "customer_id": "1",
+      "quantity": 1,
+      "id": 7
+    }
+  ],
+  "orders": [
+    {
+      "note": "No need to notekasjfdlksadjkflsad\najlksdfjkldsajflksdaf\nasf;alsdkflsadjflksdaf\naskdfldsakjlfdsaljfjldsakfjldsaf",
+      "created_on_utc": "2023-05-15T14:12:01.529Z",
+      "customer_id": "1",
+      "shipping_address_id": 1,
+      "total_price": 270428000,
+      "status": "COMPLETED",
+      "category_id": "",
+      "id": 1
+    },
+    {
+      "note": "1223333",
+      "created_on_utc": "2023-05-16T01:43:58.201Z",
+      "customer_id": "2",
+      "shipping_address_id": 2,
+      "total_price": 3330000,
+      "status": "PENDING",
+      "id": 2
+    },
+    {
+      "note": "",
+      "created_on_utc": "2023-05-17T03:40:17.566Z",
+      "customer_id": "1",
+      "shipping_address_id": 3,
+      "total_price": 95000000,
+      "status": "PENDING",
+      "id": 3
+    },
+    {
+      "note": "",
+      "created_on_utc": "2023-05-17T03:40:17.566Z",
+      "customer_id": "1",
+      "shipping_address_id": 4,
+      "total_price": 95000000,
+      "status": "PENDING",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "note": "sdakfjsaldfjklsad",
+      "created_on_utc": "2023-05-18T17:00:00.000Z",
+      "customer_id": 3,
+      "shipping_address_id": 4,
+      "total_price": "25600000",
+      "status": "DECLINED",
+      "category_id": ""
+    },
+    {
+      "id": 6,
+      "note": "asfsadfas",
+      "created_on_utc": "2023-05-16T17:00:00.000Z",
+      "customer_id": 5,
+      "shipping_address_id": 5,
+      "total_price": "7000000",
+      "status": "CONFIRMED",
+      "category_id": ""
+    },
+    {
+      "id": 7,
+      "note": "askokljlkjlkdsjf",
+      "created_on_utc": "2023-05-17T17:00:00.000Z",
+      "customer_id": 9,
+      "shipping_address_id": 5,
+      "total_price": "19000000",
+      "status": "SHIPPING",
+      "category_id": ""
+    },
+    {
+      "id": 8,
+      "note": "mvnlkakfdjlkasdf",
+      "created_on_utc": "2023-05-17T17:00:00.000Z",
+      "customer_id": 8,
+      "shipping_address_id": 2,
+      "total_price": "17500000",
+      "status": "COMPLETED",
+      "category_id": ""
+    },
+    {
+      "id": 9,
+      "note": "",
+      "created_on_utc": "2023-05-18T17:00:00.000Z",
+      "customer_id": "",
+      "shipping_address_id": "",
+      "total_price": "9000000",
+      "status": "CONFIRMED",
+      "category_id": ""
+    }
+  ],
+  "order_item": [
+    {
+      "order_id": 1,
+      "product_id": 35,
+      "quantity": 2,
+      "rate": 3,
+      "comment": "Too bad boy",
+      "id": 1
+    },
+    {
+      "order_id": 1,
+      "product_id": 36,
+      "quantity": 3,
+      "rate": 0,
+      "comment": "",
+      "id": 2
+    },
+    {
+      "order_id": 1,
+      "product_id": 37,
+      "quantity": 4,
+      "rate": 0,
+      "comment": "",
+      "id": 3
+    },
+    {
+      "order_id": 2,
+      "product_id": 28,
+      "quantity": 3,
+      "rate": 1,
+      "comment": "China’s first self-developed 150 MW large-scale impulse water turbine runner rolled off the production line on Tuesday in Deyang, Sichuan. The 20-tonne runner, made with the help of 3D-printing technology, is expected to be operational in June.",
+      "id": 4
+    },
+    {
+      "order_id": 2,
+      "product_id": 29,
+      "quantity": 1,
+      "rate": 5,
+      "comment": "As part of the Rolex Perpetual Planet Initiative, legendary oceanographer Sylvia Earle has spent her life exploring the world's seas; she says that humanity is only just beginning to understand them. https://cnn.it/431EYVx #CallToEarth #PerpetualPlanet",
+      "id": 5
+    },
+    {
+      "order_id": 3,
+      "product_id": 28,
+      "quantity": 4,
+      "rate": 4,
+      "comment": "Lan any on asdfhoasf",
+      "id": 6
+    },
+    {
+      "order_id": 3,
+      "product_id": 29,
+      "quantity": 3,
+      "rate": 3,
+      "comment": "asdfasa",
+      "id": 7
+    },
+    {
+      "order_id": 4,
+      "product_id": 65,
+      "quantity": 3,
+      "rate": 5,
+      "comment": "excellent",
+      "id": 8
+    },
+    {
+      "order_id": 4,
+      "product_id": 66,
+      "quantity": 1,
+      "rate": 4,
+      "comment": "qutie good",
+      "id": 9
+    },
+    {
+      "order_id": 5,
+      "product_id": 28,
+      "quantity": 2,
+      "rate": 5,
+      "comment": "good 100",
+      "id": 10
+    },
+    {
+      "order_id": 5,
+      "product_id": 29,
+      "quantity": 1,
+      "rate": 5,
+      "comment": "very excellent",
+      "id": 11
+    }
+  ],
+  "address": [
+    {
+      "house_number": "12A",
+      "street": "New Street",
+      "province_id": 2,
+      "id": 1
+    },
+    {
+      "house_number": "A222",
+      "street": "12A",
+      "province_id": 0,
+      "id": 2
+    },
+    {
+      "house_number": "",
+      "street": "",
+      "province_id": 1,
+      "id": 3
+    },
+    {
+      "house_number": "",
+      "street": "",
+      "province_id": 1,
+      "id": 4
     }
   ]
 }

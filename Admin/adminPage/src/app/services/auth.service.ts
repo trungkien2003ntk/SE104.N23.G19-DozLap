@@ -9,7 +9,7 @@ export class AuthService {
   constructor(private http:HttpClient) { 
 
   }
-  apiurl='http://localhost:3000/user';
+  apiurl='http://localhost:3000/admin';
 
   GetUserbyCode(id:any){
     return this.http.get(this.apiurl+'/'+id);

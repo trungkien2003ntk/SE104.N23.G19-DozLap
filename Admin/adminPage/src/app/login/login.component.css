@@ -100,10 +100,10 @@ form .login{
 }
 
 .container .div-text p{
-    margin: 0 auto;
-    width: 60%;
+    margin-top: 30px;
+    width: 100%;
     color: #f0f0f0;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 2;
 }
 

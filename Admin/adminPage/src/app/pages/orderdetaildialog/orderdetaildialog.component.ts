@@ -8,13 +8,13 @@ import { MessageService } from 'primeng/api';
 import { tap } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-order-dialog',
-  templateUrl: './order-dialog.component.html',
-  styleUrls: ['./order-dialog.component.css'],
+  selector: 'app-orderdetaildialog',
+  templateUrl: './orderdetaildialog.component.html',
+  styleUrls: ['./orderdetaildialog.component.css'],
   providers: [MessageService]
 })
 
-export class OrderDialogComponent implements OnInit {
+export class OrderdetaildialogComponent implements OnInit {
   empForm: FormGroup;
 
   // categories: number[] = [];
@@ -22,18 +22,15 @@ export class OrderDialogComponent implements OnInit {
 
   constructor(private _fb: FormBuilder,
      private _empService: ManufacturerService,
-     private _dialogRef: MatDialogRef<OrderDialogComponent>,
+     private _dialogRef: MatDialogRef<OrderdetaildialogComponent>,
      @Inject(MAT_DIALOG_DATA) public data: any,
      private _coreService: CoreService,
      private messageService: MessageService){
      this.empForm = _fb.group({
-      note: '',
-      created_on_utc: '',
-      customer_id: '',
-      shipping_address_id:'',
-      total_price:'',
-      status:'',
-      category_id:'',
+      product_id: '',
+      quantity: '',
+      rate: '',
+      comment:'',
     })
   }
   ngOnInit(): void {
@@ -50,7 +47,7 @@ export class OrderDialogComponent implements OnInit {
       console.log(this.empForm.value);
       if (this.data)
       {
-        this._empService.updateOrder(this.data.id, this.empForm.value).subscribe({
+        this._empService.updateOrderDetail(this.data.id, this.empForm.value).subscribe({
           next: (val: any) => {
             this._coreService.openSnackBar('Order detail updated!');
             this._dialogRef.close(true);
@@ -60,9 +57,9 @@ export class OrderDialogComponent implements OnInit {
           }
         }) ;
       }else{
-        this._empService.addOrder(this.empForm.value).subscribe({
+        this._empService.addOrderDetail(this.empForm.value).subscribe({
           next: (val: any) => {
-           this._coreService.openSnackBar('Order added successfully');
+           this._coreService.openSnackBar('Order detail added successfully');
             this._dialogRef.close(true);
           },
           error: (err:any) => {

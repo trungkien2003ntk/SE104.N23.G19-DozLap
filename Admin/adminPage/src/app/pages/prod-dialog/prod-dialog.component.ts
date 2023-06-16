@@ -5,49 +5,48 @@ import { DialogRef } from '@angular/cdk/dialog';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { CoreService } from 'src/app/core/core.service';
 import { MessageService } from 'primeng/api';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-prod-dialog',
   templateUrl: './prod-dialog.component.html',
-  styleUrls: ['./prod-dialog.component.css']
+  styleUrls: ['./prod-dialog.component.css'],
+  providers: [MessageService]
 })
 export class ProdDialogComponent implements OnInit {
   empForm: FormGroup;
 
-  categories: string[] = [
-    'Laptop',
-    'Tablet',
-    'Iphone',
-    'SamSung',
-    'Watch',
-  ]
+  categories: number[] = [];
 
 
   constructor(private _fb: FormBuilder,
      private _empService: ManufacturerService,
      private _dialogRef: MatDialogRef<ProdDialogComponent>,
      @Inject(MAT_DIALOG_DATA) public data: any,
-     private _coreService: CoreService){
+     private _coreService: CoreService,
+     private messageService: MessageService){
      this.empForm = _fb.group({
       name: '',
-      image: '',
+      image_url: '',
       description: '',
       specs:'',
       price:'',
       status:'',
-      category:'',
+      category_id:'',
     })
   }
   ngOnInit(): void {
+    this._empService.getCateIdList().subscribe((categoryIds: number[]) => {
+      this.categories = categoryIds;
+    });
     this.empForm.patchValue(this.data);
   }
 
-  
 
   onFormSubmit(){
     if(this.empForm.valid)
     {
-      //console.log(this.empForm.value);
+      console.log(this.empForm.value);
       if (this.data)
       {
         this._empService.updateProd(this.data.id, this.empForm.value).subscribe({
@@ -73,5 +72,16 @@ export class ProdDialogComponent implements OnInit {
       
     }
   }
+
+  uploadedFiles: any[] = [];
+
+
+    onUpload(event: any) {
+        for (const file of event.files) {
+            this.uploadedFiles.push(file);
+        }
+
+        this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded' });
+    }
 }
 

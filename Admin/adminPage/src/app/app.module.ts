@@ -36,6 +36,9 @@ import { LoginComponent } from './login/login.component';
 import { CustomerComponent } from './pages/customer/customer.component';
 import { OrderComponent } from './pages/order/order.component';
 import { OrderDialogComponent } from './pages/order-dialog/order-dialog.component';
+import { CustomDialogComponent } from './pages/custom-dialog/custom-dialog.component';
+import { OrderdetailComponent } from './pages/orderdetail/orderdetail.component';
+import { OrderdetaildialogComponent } from './pages/orderdetaildialog/orderdetaildialog.component';
 
 
 
@@ -54,7 +57,10 @@ import { OrderDialogComponent } from './pages/order-dialog/order-dialog.componen
     LoginComponent,
     CustomerComponent,
     OrderComponent,
-    OrderDialogComponent
+    OrderDialogComponent,
+    CustomDialogComponent,
+    OrderdetailComponent,
+    OrderdetaildialogComponent
     
 
   ],

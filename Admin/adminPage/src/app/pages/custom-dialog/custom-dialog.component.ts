@@ -7,39 +7,40 @@ import { CoreService } from 'src/app/core/core.service';
 import { MessageService } from 'primeng/api';
 import { tap } from 'rxjs/operators';
 
+
+
 @Component({
-  selector: 'app-order-dialog',
-  templateUrl: './order-dialog.component.html',
-  styleUrls: ['./order-dialog.component.css'],
+  selector: 'app-custom-dialog',
+  templateUrl: './custom-dialog.component.html',
+  styleUrls: ['./custom-dialog.component.css'],
   providers: [MessageService]
 })
 
-export class OrderDialogComponent implements OnInit {
+export class CustomDialogComponent implements OnInit {
   empForm: FormGroup;
 
-  // categories: number[] = [];
+
 
 
   constructor(private _fb: FormBuilder,
      private _empService: ManufacturerService,
-     private _dialogRef: MatDialogRef<OrderDialogComponent>,
+     private _dialogRef: MatDialogRef<CustomDialogComponent>,
      @Inject(MAT_DIALOG_DATA) public data: any,
      private _coreService: CoreService,
      private messageService: MessageService){
      this.empForm = _fb.group({
-      note: '',
-      created_on_utc: '',
-      customer_id: '',
-      shipping_address_id:'',
-      total_price:'',
-      status:'',
-      category_id:'',
+      username: '',
+      password: '',
+      email: '',
+      first_name:'',
+      last_name:'',
+      gender:'',
+      phone_number:'',
+      date_of_birth:'',
     })
   }
+
   ngOnInit(): void {
-    // this._empService.getCateIdList().subscribe((categoryIds: number[]) => {
-    //   this.categories = categoryIds;
-    // });
     this.empForm.patchValue(this.data);
   }
 
@@ -50,9 +51,9 @@ export class OrderDialogComponent implements OnInit {
       console.log(this.empForm.value);
       if (this.data)
       {
-        this._empService.updateOrder(this.data.id, this.empForm.value).subscribe({
+        this._empService.updateCust(this.data.id, this.empForm.value).subscribe({
           next: (val: any) => {
-            this._coreService.openSnackBar('Order detail updated!');
+            this._coreService.openSnackBar('Customer detail updated!');
             this._dialogRef.close(true);
           },
           error: (err:any) => {
@@ -60,9 +61,9 @@ export class OrderDialogComponent implements OnInit {
           }
         }) ;
       }else{
-        this._empService.addOrder(this.empForm.value).subscribe({
+        this._empService.addCust(this.empForm.value).subscribe({
           next: (val: any) => {
-           this._coreService.openSnackBar('Order added successfully');
+           this._coreService.openSnackBar('Customer added successfully');
             this._dialogRef.close(true);
           },
           error: (err:any) => {
@@ -74,5 +75,6 @@ export class OrderDialogComponent implements OnInit {
     }
   }
 }
+
 
 

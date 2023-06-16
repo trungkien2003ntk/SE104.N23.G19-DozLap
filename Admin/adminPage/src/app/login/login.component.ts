@@ -19,18 +19,20 @@ export class LoginComponent {
   hide = true;
 
   loginform = this.builder.group({
-    id: this.builder.control('', Validators.required),
+    username: this.builder.control('', Validators.required),
     password: this.builder.control('', Validators.required)
   });
 
   proceedlogin() {
     if (this.loginform.valid) {
-      this.service.GetUserbyCode(this.loginform.value.id).subscribe(item => {
+      this.service.GetUserbyCode(1).subscribe(item => {
         this.result = item;
-        if (this.result.password === this.loginform.value.password) {
+        console.log(item);
+        if (this.result.username === this.loginform.value.username
+          && this.result.password === this.loginform.value.password) {
           if (this.result.isactive) {
             sessionStorage.setItem('username',this.result.id);
-            this.router.navigate(['']);
+            this.router.navigate(['/dashboard']);
           } else {
             this.toastr.error('Please contact Admin', 'InActive User');
             

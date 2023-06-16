@@ -1,3 +1,5 @@
+
+
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog'
 import { ManufacturerService } from 'src/app/services/manufacturer.service';
@@ -6,50 +8,68 @@ import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { CoreService } from 'src/app/core/core.service';
 import { OrderDialogComponent } from '../order-dialog/order-dialog.component';
-
+import { OrderdetaildialogComponent } from '../orderdetaildialog/orderdetaildialog.component';
+import { ActivatedRoute } from '@angular/router';
 @Component({
-  selector: 'app-order',
-  templateUrl: './order.component.html',
-  styleUrls: ['./order.component.css']
+  selector: 'app-orderdetail',
+  templateUrl: './orderdetail.component.html',
+  styleUrls: ['./orderdetail.component.css']
 })
 
-export class OrderComponent implements OnInit {
+export class OrderdetailComponent implements OnInit {
   displayedColumns: string[] = [
-    'id', 
-    'note', 
-    'created_on_utc', 
-    'customer_id',
-    'shipping_address_id',
-    'total_price',
-    'status',
-    'view',
+    // 'id', 
+    // 'order_id', 
+    'product_id', 
+    'quantity',
+    'rate',
+    'comment',
     'action'];
   dataSource!: MatTableDataSource<any>;
+
+  orderId: number | undefined;
+
+  thisOrder: any;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private _dialog: MatDialog, 
     private _emService: ManufacturerService,
-    private _coreService: CoreService) {}
+    private _coreService: CoreService,
+    private route: ActivatedRoute) {}
   ngOnInit(): void {
-    this.getOrderList();
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+      if (id !== null) {
+        this.orderId = +id;
+        // You can use orderId within this component
+        console.log('Order ID:', this.orderId);
+      } else {
+        // Handle the case when id is null
+      }
+    });
+    this.getOrderItemsByOrderId(this.orderId);
+
+    this._emService.getOrderById(this.orderId).subscribe(data => {
+      this.thisOrder = data;
+    });
   }
 
   openAddEditManuForm()
   {
-    const dialogRef = this._dialog.open(OrderDialogComponent);
+    const dialogRef = this._dialog.open(OrderdetaildialogComponent);
     dialogRef.afterClosed().subscribe({
       next: (val) => {
          if (val){
-          this.getOrderList();
+          this.getOrderItemsByOrderId(this.orderId);
          }
       }
     });
   }
 
-  getOrderList() {
-    this._emService.getOrderList().subscribe({
+  getOrderItemsByOrderId(id: any) {
+    this._emService.getOrderItemsByOrderId(id).subscribe({
       next:  (res) => {
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;
@@ -72,10 +92,10 @@ export class OrderComponent implements OnInit {
   }
 
   deleteOrder(id: number) {
-    this._emService.deleteOrder(id).subscribe({
+    this._emService.deleteOrderDetail(id).subscribe({
       next: (res) => {
-        this._coreService.openSnackBar('Order deleted!', 'done');
-        this.getOrderList();
+        this._coreService.openSnackBar('Order detail deleted!', 'done');
+        this.getOrderItemsByOrderId(this.orderId);
       },
       error: console.log,
     })
@@ -83,14 +103,14 @@ export class OrderComponent implements OnInit {
 
   openEditForm(data: any)
   {
-    const dialogRef = this._dialog.open(OrderDialogComponent, {
+    const dialogRef = this._dialog.open(OrderdetaildialogComponent, {
       data, 
     });
 
     dialogRef.afterClosed().subscribe({
       next: (val) => {
          if (val){
-          this.getOrderList();
+          this.getOrderItemsByOrderId(this.orderId);
          }
       }
     });

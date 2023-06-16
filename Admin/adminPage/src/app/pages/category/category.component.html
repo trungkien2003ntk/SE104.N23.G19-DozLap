@@ -1,10 +1,10 @@
 
   <!-- MAIN -->
     <main>
-      <div class="head-title">
+      <!-- <div class="head-title">
         <div class="left">
           <h1>Category</h1>
-          <!-- <ul class="breadcrumb">
+          <ul class="breadcrumb">
             <li>
               <a href="#">Category</a>
             </li>
@@ -12,7 +12,7 @@
             <li>
               <a class="active" href="#">Home</a>
             </li>
-          </ul> -->
+          </ul>
         </div>
         <a href="#" class="btn-download">
           <i class='bx bxs-cloud-download' ></i>
@@ -21,19 +21,25 @@
 
         
         
-      </div>
+      </div> -->
       
       <div class="table-data">
-            <mat-form-field>
-              <mat-icon matPrefix>search</mat-icon>
-              <mat-label>Search</mat-label>
-              <input class="search" matInput (keyup)="applyFilter($event)" placeholder="Ex. Apple" #input>
-            </mat-form-field>
-            <a class="btn-download" (click)="openAddEditManuForm()">
-              <i class='bx bx-plus-circle'></i>
-              <span class="text">Add Manufacturer</span>
-            </a>
-          
+        <div class="btn">
+          <h3>Category</h3>
+        <mat-form-field>
+          <mat-icon matPrefix>search</mat-icon>
+          <input class="search" matInput (keyup)="applyFilter($event)" placeholder="Search" #input>
+        </mat-form-field>
+          <a class="btn-addnew" (click)="openAddEditManuForm()">
+            <i class='bx bxs-add-to-queue'></i>
+            <span class="text">Add New</span>
+          </a>
+
+          <!-- <a href="#" class="btn-download">
+            <i class='bx bxs-cloud-download' ></i>
+            <span class="text">Download PDF</span>
+          </a> -->
+        </div>
           <table mat-table [dataSource]="dataSource" matSort>
         
             <!-- ID Column -->

@@ -1,6 +1,6 @@
 <!-- SIDEBAR -->
 <section *ngIf="isMenuVisible" id="sidebar" [ngClass]="status ? 'hide' : ''">
-  <a href="#" class="brand">
+  <a href="/dashboard" class="brand">
     <i class='bx bxs-store'></i>
     <span class="text">AdminPage</span>
   </a>
@@ -11,12 +11,12 @@
         <span class="text">Dashboard</span>
       </a>
     </li>
-    <li routerLinkActive="active">
+    <!-- <li routerLinkActive="active">
        <a routerLink="/manufacturer"  ariaCurrentWhenActive="page">
         <i class='bx bxl-magento'></i>
         <span class="text">Manufacturer</span>
        </a>
-    </li>
+    </li> -->
     <li routerLinkActive="active">
       <a routerLink="/product" routerLinkActive="active" ariaCurrentWhenActive="page">       
        <i class='bx bxs-shopping-bag-alt' ></i>
@@ -39,18 +39,18 @@
 
     <li routerLinkActive="active">
       <a routerLink="/customer"   ariaCurrentWhenActive="page">
-        <i class='bx bxs-receipt'></i>
+        <i class='bx bxs-group'></i>
         <span class="text">Customer</span>
       </a>
     </li>
   </ul>
   <ul class="side-menu">
-    <li>
+    <!-- <li>
       <a href="#">
         <i class='bx bxs-cog' ></i>
         <span class="text">Settings</span>
       </a>
-    </li>
+    </li> -->
     <li>
       <a routerLink="/login" class="logout">
         <i class='bx bxs-log-out-circle' ></i>
@@ -66,21 +66,31 @@
   <!-- NAVBAR -->
   <nav *ngIf="isMenuVisible">
     <i  (click)="addToggle()" class='bx bx-menu' ></i>
-    <a href="#" class="nav-link">Categories</a>
-    <form action="#">
+    <a href="/dashboard" class="nav-link">Dashboard</a>
+    <!-- <form action="#">
       <div class="form-input">
         <input type="search" placeholder="Search...">
         <button type="button" class="search-btn"><i class='bx bx-search' ></i></button>
       </div>
-    </form>
+    </form> -->
+
+    <!-- <a class="profile">
+      <img src="assets/avatar.jpg">
+    </a>
     
-    <a href="#" class="notification">
-      <i class='bx bxs-bell' ></i>
-      <span class="num">8</span>
-    </a>
-    <a href="#" class="profile">
-      <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g">
-    </a>
+    <a href="/login" class="logout">
+      <i class='bx bx-log-in'></i>
+    </a>  -->
+    <div class="navbar-right">
+      <a class="profile">
+        <img src="assets/avatar.jpg">
+      </a>
+
+      <a href="/login" class="logout">
+        <i class='bx bx-log-in'></i>
+      </a>
+    </div>
+    
   </nav>
   <!-- NAVBAR -->
 

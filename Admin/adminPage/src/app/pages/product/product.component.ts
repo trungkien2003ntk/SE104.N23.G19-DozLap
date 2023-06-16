@@ -17,12 +17,12 @@ export class ProductComponent implements OnInit {
   displayedColumns: string[] = [
     'id', 
     'name', 
-    'image',
+    'image_url',
     'description',
     'specs',
     'price',
     'status',
-    'category',
+    'category_id',
     'action'];
   dataSource!: MatTableDataSource<any>;
 
