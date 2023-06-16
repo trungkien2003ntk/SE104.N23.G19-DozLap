@@ -1,0 +1,80 @@
+
+
+main .head .btn-download {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 36px;
+  background: var(--blue);
+  color: var(--light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 10px;
+  font-weight: 500;
+}
+
+.btn-download {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 36px;
+  background: var(--blue);
+  color: var(--light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 10px;
+  font-weight: 500;
+}
+
+
+main .table-data {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 24px;
+  margin-top: 24px;
+  width: 100%;
+  color: var(--dark);
+}
+ main .table-data {
+  border-radius: 20px;
+  background: var(--light);
+  padding: 24px;
+  overflow-x: auto;
+}
+main .table-data {
+  display: flex;
+  align-items: center;
+  grid-gap: 16px;
+  margin-bottom: 24px;
+}
+ main .table-data h3 {
+  margin-right: auto;
+  font-size: 24px;
+  font-weight: 600;
+}
+main .table-data .bx {
+  cursor: pointer;
+}
+main .table-data {
+  flex-grow: 1;
+  flex-basis: 500px;
+}
+main .table-data table {
+  width: 100%;
+  border-collapse: collapse;
+}
+ main .table-data table th {
+  padding-bottom: 12px;
+  font-size: 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--grey);
+}
+ main .table-data table td {
+  padding: 18px;
+  font-size: 17px;
+}
+
+
+
+
+

@@ -1,0 +1,67 @@
+<div mat-dialog-title>
+    <h1>Product Form</h1>
+</div>
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label> Name</mat-label>
+                <input matInput type="text" placeholder="Ex. Samsung" formControlName="name">
+            </mat-form-field>         
+        </div>
+
+        <div class="row">  
+            <mat-form-field appearance="outline">
+                <mat-label>Image</mat-label>
+                <input matInput placeholder="Ex. Technical" formControlName="image">
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <textarea  matInput placeholder="Describe your product" formControlName="description"></textarea>
+              </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Specs</mat-label>
+                <textarea  matInput placeholder="Describe your specs" formControlName="specs"></textarea>
+            </mat-form-field>           
+        </div>  
+        <div class="row">
+            <mat-form-field appearance="outline" >
+                <mat-label>Price</mat-label>
+                <input matInput placeholder="0"  formControlName="price">
+                <span matTextPrefix>₫&nbsp;</span>
+                <span matTextSuffix>VND</span>            
+            </mat-form-field>           
+        </div>  
+
+        <div class="row">
+            <mat-radio-group aria-label="Select an option" formControlName="status">
+                <mat-label><b>Status</b></mat-label>
+                <mat-radio-button value="In Stock">In Stock</mat-radio-button>
+                <mat-radio-button value="Out of Stock">Out of Stock</mat-radio-button>
+              </mat-radio-group>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Category</mat-label>
+                <mat-select formControlName="category">
+                  <mat-option *ngFor="let val of categories" [value]="val">
+                        {{val}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button"  [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Update' : 'Save'}}</button>
+    </div>
+</form>
+

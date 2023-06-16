@@ -1,0 +1,52 @@
+<div mat-dialog-title>
+    <h1>Manufacturer Form</h1>
+</div>
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label> Name</mat-label>
+                <input matInput type="text" placeholder="Ex. Samsung" formControlName="name">
+            </mat-form-field>          
+        </div>
+
+        <div class="row">
+            <div class="p-field">
+                <label for="description">Description</label>
+                <textarea id="description" pInputTextarea required rows="3" cols="20"></textarea>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>DisplayOrder</mat-label>
+                <input matInput placeholder="Ex. 4" type="number" formControlName="displayOrder">
+            </mat-form-field>   
+        </div>
+
+        <div class="row">  
+            <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)"
+                        [multiple]="true" accept="image/*" [maxFileSize]="1000000">
+              <ng-template pTemplate="content">
+                  <ul *ngIf="uploadedFiles.length">
+                      <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                  </ul>
+              </ng-template>
+          </p-fileUpload>
+        </div>
+
+        <!-- <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <input matInput placeholder="Ex. Technical" formControlName="description">
+            </mat-form-field>           
+        </div>    -->
+        
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button"  [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Update' : 'Save'}}</button>
+    </div>
+</form>
+
