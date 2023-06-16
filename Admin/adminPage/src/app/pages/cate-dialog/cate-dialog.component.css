@@ -1,0 +1,34 @@
+.content {
+    padding-top: 10px;
+}
+.row  {
+    display:contents;
+    gap: 10px   ;       
+}
+
+form {
+    width: 700px;
+    height: 500px;
+}
+
+.row mat-form-field {
+    width:100%;
+}
+
+
+
+.row mat-form-field textarea {
+    height: 280px;
+}
+
+
+
+.action{
+    padding: 0px 25px 20px;
+}
+
+.action button{
+    flex: 1;
+}
+
+

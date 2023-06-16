@@ -1,0 +1,92 @@
+<main>
+    
+    <ul class="box-info">
+      <li>
+        <i class='bx bxs-credit-card-front' ></i>
+        <span class="text">
+          <p>Sales</p>
+          <h3>{{ totalOrderPrice | currency:'VND':'symbol':'1.0-0' }}</h3>
+        </span>
+      </li>
+      <li>
+        <i class='bx bxs-calendar-check' ></i>
+        <span class="text">
+          <p>Orders</p>
+          <h3>{{ orderQuantity }}</h3>
+        </span>
+      </li>
+
+      <li>
+        <i class='bx bx-package'></i>
+        <span class="text">
+          <p>Products</p>
+          <h3>{{ productQuantity }}</h3>
+        </span>
+      </li>
+      <li>
+        <i class='bx bxs-group' ></i>
+        <span class="text">
+          <p>Customers</p>
+          <h3>{{ customerQuantity }}</h3>
+        </span>
+      </li>
+      
+    </ul>
+    <div class="table-data">
+      <div class="order">
+        <div class="head">
+          <h2>Latest Orders</h2>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Id Order</th>
+              <th>Date Order</th>
+              <th>Total Price</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of orders">
+              <td>
+                <i class='bx bxl-shopify'></i>
+                <p>{{ order.id }}</p>
+              </td>
+              <td>{{ order.created_on_utc | date:'dd-MM-yyyy HH:mm:ss' }}</td>
+              <td>{{ order.total_price | currency:'VND':'symbol':'1.0-0' }}</td>
+              <td><span class="status {{ order.status }}">{{ order.status }}</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <img src="assets/delivery.svg" alt="" class="image">
+      </div>
+
+      <div class="col-lg-6 category">
+        <h2>Categories</h2>
+        <canvas id="piechart"></canvas>
+      </div> 
+      
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-6" class="sales">
+        <h2>Monthly Sales</h2>
+        <canvas id="barchart"></canvas>
+      </div>
+
+      <div class="col-lg-7 product">
+        <h2>Top Products</h2>
+        <canvas id="horizontal_barchart"></canvas>
+      </div>
+    
+      
+    </div>
+    
+ 
+  <div class="row">
+
+    
+  </div>
+</main>

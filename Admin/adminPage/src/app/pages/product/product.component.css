@@ -1,0 +1,196 @@
+  .btn-download {
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 36px;
+    background: var(--blue);
+    color: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+.btn-addnew {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 36px;
+  background: var(--blue);
+  color: var(--light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 10px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+main .table-data .btn {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  grid-gap: 14px;
+}
+
+h3 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+
+main .table-data {
+  display: flex;
+  flex-wrap: wrap;
+   grid-gap: 24px; 
+  margin-top: -12px;
+  width: 100%;
+  color: var(--dark);
+}
+ main .table-data {
+  border-radius: 20px;
+  background: var(--light);
+  padding: 24px;
+  overflow-x: auto;
+}
+main .table-data {
+  display: flex;
+  align-items: center;
+  grid-gap: 16px;
+  margin-bottom: 24px;
+}
+ main .table-data mat-form-field {
+  margin-right: auto;
+  width: 400px;
+  padding: 0px;
+}
+main .table-data .bx {
+  cursor: pointer;
+}
+main .table-data {
+  flex-grow: 1;
+  flex-basis: 500px;
+}
+main .table-data table {
+  width: 100%;
+  border-collapse: collapse;
+}
+ main .table-data table th {
+  padding-bottom: 12px;
+  font-size: 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--grey);
+}
+ main .table-data table td {
+  padding: 18px;
+  font-size: 17px;
+}
+
+/* 
+table{
+  width: 100%;
+ }
+ 
+ .mat-column-id {
+   word-wrap: break-word !important;
+   white-space: unset !important;
+   flex: 0 0 5% !important;
+   width: 5% !important;
+   overflow-wrap: break-word;
+   word-wrap: break-word;
+ 
+   word-break: break-word;
+ 
+   -ms-hyphens: auto;
+   -moz-hyphens: auto;
+   -webkit-hyphens: auto;
+   hyphens: auto;
+ }
+ 
+ .mat-column-name {
+   word-wrap: break-word !important;
+   white-space: unset !important;
+   flex: 0 0 10% !important;
+   width: 10% !important;
+   overflow-wrap: break-word;
+   word-wrap: break-word;
+ 
+   word-break: break-word;
+ 
+   -ms-hyphens: auto;
+   -moz-hyphens: auto;
+   -webkit-hyphens: auto;
+   hyphens: auto;
+ }
+ 
+ .mat-column-description {
+   word-wrap: break-word !important;
+   white-space: unset !important;
+   flex: 0 0 30% !important;
+   width: 30% !important;
+   overflow-wrap: break-word;
+   word-wrap: break-word;
+ 
+   word-break: break-word;
+ 
+   -ms-hyphens: auto;
+   -moz-hyphens: auto;
+   -webkit-hyphens: auto;
+   hyphens: auto;
+ }
+ 
+ .mat-column-image_url {
+   word-wrap: break-word !important;
+   white-space: unset !important;
+   flex: 0 0 15% !important;
+   width: 15% !important;
+   overflow-wrap: break-word;
+   word-wrap: break-word;
+ 
+   word-break: break-word;
+ 
+   -ms-hyphens: auto;
+   -moz-hyphens: auto;
+   -webkit-hyphens: auto;
+   hyphens: auto;
+ }
+ 
+ .mat-column-specs {
+   word-wrap: break-word !important;
+   white-space: unset !important;
+   flex: 0 0 30% !important;
+   width: 30% !important;
+   overflow-wrap: break-word;
+   word-wrap: break-word;
+ 
+   word-break: break-word;
+ 
+   -ms-hyphens: auto;
+   -moz-hyphens: auto;
+   -webkit-hyphens: auto;
+   hyphens: auto;
+ }
+ */
+
+ .mat-column-description{
+  max-width: 400px !important;
+  min-width: 400px !important;
+}
+
+.mat-column-specs{
+  max-width: 400px !important;
+  min-width: 400px !important;
+}
+
+.mat-column-image_url{
+  max-height: 0px !important;
+  min-height: 200px !important;
+  max-width: 400px !important;
+  min-width: 100px !important;
+}
+
+.img {
+  width: 20px;
+  height: 40px;
+  font-size: 20px;
+}

@@ -1,0 +1,201 @@
+
+
+/* main .head .btn-download {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 36px;
+  background: var(--blue);
+  color: var(--light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 10px;
+  font-weight: 500;
+} */
+
+.btn-download {
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 36px;
+    background: var(--blue);
+    color: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .btn-addnew {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 36px;
+  background: var(--blue);
+  color: var(--light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  }
+  
+  main .table-data .btn {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  grid-gap: 14px;
+  }
+  
+  h3 {
+  font-size: 25px;
+  font-weight: 600;
+  }
+  
+  
+  main .table-data {
+  display: flex;
+  flex-wrap: wrap;
+   grid-gap: 15px; 
+  margin-top: -12px;
+  width: 100%;
+  color: var(--dark);
+  }
+  main .table-data {
+  border-radius: 20px;
+  background: var(--light);
+  padding: 24px;
+  overflow-x: auto;
+  }
+  main .table-data {
+  display: flex;
+  align-items: center;
+  grid-gap: 16px;
+  margin-bottom: 24px;
+  }
+  main .table-data mat-form-field {
+  margin-right: auto;
+  width: 400px;
+  padding: 0px;
+  }
+  main .table-data .bx {
+  cursor: pointer;
+  }
+  main .table-data {
+  flex-grow: 1;
+  flex-basis: 500px;
+  }
+  main .table-data .detailoder{
+    width: 100%;
+    
+  }
+
+  main .table-data .detailoder table {
+  width: 100%;
+  border-collapse: collapse;
+  }
+  main .table-data .detailoder table th {
+  font-size: 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--grey);
+  }
+  main .table-data .detailoder table td {
+  padding: auto;
+  font-size: 17px;
+  }
+
+  /* .order {
+    display: grid;
+    flex-wrap: wrap;
+    margin-top: 17px;
+    width: 100%;
+    color: var(--dark);
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 10px;
+  } */
+
+  .order {
+    display: grid;
+    flex-wrap: wrap;
+    margin-top: 17px;
+    width: 100%;
+    color: var(--dark);
+    grid-template-columns: 22% 33% 45%; /* Chia tỷ lệ 40% và 60% */
+    grid-gap: 10px;
+  }
+
+
+  .order > div {
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+    flex-grow: 1;
+    flex-basis: 500px;
+  }
+  .order table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  /* .order .order_right{
+    width: 70%;
+  }
+
+  .order .order_left{
+    width: 30%;
+  } */
+   .order table th {
+    width:150px;
+    font-size: 17px;
+    text-align: left;
+    /* border-bottom: 1px solid var(--grey); */
+  }
+    .order table td {
+    padding: 16px 0;
+    font-size: 15px;
+  }
+    .order table tr td:first-child {
+    display: flex;
+    align-items: left;
+    grid-gap: 12px;
+    padding-left: 6px;
+  }
+    .order table td p {
+    font-size: 16px;
+    align-items: left;
+    justify-content: left;
+    margin: auto 0;
+  }
+    .order table tr td .status {
+    font-size: 10px;
+    padding: 6px 16px;
+    color: var(--light);
+    border-radius: 20px;
+    font-weight: 700;
+  }
+    .order table tr td .status.COMPLETED {
+    background: var(--blue);
+  }
+    .order table tr td .status.CONFIRMED {
+    background: var(--yellow);
+  }
+   .order table tr td .status.PENDING {
+    background: var(--orange);
+  }
+
+  .order table tr td .status.SHIPPING {
+    background: var(--green);
+  }
+   .order table tr td .status.DECLINED {
+    background: var(--red);
+  }
+
+
+  
+  
+  
+  
+  
+  

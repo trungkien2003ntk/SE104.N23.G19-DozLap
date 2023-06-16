@@ -1,0 +1,190 @@
+/* MAIN */
+ main {
+    width: 100%;
+    padding: 36px 24px;
+    font-family: var(--poppins);
+    max-height: calc(100vh - 56px);
+    overflow-y: auto;
+  }
+
+   main .box-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 17px;
+    margin-top: -15px;
+  }
+   main .box-info li {
+    padding: 24px;
+    background: var(--light);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    grid-gap: 24px;
+  }
+   main .box-info li .bx {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    font-size: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+   main .box-info li:nth-child(1) .bx {
+    background: var(--light--green);
+    color: var(--green);
+  }
+   main .box-info li:nth-child(2) .bx {
+    background: var(--light-blue);
+    color: var(--blue);
+  }
+   main .box-info li:nth-child(3) .bx {
+    background: var(--light-orange);
+    color: var(--orange);
+  }
+   main .box-info li:nth-child(4) .bx {
+    background: var(--light-yellow);
+    color: var(--yellow );
+  }
+  
+   main .box-info li .text {
+    margin-top: 20px;
+  }
+   main .box-info li .text h2 {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--dark);
+  }
+ main .box-info li .text p {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--dark);  
+  }
+ main .table-data {
+    display: grid;
+    flex-wrap: wrap;
+    margin-top: 17px;
+    width: 100%;
+    color: var(--dark);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 15px;
+  }
+   main .table-data > div {
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+  }
+   main .table-data .head {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+  }
+   main .table-data h2 {
+    margin-right: auto;
+    font-size: 20px;
+    font-weight: 600;
+  }
+   main .table-data .head .bx {
+    cursor: pointer;
+  }
+   main .table-data .order {
+    flex-grow: 1;
+    flex-basis: 500px;
+  }
+   main .table-data .order table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+   main .table-data .order table th {
+    padding-bottom: 12px;
+    font-size: 17px;
+    text-align: left;
+    border-bottom: 1px solid var(--grey);
+  }
+   main .table-data .order table td {
+    padding: 16px 0;
+    font-size: 15px;
+  }
+   main .table-data .order table tr td:first-child {
+    display: flex;
+    align-items: center;
+    grid-gap: 12px;
+    padding-left: 6px;
+  }
+   main .table-data .order img {
+    width: 80%;
+    margin-top: 40px;
+    margin-left: 50px;
+  }
+  
+   main .table-data .order table td .bx {
+    width: 20x;
+    height: 20px;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+   main .table-data .order table td p {
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    margin: auto 0;
+  }
+  
+   main .table-data .order table tbody tr:hover {
+    background: var(--grey);
+  }
+   main .table-data .order table tr td .status {
+    font-size: 10px;
+    padding: 6px 16px;
+    color: var(--light);
+    border-radius: 20px;
+    font-weight: 700;
+  }
+   main .table-data .order table tr td .status.COMPLETED {
+    background: var(--blue);
+  }
+   main .table-data .order table tr td .status.CONFIRMED {
+    background: var(--yellow);
+  }
+   main .table-data .order table tr td .status.PENDING {
+    background: var(--orange);
+  }
+
+  main .table-data .order table tr td .status.SHIPPING {
+    background: var(--green);
+  }
+   main .table-data .order table tr td .status.DECLINED {
+    background: var(--red);
+  }
+  
+  .row div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    width: 100%;
+    color: var(--dark);
+  }
+   .row > div {
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 15px;
+  }
+
+  .row div h2{
+    margin: auto;
+  }
+
+
+
+
