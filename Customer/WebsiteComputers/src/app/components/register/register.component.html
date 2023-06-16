@@ -2,13 +2,13 @@
     <div class="form">
         <h5>Registration</h5>
         <form class="register-form" [formGroup]="registerform" (ngSubmit)="proceedRegister()">
-            <input type="text" placeholder="username" formControlName="username"/>
-            <input type="text" placeholder="first name" formControlName="first_name"/>
-            <input type="text" placeholder="last name" formControlName="last_name"/>
-            <input type="password" placeholder="password" formControlName="password"/>
-            <input type="text" placeholder="email" formControlName="email"/>
-            <input type="tel" placeholder="phone number" formControlName="phone_number"/>
-            <input type="date" placeholder="birthdate" formControlName="date_of_birth"/>
+            <input type="text" placeholder="Username" formControlName="username"/>
+            <input type="text" placeholder="First Name" formControlName="first_name"/>
+            <input type="text" placeholder="Last Name" formControlName="last_name"/>
+            <input type="password" placeholder="Password" formControlName="password"/>
+            <input type="text" placeholder="Email" formControlName="email"/>
+            <input type="tel" placeholder="Phone number" formControlName="phone_number"/>
+            <input type="date" placeholder="Birthdate" formControlName="date_of_birth"/>
             <div class="radio-group" formControlName="gender">
                 <p>Gender</p>
                 <input type="radio" name="gender" value="male"> Male

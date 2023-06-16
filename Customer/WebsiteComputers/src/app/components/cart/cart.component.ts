@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { forkJoin } from 'rxjs';
 import { ApiServiceService } from 'src/app/services/api-service.service';
 
 @Component({
@@ -12,10 +13,14 @@ export class CartComponent {
   products: any = [];
   responsiveOptions: any;
   cartItems: any = [];
-  newItems:any;
+  newItems: any;
   total = 0;
 
-  constructor(private service: ApiServiceService, private pageTitle: Title, private router: Router) {
+  constructor(
+    private service: ApiServiceService,
+    private pageTitle: Title,
+    private router: Router
+  ) {
     pageTitle.setTitle('Cart');
     this.initResponsive();
   }
@@ -46,9 +51,11 @@ export class CartComponent {
     this.getProducts();
   }
 
-  combineTables(){
-    this.newItems = this.products.map((product:any) => {
-      const cartItem = this.cartItems.find((cartItem:any) => cartItem.product_id === product.id);
+  combineTables() {
+    this.newItems = this.products.map((product: any) => {
+      const cartItem = this.cartItems.find(
+        (cartItem: any) => cartItem.product_id === product.id
+      );
       return {
         id: product.id,
         name: product.name,
@@ -64,13 +71,14 @@ export class CartComponent {
   getCartItems() {
     const customerId = sessionStorage.getItem('id');
     this.service.getData('shopping_cart_item').subscribe((result) => {
-      this.cartItems = result.filter((item:any) => item.customer_id === customerId);
+      this.cartItems = result.filter(
+        (item: any) => item.customer_id === customerId
+      );
       // console.log('This is current id', customerId);
       // console.log('This is all cartItems', result);
       // console.log('This is all items got', this.cartItems);
     });
   }
-  
 
   getProducts() {
     this.service.getData('product').subscribe((result) => {
@@ -84,32 +92,34 @@ export class CartComponent {
           );
           return { ...product, cart_item_id: cartItem.id };
         });
-        this.combineTables();
+      this.combineTables();
     });
   }
 
   deleteProduct(product: any): void {
-    this.service.deleteData('shopping_cart_item', product.cart_item_id).subscribe(
-      () => {
-        const index = this.newItems.findIndex((p: any) => p.id === product.id);
-        if (index > -1) {
-          this.newItems.splice(index, 1);
-          this.onInputChange(null, 0);
+    this.service
+      .deleteData('shopping_cart_item', product.cart_item_id)
+      .subscribe(
+        () => {
+          const index = this.newItems.findIndex(
+            (p: any) => p.id === product.id
+          );
+          if (index > -1) {
+            this.newItems.splice(index, 1);
+            this.onInputChange(null, 0);
+          }
+        },
+        (error) => {
+          console.error('Error deleting product:', error);
         }
-      },
-      (error) => {
-        console.error('Error deleting product:', error);
-      }
-    );
+      );
   }
 
-  onInputChange(item:any, quantity: number){
+  onInputChange(item: any, quantity: number) {
     this.total = 0;
-    for (let p of this.newItems)
-    {
-      if (item != null){
-        if (p.id === item.id)
-        {
+    for (let p of this.newItems) {
+      if (item != null) {
+        if (p.id === item.id) {
           p.quantity = quantity;
         }
       }
@@ -117,7 +127,7 @@ export class CartComponent {
     }
   }
 
-  checkOut(){
+  checkOut() {
     const newCartItems = this.newItems.map((item: any) => {
       return {
         id: item.cart_item_id,
@@ -127,9 +137,20 @@ export class CartComponent {
       };
     });
 
-    for (let item of newCartItems){
-      this.service.putData('shopping_cart_item', item.id, item).subscribe();
+    // for (let item of newCartItems){
+    //   this.service.putData('shopping_cart_item', item.id, item).subscribe();
+    // }
+    // this.router.navigate(['order']);
+    const updateRequests = [];
+
+    for (let item of newCartItems) {
+      updateRequests.push(
+        this.service.putData('shopping_cart_item', item.id, item)
+      );
     }
-    this.router.navigate(['order']);
+
+    forkJoin(updateRequests).subscribe(() => {
+      this.router.navigate(['order']);
+    });
   }
 }

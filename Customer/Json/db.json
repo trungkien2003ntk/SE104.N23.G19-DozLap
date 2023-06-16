@@ -1227,9 +1227,39 @@
       "date_of_birth": "2023-05-18",
       "gender": "male",
       "id": 1
+    },
+    {
+      "username": "user1",
+      "first_name": "Bow",
+      "last_name": "Jaro",
+      "password": "bowjaro3",
+      "email": "mn@gm.com",
+      "phone_number": "0123456777",
+      "date_of_birth": "2023-05-24",
+      "gender": "male",
+      "id": 2
     }
   ],
-  "shopping_cart_item": [],
+  "shopping_cart_item": [
+    {
+      "product_id": 1,
+      "customer_id": null,
+      "quantity": 1,
+      "id": 1
+    },
+    {
+      "product_id": 45,
+      "customer_id": null,
+      "quantity": 1,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "customer_id": "2",
+      "product_id": 35,
+      "quantity": 4
+    }
+  ],
   "orders": [
     {
       "note": "No need to note",
@@ -1239,6 +1269,15 @@
       "total_price": 270428000,
       "status": "PENDING",
       "id": 1
+    },
+    {
+      "note": "1223333",
+      "created_on_utc": "2023-05-16T01:43:58.201Z",
+      "customer_id": "2",
+      "shipping_address_id": 2,
+      "total_price": 3330000,
+      "status": "PENDING",
+      "id": 2
     }
   ],
   "order_item": [
@@ -1259,6 +1298,18 @@
       "product_id": 13,
       "quantity": 4,
       "id": 3
+    },
+    {
+      "order_id": 2,
+      "product_id": 28,
+      "quantity": 2,
+      "id": 4
+    },
+    {
+      "order_id": 2,
+      "product_id": 32,
+      "quantity": 3,
+      "id": 5
     }
   ],
   "address": [
@@ -1267,6 +1318,12 @@
       "street": "New Street",
       "province_id": 2,
       "id": 1
+    },
+    {
+      "house_number": "A222",
+      "street": "12A",
+      "province_id": 0,
+      "id": 2
     }
   ]
 }

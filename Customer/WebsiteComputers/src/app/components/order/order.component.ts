@@ -22,11 +22,7 @@ export class OrderComponent {
   cartItems: any = [];
   newItems: any;
   provinces: any;
-  selectedProvince = {
-    id: 0,
-    name: 'Select Province',
-    shipping_charge: 0,
-  };
+  selectedProvince: any;
   total = 0;
   customer: any;
   time: any;
@@ -129,6 +125,7 @@ export class OrderComponent {
   getProvince() {
     this.service.getData('province').subscribe((result) => {
       this.provinces = result;
+      this.selectedProvince = this.provinces[0];
     });
   }
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { ApiServiceService } from 'src/app/services/api-service.service';
 
 @Component({
@@ -13,10 +13,11 @@ export class ProductComponent {
   responsiveOptions: any;
   id:any;
   product:any;
+  cartItems: any = [];
   specs:any;
   specification:any = [];
   
-  constructor(private service: ApiServiceService, private router: ActivatedRoute, private pageTitle: Title){
+  constructor(private service: ApiServiceService, private router: ActivatedRoute, private pageTitle: Title, private routerLink : Router){
     this.initResponsive();
     
   }
@@ -75,17 +76,43 @@ export class ProductComponent {
     
   }
 
-  addToCart(id: any) {
-    console.log(id, 'This is value!!!');
+  async getCartItems(): Promise<any> {
+    return new Promise<void>(resolve => {
+      this.service.getData('shopping_cart_item').subscribe((result) => {
+        this.cartItems = result;
+        resolve();
+      });
+    });
+  }
+
+  isDifferentFromAll(data:any, allData:any){
+    for (const otherData of allData) {
+      if (data.product_id === otherData.product_id && data.customer_id === otherData.customer_id) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  async addToCart(id: any) {
+    if (!sessionStorage.getItem('id')){
+      this.routerLink.navigate(['login']);
+      return;
+    }
+    await this.getCartItems();
     const data = {
-      "id" : Math.floor(Math.random() * 1000000),
-      "productId": id,
-      "customerId": 1,
+      "product_id": id,
+      "customer_id": sessionStorage.getItem('id'),
       "quantity": 1
     };
-    this.service.postData("cart", data).subscribe((result) =>
-    {
-      console.log(result, "This is postData");
-    });
+    if (this.isDifferentFromAll(data, this.cartItems)) {
+      this.service.postData("shopping_cart_item", data).subscribe((result) =>
+      {
+        console.log(result, "This is postData");
+      });
+    }
+    else{
+      console.log("Duplicate id!");
+    }
   }
 }

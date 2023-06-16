@@ -1,13 +1,17 @@
-<div class="product-details">
-    <div class="left">
-        <h1>{{product.name}}</h1>
-        <div style="display: flex; align-items: center;">
-            <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
-            <p-button icon="pi pi-shopping-cart" (onClick)="addToCart(product.id)"
-            style="margin-left: 20px;"
+<div class="top">
+    <h1>{{product.name}}</h1>
+    <div style="display: flex; align-items: center;">
+        <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
+        <p-button icon="pi pi-shopping-cart" (onClick)="addToCart(product.id)" style="margin-left: 20px;"
             [disabled]="product.status === 'OUTOFSTOCK'"></p-button>
-        </div>
-        <br />
+        <h3 style="color: red; margin-left: 20px;">{{product.price | currency: 'VND'}}</h3>
+    </div>
+</div>
+<br/>
+
+<div class="product-details">
+
+    <div class="left">
         <img src="{{product.image_url}}" />
         <br />
         <br />

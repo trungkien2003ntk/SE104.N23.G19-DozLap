@@ -1,0 +1,6 @@
+.product-name {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis; /* add ellipsis for long product names */
+    white-space: nowrap; 
+}

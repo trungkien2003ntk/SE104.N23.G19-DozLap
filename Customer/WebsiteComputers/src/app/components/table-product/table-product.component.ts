@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { ApiServiceService } from 'src/app/services/api-service.service';
 
@@ -23,7 +24,7 @@ export class TableProductComponent {
   sortField: string = '';
   sortKey: any;
 
-  constructor(private service: ApiServiceService, private cdr: ChangeDetectorRef) {
+  constructor(private service: ApiServiceService, private cdr: ChangeDetectorRef, private router : Router) {
     this.initResponsive();
   }
 
@@ -81,6 +82,10 @@ export class TableProductComponent {
   }
 
   async addToCart(id: any) {
+    if (!sessionStorage.getItem('id')){
+      this.router.navigate(['login']);
+      return;
+    }
     await this.getCartItems();
     const data = {
       "product_id": id,
