@@ -34,6 +34,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { OrderComponent } from './components/order/order.component';
 import { HistoryComponent } from './components/history/history.component';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { HistoryComponent } from './components/history/history.component';
     ReactiveFormsModule,
     CardModule,
     TableModule,
-    TagModule
+    TagModule,
+    DialogModule
   ],
   providers: [
     //my imports

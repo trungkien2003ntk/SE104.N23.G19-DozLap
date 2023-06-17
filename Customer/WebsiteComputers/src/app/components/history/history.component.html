@@ -1,22 +1,22 @@
 <p-card header="Shopping Cart">
     <p-table [value]="purchaseHistory" [tableStyle]="{'min-width': '60rem'}">
-    <!-- <p-table  [tableStyle]="{'min-width': '60rem'}"> -->
         <ng-template pTemplate="header">
             <tr>
-                <th>Name</th>
+                <th class="name-column">Name</th>
                 <th>Image</th>
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Total Price</th>
                 <th>Date Created</th>
                 <th>Status</th>
-                <th>Cancel/ Rate</th>
+                <th class="cancel-rating-column">Cancel/ Rate</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-purchase>
             <tr>
                 <td [routerLink]="['/product/', purchase.id]" style="cursor: pointer;">{{purchase.name}}</td>
-                <td [routerLink]="['/product/', purchase.id]" style="cursor: pointer;"><img [src]="purchase.image_url" [alt]="purchase.name" width="100" class="shadow-4" /></td>
+                <td [routerLink]="['/product/', purchase.id]" style="cursor: pointer;"><img [src]="purchase.image_url"
+                        [alt]="purchase.name" width="100" class="shadow-4" /></td>
                 <td>{{purchase.price | currency:'VND'}}</td>
                 <td>{{purchase.quantity}}</td>
                 <td>{{purchase.total_price | currency:'VND'}}</td>
@@ -24,19 +24,23 @@
                 <td>{{purchase.status}}</td>
                 <td>
                     <div *ngIf="purchase.status === 'PENDING'">
-                        <p-button icon="pi pi-trash" (click)="cancel(purchase)"></p-button>
+                        <!-- <p-button icon="pi pi-trash" (click)="cancel(purchase)"></p-button> -->
+                        <p-button label="Cancel" styleClass="p-button-rounded p-button-danger"
+                            (click)="cancel(purchase)"></p-button>
                     </div>
-                    <div *ngIf="purchase.status != 'PENDING'">
-                        <p-rating [ngModel]="purchase.rating" [readonly]="true" [cancel]="false"></p-rating>
+                    <div *ngIf="purchase.status === 'COMPLETED'">
+                        <p-button label="Rate" styleClass="p-button-rounded" (onClick)="openRate(purchase)"></p-button>
+                        <p-dialog header="Rate Product" [(visible)]="purchase.rate_visible" [style]="{width: 'main-content'}">
+                            <p-rating [(ngModel)]="purchase.rate" [cancel]="false"></p-rating>
+                            <br/>
+                            <textarea rows="5" cols="30" pInputTextarea [(ngModel)]="purchase.comment"></textarea>
+                            <p-button class="button-container" label="Send" styleClass="p-button-rounded"
+                            (click)="send(purchase.order_item_id)"></p-button>
+                        </p-dialog>
                     </div>
                 </td>
             </tr>
         </ng-template>
-        <ng-template pTemplate="summary">
-            <!-- <div class="flex align-items-center justify-content-between">
-                In total there are {{products ? products.length : 0 }} products.
-            </div> -->
-        </ng-template>
     </p-table>
 </p-card>
-<br/>
+<br />

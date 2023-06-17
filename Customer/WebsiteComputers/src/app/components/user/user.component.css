@@ -1,11 +1,19 @@
-.tabView{
+:host ::ng-deep .name-column {
+    width: 20%;
+}
+
+:host ::ng-deep .cancel-rating-column {
+    width: max-content;
+}
+
+.tabView {
     margin-left: 10%;
     margin-right: 10%;
     display: block;
     width: 80%;
 }
 
-.content-bar{
+.content-bar {
     border-top: .0625rem solid #efefef;
     padding-top: 10px;
     height: auto;
@@ -18,16 +26,16 @@
     margin-right: 30%;
 }
 
-.table-content{
+.table-content {
     border-collapse: separate;
     border-spacing: 0 20px;
 }
 
-.table-content .td-right input{
+.table-content .td-right input {
     width: 300px;
 }
 
-.table-content .td-right label input{
+.table-content .td-right label input {
     width: auto;
     margin-left: 10px;
 }
@@ -35,7 +43,7 @@
 .radio-group label {
     display: inline-block;
     margin-right: 20px;
-}  
+}
 
 .avt-content {
     display: flex;
@@ -44,12 +52,12 @@
     border-left: .0625rem solid #efefef;
 }
 
-.td-left{
+.td-left {
     text-align: right;
     margin-left: 100px;
 }
 
-.td-right{
+.td-right {
     text-align: left;
     padding-left: 10px;
     padding-right: 10px;
@@ -170,4 +178,4 @@ body {
 .radio-group {
     display: flex;
     flex-direction: row;
-}  
+}
