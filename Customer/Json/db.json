@@ -1240,90 +1240,50 @@
       "id": 2
     }
   ],
-  "shopping_cart_item": [
-    {
-      "product_id": 1,
-      "customer_id": null,
-      "quantity": 1,
-      "id": 1
-    },
-    {
-      "product_id": 45,
-      "customer_id": null,
-      "quantity": 1,
-      "id": 2
-    },
-    {
-      "id": 3,
-      "customer_id": "2",
-      "product_id": 35,
-      "quantity": 4
-    }
-  ],
+  "shopping_cart_item": [],
   "orders": [
     {
-      "note": "No need to note",
-      "created_on_utc": "2023-05-15T14:12:01.529Z",
+      "note": "This is note",
+      "created_on_utc": "2023-05-17T08:14:45.252Z",
       "customer_id": "1",
       "shipping_address_id": 1,
-      "total_price": 270428000,
-      "status": "PENDING",
+      "total_price": 3920000,
+      "status": "COMPLETED",
       "id": 1
-    },
-    {
-      "note": "1223333",
-      "created_on_utc": "2023-05-16T01:43:58.201Z",
-      "customer_id": "2",
-      "shipping_address_id": 2,
-      "total_price": 3330000,
-      "status": "PENDING",
-      "id": 2
     }
   ],
   "order_item": [
     {
       "order_id": 1,
-      "product_id": 11,
+      "product_id": 35,
       "quantity": 2,
+      "rate": 3,
+      "comment": "Too bad boy",
       "id": 1
     },
     {
       "order_id": 1,
-      "product_id": 12,
+      "product_id": 36,
       "quantity": 3,
+      "rate": 0,
+      "comment": "",
       "id": 2
     },
     {
       "order_id": 1,
-      "product_id": 13,
+      "product_id": 37,
       "quantity": 4,
+      "rate": 0,
+      "comment": "",
       "id": 3
-    },
-    {
-      "order_id": 2,
-      "product_id": 28,
-      "quantity": 2,
-      "id": 4
-    },
-    {
-      "order_id": 2,
-      "product_id": 32,
-      "quantity": 3,
-      "id": 5
     }
   ],
   "address": [
     {
-      "house_number": "12A",
-      "street": "New Street",
-      "province_id": 2,
+      "house_number": "A1",
+      "street": "BL",
+      "province_id": 3,
       "id": 1
-    },
-    {
-      "house_number": "A222",
-      "street": "12A",
-      "province_id": 0,
-      "id": 2
     }
   ]
 }

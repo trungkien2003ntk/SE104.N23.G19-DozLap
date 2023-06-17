@@ -23,7 +23,7 @@ export class RegisterComponent {
   users:any;
 
   constructor(private builder: FormBuilder, private router: Router, private service: AuthService){
-    
+    sessionStorage.clear();
   }
 
   proceedRegister() {

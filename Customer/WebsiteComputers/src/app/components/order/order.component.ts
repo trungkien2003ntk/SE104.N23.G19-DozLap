@@ -174,6 +174,8 @@ export class OrderComponent {
                 'order_id': order_id,
                 'product_id': item.id,
                 'quantity': item.quantity,
+                'rate' : 0,
+                'comment' : ''
               };
   
               return this.service.postData('order_item', order_item).pipe(

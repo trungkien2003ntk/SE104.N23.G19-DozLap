@@ -63,7 +63,7 @@ export class ProductComponent {
   }
 
   getProductInfo() {
-    this.service.getData("product").subscribe((result) =>
+    this.service.getProduct().subscribe((result) =>
     {
       this.product = result.filter((data:any) => data.id == this.id)[0];
       this.pageTitle.setTitle(this.product.name);
@@ -71,7 +71,8 @@ export class ProductComponent {
       this.specs = this.product.specs.split("|\r\n");
       this.specs.pop();
       this.convertSpecs();
-      console.log("This is specs", this.specification);
+      // console.log("This is specs", this.specification);
+      // console.log('This is rate', this.product);
     });
     
   }
