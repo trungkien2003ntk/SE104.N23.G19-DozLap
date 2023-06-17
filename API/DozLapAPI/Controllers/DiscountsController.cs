@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using DozLapAPI.Models;
+using DozLapAPI.Entities;
 
 namespace DozLapAPI.Controllers
 {
