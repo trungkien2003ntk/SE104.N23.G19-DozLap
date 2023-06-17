@@ -14,8 +14,8 @@
         </ng-template>
         <ng-template pTemplate="body" let-purchase>
             <tr>
-                <td [routerLink]="['/product/', purchase.id]" style="cursor: pointer;">{{purchase.name}}</td>
-                <td [routerLink]="['/product/', purchase.id]" style="cursor: pointer;"><img [src]="purchase.image_url"
+                <td [routerLink]="['/product/', purchase.product_id]" style="cursor: pointer;">{{purchase.name}}</td>
+                <td [routerLink]="['/product/', purchase.product_id]" style="cursor: pointer;"><img [src]="purchase.image_url"
                         [alt]="purchase.name" width="100" class="shadow-4" /></td>
                 <td>{{purchase.price | currency:'VND'}}</td>
                 <td>{{purchase.quantity}}</td>

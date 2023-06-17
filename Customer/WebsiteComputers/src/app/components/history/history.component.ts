@@ -34,17 +34,18 @@ export class HistoryComponent implements OnInit {
         );
 
         const row = {
-          name: product.name,
-          image_url: product.image_url,
-          price: product.price,
-          quantity: orderItem.quantity,
-          total_price: product.price * orderItem.quantity,
-          created_on_utc: order.created_on_utc,
-          status: order.status,
-          order_item_id: orderItem.id,
-          rate: orderItem.rate,
-          comment: orderItem.comment,
-          rate_visible: false,
+          'product_id' : product.id,
+          'name': product.name,
+          'image_url': product.image_url,
+          'price': product.price,
+          'quantity': orderItem.quantity,
+          'total_price': product.price * orderItem.quantity,
+          'created_on_utc': order.created_on_utc,
+          'status': order.status,
+          'order_item_id': orderItem.id,
+          'rate': orderItem.rate,
+          'comment': orderItem.comment,
+          'rate_visible': false,
         };
 
         this.purchaseHistory.push(row);

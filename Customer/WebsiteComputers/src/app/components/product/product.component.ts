@@ -16,6 +16,7 @@ export class ProductComponent {
   cartItems: any = [];
   specs:any;
   specification:any = [];
+  order_item:any;
   
   constructor(private service: ApiServiceService, private router: ActivatedRoute, private pageTitle: Title, private routerLink : Router){
     this.initResponsive();
@@ -71,10 +72,18 @@ export class ProductComponent {
       this.specs = this.product.specs.split("|\r\n");
       this.specs.pop();
       this.convertSpecs();
-      // console.log("This is specs", this.specification);
-      // console.log('This is rate', this.product);
+      this.getOrderItem();
     });
-    
+  }
+
+  getOrderItem() {
+    this.service.getData('order_item').subscribe((result: any) => {
+      this.order_item = result.filter((item: any) => {
+        if (item.rate === 0)
+        return false;
+        return item.product_id === this.product.id});
+      // console.log('This is order item', this.order_item);
+    });
   }
 
   async getCartItems(): Promise<any> {
@@ -109,11 +118,11 @@ export class ProductComponent {
     if (this.isDifferentFromAll(data, this.cartItems)) {
       this.service.postData("shopping_cart_item", data).subscribe((result) =>
       {
-        console.log(result, "This is postData");
+        // console.log(result, "This is postData");
       });
     }
     else{
-      console.log("Duplicate id!");
+      // console.log("Duplicate id!");
     }
   }
 }

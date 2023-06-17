@@ -71,3 +71,17 @@
     display: table; 
     clear: both;
 }
+
+/* review */
+.review{
+    display: block;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.review-element{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0px;
+}
