@@ -1,5 +1,5 @@
-﻿using DozLapAPI.DTOs;
-using DozLapAPI.Models;
+﻿using DozLapAPI.Models;
+using DozLapAPI.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
