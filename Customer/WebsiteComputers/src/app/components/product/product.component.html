@@ -28,69 +28,20 @@
                     <td class="title-specification">{{ spec[0] }}</td>
                     <td class="content-specification">{{ spec[1] }}</td>
                 </tr>
-                <!-- <tr>
-                    <td class="title-specification">Screen Size</td>
-                    <td class="content-specification">Second string</td>
-                </tr> -->
-                <!-- <tr>
-                    <td class="title-specification">Screen Resolution</td>
-                    <td class="content-specification">Second string what if this is just a right text and if it is longer than
-                        expected, what should I do</td>
-                </tr>
-                <tr>
-                    <td class="title-specification">Touch Screen</td>
-                    <td class="content-specification">Sixth string</td>
-                </tr>
-                <tr>
-                    <td class="title-specification">Processor Model</td>
-                    <td class="content-specification">Second string</td>
-                </tr>
-                <tr>
-                    <td class="title-specification">Processor Model Number</td>
-                    <td class="content-specification">Fourth string</td>
-                </tr>
-                <tr>
-                    <td class="title-specification">Processor Speed (up to)</td>
-                    <td class="content-specification">Sixth string</td>
-                </tr>
-                <tr>
-                    <td class="title-specification">Storage Type</td>
-                    <td class="content-specification">Second string</td>
-                </tr>
-                <tr>
-                    <td class="title-specification">Total Storage Capacity</td>
-                    <td class="content-specification">Fourth string</td>
-                </tr>
-                <tr>
-                    <td class="title-specification">System Memory (RAM)</td>
-                    <td class="content-specification">Sixth string</td>
-                </tr>
-                <tr>
-                    <td class="title-specification">Graphics</td>
-                    <td class="content-specification">Second string</td>
-                </tr>
-                <tr>
-                    <td class="title-specification">Operating System</td>
-                    <td class="content-specification">Fourth string</td>
-                </tr>
-                <tr>
-                    <td class="title-specification">Voice Assistant Built-in</td>
-                    <td class="content-specification">Sixth string</td>
-                </tr>
-                <tr>
-                    <td class="title-specification">Battery Life (up to)</td>
-                    <td class="content-specification">Fourth string</td>
-                </tr>
-                <tr>
-                    <td class="title-specification">Battery Type</td>
-                    <td class="content-specification">Sixth string</td>
-                </tr>
-                <tr>
-                    <td class="title-specification">Backlit Keyboard</td>
-                    <td class="content-specification">Second string</td>
-                </tr> -->
+
             </tbody>
         </table>
     </div>
 </div>
 <br />
+
+<p-card class="review" >
+    <h3>Customers' review</h3>
+    <p-card class="review-element" *ngFor="let item of order_item">
+        <p>Bought {{item.quantity}} products</p>
+        <p-rating [(ngModel)]="item.rate" [readonly]="true" [cancel]="false"></p-rating>
+        <!-- <textarea readonly="true" pInputTextarea style="width: 100%;" [(ngModel)]="item.comment"></textarea> -->
+        <p>{{item.comment}}</p>
+    </p-card>
+</p-card>
+<br/>
