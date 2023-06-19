@@ -74,6 +74,8 @@ export class TableProductComponent {
 
   isDifferentFromAll(data:any, allData:any){
     for (const otherData of allData) {
+      console.log('Data', data);
+      console.log('other data', otherData);
       if (data.product_id === otherData.product_id && data.customer_id === otherData.customer_id) {
         return false;
       }
@@ -82,14 +84,14 @@ export class TableProductComponent {
   }
 
   async addToCart(id: any) {
-    if (!sessionStorage.getItem('id')){
+    if (!Number(sessionStorage.getItem('id'))){
       this.router.navigate(['login']);
       return;
     }
     await this.getCartItems();
     const data = {
       "product_id": id,
-      "customer_id": sessionStorage.getItem('id'),
+      "customer_id": Number(sessionStorage.getItem('id')),
       "quantity": 1
     };
     if (this.isDifferentFromAll(data, this.cartItems)) {

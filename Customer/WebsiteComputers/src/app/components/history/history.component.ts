@@ -57,7 +57,7 @@ export class HistoryComponent implements OnInit {
   }
 
   getDataFromServer() {
-    const variantId = sessionStorage.getItem('id');
+    const variantId = Number(sessionStorage.getItem('id'));
     if (variantId == null) {
       return;
     }
@@ -88,8 +88,15 @@ export class HistoryComponent implements OnInit {
       .deleteData('order_item', purchase.order_item_id)
       .subscribe((nothing: any) => {
         this.service.putData('orders', purchase.order_id, order)
-        .subscribe((nothing: any)=>
-        this.getDataFromServer());
+        .subscribe((nothing: any)=>{
+          let orderItem = this.order_items.filter((item: any) => item.order_id === order.id);
+          console.log("this is orderItem", orderItem);
+          if (orderItem.length == 1){
+            this.service.deleteData('orders', order.id).subscribe();
+          }
+          this.getDataFromServer()
+        }
+        );
       });
   }
 

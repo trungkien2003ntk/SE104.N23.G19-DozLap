@@ -18,7 +18,7 @@ export class ApiServiceService {
   public orderItem$: BehaviorSubject<any> = new BehaviorSubject(null);
   rate = <any>[];
   countProduct = 0;
-  baseUrl = "http://localhost:3000/";
+  baseUrl = "https://dozlapapiasia.azurewebsites.net/api/";
 
   constructor(private http: HttpClient) { 
     this.initProduct();
@@ -47,7 +47,7 @@ export class ApiServiceService {
   }
 
   initCategory() {
-    const url = `${this.baseUrl}category`;
+    const url = `${this.baseUrl}product_category`;
     this.http
       .get(url)
       .pipe(
