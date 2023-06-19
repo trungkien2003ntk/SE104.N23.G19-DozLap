@@ -95,11 +95,14 @@ export class TableProductComponent {
     if (this.isDifferentFromAll(data, this.cartItems)) {
       this.service.postData("shopping_cart_item", data).subscribe((result) =>
       {
-        console.log(result, "This is postData");
+        // console.log(result, "This is postData");
+        alert('Add to cart successfully!');
+
       });
     }
     else{
-      console.log("Duplicate id!");
+      // console.log("Duplicate id!");
+      alert('Duplicate id!');
     }
   }
 }

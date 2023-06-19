@@ -35,6 +35,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { OrderComponent } from './components/order/order.component';
 import { HistoryComponent } from './components/history/history.component';
 import { DialogModule } from 'primeng/dialog';
+import { MessagesModule } from 'primeng/messages';
+
 
 @NgModule({
   declarations: [
@@ -73,7 +75,8 @@ import { DialogModule } from 'primeng/dialog';
     CardModule,
     TableModule,
     TagModule,
-    DialogModule
+    DialogModule,
+    MessagesModule
   ],
   providers: [
     //my imports

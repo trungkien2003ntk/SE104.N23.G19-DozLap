@@ -17,7 +17,8 @@
                 <td>{{product.price | currency:'VND'}}</td>
                 <td>
                     <div>
-                        <input #quantityInput type="number" (change)="onInputChange(product, quantityInput.valueAsNumber)" [ngModel]="product.quantity" style="width: 50px;">
+                        <input #quantityInput type="number" min="1" value="10" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+                        (change)="onInputChange(product, quantityInput.valueAsNumber)" [ngModel]="product.quantity" style="width: 50px;">
                         <!-- <p-button icon="pi pi-check" style="margin-left: 10px;" (click)="updateQuantity(product, quantityInput.valueAsNumber)"></p-button> -->
                     </div> 
                 </td>
