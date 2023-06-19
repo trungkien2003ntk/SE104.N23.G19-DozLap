@@ -1316,12 +1316,21 @@
     },
     {
       "note": "",
-      "created_on_utc": "2023-05-28T09:04:50.688Z",
+      "created_on_utc": "2023-06-06T12:50:34.546Z",
       "customer_id": "1",
-      "shipping_address_id": 11,
-      "total_price": 83440000,
+      "shipping_address_id": 13,
+      "total_price": 2000,
       "status": "PENDING",
       "id": 9
+    },
+    {
+      "note": "",
+      "created_on_utc": "2023-06-06T13:00:43.226Z",
+      "customer_id": "1",
+      "shipping_address_id": 14,
+      "total_price": 18000,
+      "status": "PENDING",
+      "id": 10
     }
   ],
   "order_item": [
@@ -1412,22 +1421,6 @@
       "rate": 5,
       "comment": "very excellent",
       "id": 11
-    },
-    {
-      "order_id": 9,
-      "product_id": 11,
-      "quantity": 1,
-      "rate": 0,
-      "comment": "",
-      "id": 12
-    },
-    {
-      "order_id": 9,
-      "product_id": 12,
-      "quantity": 1,
-      "rate": 0,
-      "comment": "",
-      "id": 13
     }
   ],
   "address": [
@@ -1496,6 +1489,36 @@
       "street": "",
       "province_id": 1,
       "id": 11
+    },
+    {
+      "house_number": "",
+      "street": "",
+      "province_id": 2,
+      "id": 12
+    },
+    {
+      "house_number": "",
+      "street": "",
+      "province_id": 10,
+      "id": 13
+    },
+    {
+      "house_number": "",
+      "street": "",
+      "province_id": 4,
+      "id": 14
+    },
+    {
+      "house_number": "",
+      "street": "",
+      "province_id": 3,
+      "id": 15
+    },
+    {
+      "house_number": "",
+      "street": "",
+      "province_id": 17,
+      "id": 16
     }
   ]
 }
