@@ -19,23 +19,11 @@ public partial class DozLapDbContext : DbContext
 
     public virtual DbSet<Admin> Admins { get; set; }
 
-    public virtual DbSet<BuildVersion> BuildVersions { get; set; }
-
-    public virtual DbSet<CreditCard> CreditCards { get; set; }
-
-    public virtual DbSet<CreditCardType> CreditCardTypes { get; set; }
-
     public virtual DbSet<Customer> Customers { get; set; }
-
-    public virtual DbSet<Discount> Discounts { get; set; }
-
-    public virtual DbSet<DiscountAppliedCategory> DiscountAppliedCategories { get; set; }
 
     public virtual DbSet<Order> Orders { get; set; }
 
     public virtual DbSet<OrderItem> OrderItems { get; set; }
-
-    public virtual DbSet<PaymentMethod> PaymentMethods { get; set; }
 
     public virtual DbSet<Product> Products { get; set; }
 
@@ -43,9 +31,11 @@ public partial class DozLapDbContext : DbContext
 
     public virtual DbSet<Province> Provinces { get; set; }
 
-    public virtual DbSet<ShipmentMethod> ShipmentMethods { get; set; }
-
     public virtual DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Data Source=dozlapsoutheastasia.database.windows.net, 1433;Initial Catalog=DozLapPTTKDB;Persist Security Info=True;User ID=sqladmin;Password=CodingProject123@");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -78,9 +68,9 @@ public partial class DozLapDbContext : DbContext
 
             entity.ToTable("admin");
 
-            entity.HasIndex(e => e.Password, "UQ__admin__6E2DBEDE1D2BBC06").IsUnique();
+            entity.HasIndex(e => e.Password, "UQ__admin__6E2DBEDE992C0F19").IsUnique();
 
-            entity.HasIndex(e => e.Username, "UQ__admin__F3DBC57254133B72").IsUnique();
+            entity.HasIndex(e => e.Username, "UQ__admin__F3DBC572A6354A78").IsUnique();
 
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
@@ -95,77 +85,6 @@ public partial class DozLapDbContext : DbContext
                 .HasColumnName("username");
         });
 
-        modelBuilder.Entity<BuildVersion>(entity =>
-        {
-            entity.HasKey(e => e.Clo).HasName("PK__BuildVer__35E58ECAC931EFFB");
-
-            entity.ToTable("BuildVersion");
-
-            entity.Property(e => e.Clo)
-                .ValueGeneratedOnAdd()
-                .HasColumnName("clo");
-            entity.Property(e => e.DatabaseVersion)
-                .HasMaxLength(25)
-                .HasColumnName("Database Version");
-            entity.Property(e => e.ModifiedDate)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime");
-            entity.Property(e => e.VersionDate).HasColumnType("datetime");
-        });
-
-        modelBuilder.Entity<CreditCard>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("pk_card");
-
-            entity.ToTable("credit_card");
-
-            entity.HasIndex(e => e.AccountNumber, "UQ__credit_c__AF91A6ADB7CEAA24").IsUnique();
-
-            entity.HasIndex(e => e.Username, "UQ__credit_c__F3DBC57206679CFF").IsUnique();
-
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
-            entity.Property(e => e.AccountNumber)
-                .HasMaxLength(1000)
-                .IsUnicode(false)
-                .HasColumnName("account_number");
-            entity.Property(e => e.Balance)
-                .HasColumnType("money")
-                .HasColumnName("balance");
-            entity.Property(e => e.CardTypeId).HasColumnName("card_type_id");
-            entity.Property(e => e.CsvNumber)
-                .HasMaxLength(4)
-                .IsUnicode(false)
-                .HasColumnName("csv_number");
-            entity.Property(e => e.ExpireOnUtc)
-                .HasColumnType("datetime")
-                .HasColumnName("expire_on_utc");
-            entity.Property(e => e.Username)
-                .HasMaxLength(1000)
-                .IsUnicode(false)
-                .HasColumnName("username");
-        });
-
-        modelBuilder.Entity<CreditCardType>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("pk_card_type");
-
-            entity.ToTable("credit_card_type");
-
-            entity.HasIndex(e => e.Name, "UQ__credit_c__72E12F1B326889BA").IsUnique();
-
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
-            entity.Property(e => e.Charge)
-                .HasColumnType("money")
-                .HasColumnName("charge");
-            entity.Property(e => e.Name)
-                .HasMaxLength(1000)
-                .HasColumnName("name");
-        });
-
         modelBuilder.Entity<Customer>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("pk_customer");
@@ -175,7 +94,7 @@ public partial class DozLapDbContext : DbContext
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
                 .HasColumnName("id");
-            entity.Property(e => e.CardId).HasColumnName("card_id");
+            entity.Property(e => e.AddressId).HasColumnName("address_id");
             entity.Property(e => e.DateOfBirth)
                 .HasColumnType("datetime")
                 .HasColumnName("date_of_birth");
@@ -207,51 +126,9 @@ public partial class DozLapDbContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("username");
 
-            entity.HasOne(d => d.Card).WithMany(p => p.Customers)
-                .HasForeignKey(d => d.CardId)
-                .HasConstraintName("fk_customer_card");
-        });
-
-        modelBuilder.Entity<Discount>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("pk_discount");
-
-            entity.ToTable("discount");
-
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
-            entity.Property(e => e.DiscountPercentage).HasColumnName("discount_percentage");
-            entity.Property(e => e.EndDateUtc)
-                .HasColumnType("datetime")
-                .HasColumnName("end_date_utc");
-            entity.Property(e => e.Name)
-                .HasMaxLength(1000)
-                .HasColumnName("name");
-            entity.Property(e => e.StartDateUtc)
-                .HasColumnType("datetime")
-                .HasColumnName("start_date_utc");
-        });
-
-        modelBuilder.Entity<DiscountAppliedCategory>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("pk_discount_applied_category");
-
-            entity.ToTable("discount_applied_category");
-
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
-            entity.Property(e => e.CategoryId).HasColumnName("category_id");
-            entity.Property(e => e.DiscountId).HasColumnName("discount_id");
-
-            entity.HasOne(d => d.Category).WithMany(p => p.DiscountAppliedCategories)
-                .HasForeignKey(d => d.CategoryId)
-                .HasConstraintName("fk_category_applied");
-
-            entity.HasOne(d => d.Discount).WithMany(p => p.DiscountAppliedCategories)
-                .HasForeignKey(d => d.DiscountId)
-                .HasConstraintName("fk_discount_applied");
+            entity.HasOne(d => d.Address).WithMany(p => p.Customers)
+                .HasForeignKey(d => d.AddressId)
+                .HasConstraintName("fk_customer_address");
         });
 
         modelBuilder.Entity<Order>(entity =>
@@ -271,9 +148,7 @@ public partial class DozLapDbContext : DbContext
             entity.Property(e => e.Note)
                 .HasMaxLength(1000)
                 .HasColumnName("note");
-            entity.Property(e => e.PaymentMethodId).HasColumnName("payment_method_id");
             entity.Property(e => e.ShippingAddressId).HasColumnName("shipping_address_id");
-            entity.Property(e => e.ShippingMethodId).HasColumnName("shipping_method_id");
             entity.Property(e => e.Status)
                 .HasMaxLength(10)
                 .IsUnicode(false)
@@ -286,17 +161,9 @@ public partial class DozLapDbContext : DbContext
                 .HasForeignKey(d => d.CustomerId)
                 .HasConstraintName("fk_order_customer");
 
-            entity.HasOne(d => d.PaymentMethod).WithMany(p => p.Orders)
-                .HasForeignKey(d => d.PaymentMethodId)
-                .HasConstraintName("fk_order_payment_method");
-
             entity.HasOne(d => d.ShippingAddress).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.ShippingAddressId)
                 .HasConstraintName("fk_order_shipping_addresses");
-
-            entity.HasOne(d => d.ShippingMethod).WithMany(p => p.Orders)
-                .HasForeignKey(d => d.ShippingMethodId)
-                .HasConstraintName("fk_order_shipping_method");
         });
 
         modelBuilder.Entity<OrderItem>(entity =>
@@ -325,29 +192,13 @@ public partial class DozLapDbContext : DbContext
                 .HasConstraintName("fk_item_product");
         });
 
-        modelBuilder.Entity<PaymentMethod>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("pk_payment_method");
-
-            entity.ToTable("payment_method");
-
-            entity.HasIndex(e => e.Name, "UQ__payment___72E12F1B6DC2782D").IsUnique();
-
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
-            entity.Property(e => e.Name)
-                .HasMaxLength(1000)
-                .HasColumnName("name");
-        });
-
         modelBuilder.Entity<Product>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("pk_product");
 
             entity.ToTable("product");
 
-            entity.HasIndex(e => e.Name, "UQ__product__72E12F1BD9520DE6").IsUnique();
+            entity.HasIndex(e => e.Name, "UQ__product__72E12F1B53F713E0").IsUnique();
 
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
@@ -382,7 +233,7 @@ public partial class DozLapDbContext : DbContext
 
             entity.ToTable("product_category");
 
-            entity.HasIndex(e => e.Name, "UQ__product___72E12F1BE1264A35").IsUnique();
+            entity.HasIndex(e => e.Name, "UQ__product___72E12F1BF64304D9").IsUnique();
 
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
@@ -401,7 +252,7 @@ public partial class DozLapDbContext : DbContext
 
             entity.ToTable("province");
 
-            entity.HasIndex(e => e.Name, "UQ__province__72E12F1B52C8E35D").IsUnique();
+            entity.HasIndex(e => e.Name, "UQ__province__72E12F1BA8C5DD33").IsUnique();
 
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
@@ -412,28 +263,6 @@ public partial class DozLapDbContext : DbContext
             entity.Property(e => e.ShippingCharge)
                 .HasColumnType("money")
                 .HasColumnName("shipping_charge");
-        });
-
-        modelBuilder.Entity<ShipmentMethod>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("pk_shipment_method");
-
-            entity.ToTable("shipment_method");
-
-            entity.HasIndex(e => e.Name, "UQ__shipment__72E12F1B3A3B726A").IsUnique();
-
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
-            entity.Property(e => e.Description)
-                .HasMaxLength(1000)
-                .HasColumnName("description");
-            entity.Property(e => e.Name)
-                .HasMaxLength(1000)
-                .HasColumnName("name");
-            entity.Property(e => e.ShipCharge)
-                .HasColumnType("money")
-                .HasColumnName("ship_charge");
         });
 
         modelBuilder.Entity<ShoppingCartItem>(entity =>
@@ -460,7 +289,6 @@ public partial class DozLapDbContext : DbContext
                 .HasForeignKey(d => d.ProductId)
                 .HasConstraintName("fk_cart_product");
         });
-        modelBuilder.HasSequence<int>("SalesOrderNumber", "SalesLT");
 
         OnModelCreatingPartial(modelBuilder);
     }
