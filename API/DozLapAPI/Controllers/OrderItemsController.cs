@@ -6,39 +6,37 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DozLapAPI.Entities;
+using AutoMapper;
+using DozLapAPI.Models;
 
 namespace DozLapAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/order_item")]
     public class OrderItemsController : ControllerBase
     {
         private readonly DozLapDbContext _context;
+        private readonly IMapper _mapper;
 
-        public OrderItemsController(DozLapDbContext context)
+        public OrderItemsController(DozLapDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
-        // GET: api/OrderItems
+        // GET: api/OrderItem
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<OrderItem>>> GetOrderItems()
+        public async Task<ActionResult<IEnumerable<OrderItemDTO>>> GetOrderItems()
         {
-          if (_context.OrderItems == null)
-          {
-              return NotFound();
-          }
-            return await _context.OrderItems.ToListAsync();
+            var orderItems = await _context.OrderItems.ToListAsync();
+            var orderItemDTOs = _mapper.Map<List<OrderItemDTO>>(orderItems);
+            return Ok(orderItemDTOs);
         }
 
-        // GET: api/OrderItems/5
+        // GET: api/OrderItem/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult<OrderItem>> GetOrderItem(long id)
+        public async Task<ActionResult<OrderItemDTO>> GetOrderItem(long id)
         {
-          if (_context.OrderItems == null)
-          {
-              return NotFound();
-          }
             var orderItem = await _context.OrderItems.FindAsync(id);
 
             if (orderItem == null)
@@ -46,19 +44,43 @@ namespace DozLapAPI.Controllers
                 return NotFound();
             }
 
-            return orderItem;
+            var orderItemDTO = _mapper.Map<OrderItemDTO>(orderItem);
+            return Ok(orderItemDTO);
         }
 
-        // PUT: api/OrderItems/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutOrderItem(long id, OrderItem orderItem)
+        // POST: api/OrderItem
+        [HttpPost]
+        public async Task<ActionResult<OrderItemDTO>> AddOrderItem(OrderItemDTO orderItemDTO)
         {
-            if (id != orderItem.Id)
+            var orderItem = _mapper.Map<OrderItem>(orderItemDTO);
+
+            if (_context.OrderItems.Count() > 0)
+            {
+                long maxId = _context.OrderItems.Max(item => item.Id);
+                orderItem.Id = maxId + 1;
+            }
+            else
+            {
+                orderItem.Id = 1;
+            }
+
+            _context.OrderItems.Add(orderItem);
+            await _context.SaveChangesAsync();
+
+            var resultDTO = _mapper.Map<OrderItemDTO>(orderItem);
+            return CreatedAtAction(nameof(GetOrderItem), new { id = resultDTO.Id }, resultDTO);
+        }
+
+        // PUT: api/OrderItem/{id}
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateOrderItem(long id, OrderItemDTO orderItemDTO)
+        {
+            if (id != orderItemDTO.Id)
             {
                 return BadRequest();
             }
 
+            var orderItem = _mapper.Map<OrderItem>(orderItemDTO);
             _context.Entry(orderItem).State = EntityState.Modified;
 
             try
@@ -80,44 +102,12 @@ namespace DozLapAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/OrderItems
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<OrderItem>> PostOrderItem(OrderItem orderItem)
-        {
-          if (_context.OrderItems == null)
-          {
-              return Problem("Entity set 'DozLapDbContext.OrderItems'  is null.");
-          }
-            _context.OrderItems.Add(orderItem);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (OrderItemExists(orderItem.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return CreatedAtAction("GetOrderItem", new { id = orderItem.Id }, orderItem);
-        }
-
-        // DELETE: api/OrderItems/5
+        // DELETE: api/OrderItem/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteOrderItem(long id)
         {
-            if (_context.OrderItems == null)
-            {
-                return NotFound();
-            }
             var orderItem = await _context.OrderItems.FindAsync(id);
+
             if (orderItem == null)
             {
                 return NotFound();
@@ -131,7 +121,7 @@ namespace DozLapAPI.Controllers
 
         private bool OrderItemExists(long id)
         {
-            return (_context.OrderItems?.Any(e => e.Id == id)).GetValueOrDefault();
+            return _context.OrderItems.Any(e => e.Id == id);
         }
     }
 }

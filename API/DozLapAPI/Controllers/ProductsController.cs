@@ -6,42 +6,37 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DozLapAPI.Entities;
+using AutoMapper;
+using DozLapAPI.Models;
 
 namespace DozLapAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/product")]
     public class ProductsController : ControllerBase
     {
         private readonly DozLapDbContext _context;
+        private readonly IMapper _mapper;
 
-        public ProductsController(DozLapDbContext context)
+        public ProductsController(DozLapDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/Products
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
+        public async Task<ActionResult<IEnumerable<ProductDTO>>> GetProducts()
         {
-            if (_context.Products.Count() == 0)
-            {
-                return NotFound();
-            }
-
-            List<Product> products = await _context.Products.ToListAsync();
-
-            return Ok(products);
+            var products = await _context.Products.ToListAsync();
+            var productDTOs = _mapper.Map<List<ProductDTO>>(products);
+            return Ok(productDTOs);
         }
 
-        // GET: api/Products/5
+        // GET: api/Products/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProduct(long id)
+        public async Task<ActionResult<ProductDTO>> GetProduct(long id)
         {
-            if (_context.Products == null)
-            {
-                return NotFound();
-            }
             var product = await _context.Products.FindAsync(id);
 
             if (product == null)
@@ -49,92 +44,79 @@ namespace DozLapAPI.Controllers
                 return NotFound();
             }
 
-            return Ok(product);
+            var productDTO = _mapper.Map<ProductDTO>(product);
+            return Ok(productDTO);
         }
 
-        //// PUT: api/Products/5
-        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> PutProduct(long id, Product product)
-        //{
-        //    if (id != product.Id)
-        //    {
-        //        return BadRequest();
-        //    }
+        // POST: api/Products
+        [HttpPost]
+        public async Task<ActionResult<ProductDTO>> AddProduct(ProductDTO productDTO)
+        {
+            var product = _mapper.Map<Product>(productDTO);
 
-        //    _context.Entry(product).State = EntityState.Modified;
+            if (_context.Products.Count() > 0)
+            {
+                long maxId = _context.Products.Max(item => item.Id);
+                product.Id = maxId + 1;
+            }
+            else
+            {
+                product.Id = 1;
+            }
 
-        //    try
-        //    {
-        //        await _context.SaveChangesAsync();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!ProductExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
+            _context.Products.Add(product);
+            await _context.SaveChangesAsync();
 
-        //    return NoContent();
-        //}
+            var resultDTO = _mapper.Map<ProductDTO>(product);
+            return CreatedAtAction(nameof(GetProduct), new { id = resultDTO.Id }, resultDTO);
+        }
 
-        //// POST: api/Products
-        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //[HttpPost]
-        //public async Task<ActionResult<Product>> PostProduct(Product product)
-        //{
-        //  if (_context.Products == null)
-        //  {
-        //      return Problem("Entity set 'DozLapDbContext.Products'  is null.");
-        //  }
-        //    _context.Products.Add(product);
-        //    try
-        //    {
-        //        await _context.SaveChangesAsync();
-        //    }
-        //    catch (DbUpdateException)
-        //    {
-        //        if (ProductExists(product.Id))
-        //        {
-        //            return Conflict();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
+        // PUT: api/Products/{id}
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateProduct(long id, ProductDTO productDTO)
+        {
+            var product = _mapper.Map<Product>(productDTO);
+            _context.Entry(product).State = EntityState.Modified;
 
-        //    return CreatedAtAction("GetProduct", new { id = product.Id }, product);
-        //}
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!ProductExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
-        //// DELETE: api/Products/5
-        //[HttpDelete("{id}")]
-        //public async Task<IActionResult> DeleteProduct(long id)
-        //{
-        //    if (_context.Products == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    var product = await _context.Products.FindAsync(id);
-        //    if (product == null)
-        //    {
-        //        return NotFound();
-        //    }
+            return NoContent();
+        }
 
-        //    _context.Products.Remove(product);
-        //    await _context.SaveChangesAsync();
+        // DELETE: api/Products/{id}
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProduct(long id)
+        {
+            var product = await _context.Products.FindAsync(id);
 
-        //    return NoContent();
-        //}
+            if (product == null)
+            {
+                return NotFound();
+            }
 
-        //private bool ProductExists(long id)
-        //{
-        //    return (_context.Products?.Any(e => e.Id == id)).GetValueOrDefault();
-        //}
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        private bool ProductExists(long id)
+        {
+            return _context.Products.Any(e => e.Id == id);
+        }
     }
 }

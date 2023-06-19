@@ -6,42 +6,37 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DozLapAPI.Entities;
+using AutoMapper;
+using DozLapAPI.Models;
 
 namespace DozLapAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/orders")]
     public class OrdersController : ControllerBase
     {
         private readonly DozLapDbContext _context;
+        private readonly IMapper _mapper;
 
-        public OrdersController(DozLapDbContext context)
+        public OrdersController(DozLapDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/Orders
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
+        public async Task<ActionResult<IEnumerable<OrderDTO>>> GetOrders()
         {
-            if (_context.Orders == null)
-            {
-                return NotFound();
-            }
-
-            List<Order> orders = await _context.Orders.ToListAsync();
-
-            return Ok(orders);
+            var orders = await _context.Orders.ToListAsync();
+            var orderDTOs = _mapper.Map<List<OrderDTO>>(orders);
+            return Ok(orderDTOs);
         }
 
-        // GET: api/Orders/5
+        // GET: api/Orders/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult<Order>> GetOrder(long id)
+        public async Task<ActionResult<OrderDTO>> GetOrder(long id)
         {
-            if (_context.Orders == null)
-            {
-                return NotFound();
-            }
             var order = await _context.Orders.FindAsync(id);
 
             if (order == null)
@@ -49,92 +44,79 @@ namespace DozLapAPI.Controllers
                 return NotFound();
             }
 
-            return Ok(order);
+            var orderDTO = _mapper.Map<OrderDTO>(order);
+            return Ok(orderDTO);
         }
 
-        //// PUT: api/Orders/5
-        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> PutOrder(long id, Order order)
-        //{
-        //    if (id != order.Id)
-        //    {
-        //        return BadRequest();
-        //    }
+        // POST: api/Orders
+        [HttpPost]
+        public async Task<ActionResult<OrderDTO>> AddOrder(OrderDTO orderDTO)
+        {
+            var order = _mapper.Map<Order>(orderDTO);
 
-        //    _context.Entry(order).State = EntityState.Modified;
+            if (_context.Orders.Count() > 0)
+            {
+                long maxId = _context.Orders.Max(item => item.Id);
+                order.Id = maxId + 1;
+            }
+            else
+            {
+                order.Id = 1;
+            }
 
-        //    try
-        //    {
-        //        await _context.SaveChangesAsync();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!OrderExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
+            _context.Orders.Add(order);
+            await _context.SaveChangesAsync();
 
-        //    return NoContent();
-        //}
+            var resultDTO = _mapper.Map<OrderDTO>(order);
+            return CreatedAtAction(nameof(GetOrder), new { id = resultDTO.Id }, resultDTO);
+        }
 
-        //// POST: api/Orders
-        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //[HttpPost]
-        //public async Task<ActionResult<Order>> PostOrder(Order order)
-        //{
-        //  if (_context.Orders == null)
-        //  {
-        //      return Problem("Entity set 'DozLapDbContext.Orders'  is null.");
-        //  }
-        //    _context.Orders.Add(order);
-        //    try
-        //    {
-        //        await _context.SaveChangesAsync();
-        //    }
-        //    catch (DbUpdateException)
-        //    {
-        //        if (OrderExists(order.Id))
-        //        {
-        //            return Conflict();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
+        // PUT: api/Orders/{id}
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateOrder(long id, OrderDTO orderDTO)
+        {
+            var order = _mapper.Map<Order>(orderDTO);
+            _context.Entry(order).State = EntityState.Modified;
 
-        //    return CreatedAtAction("GetOrder", new { id = order.Id }, order);
-        //}
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!OrderExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
-        //// DELETE: api/Orders/5
-        //[HttpDelete("{id}")]
-        //public async Task<IActionResult> DeleteOrder(long id)
-        //{
-        //    if (_context.Orders == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    var order = await _context.Orders.FindAsync(id);
-        //    if (order == null)
-        //    {
-        //        return NotFound();
-        //    }
+            return NoContent();
+        }
 
-        //    _context.Orders.Remove(order);
-        //    await _context.SaveChangesAsync();
+        // DELETE: api/Orders/{id}
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteOrder(long id)
+        {
+            var order = await _context.Orders.FindAsync(id);
 
-        //    return NoContent();
-        //}
+            if (order == null)
+            {
+                return NotFound();
+            }
 
-        //private bool OrderExists(long id)
-        //{
-        //    return (_context.Orders?.Any(e => e.Id == id)).GetValueOrDefault();
-        //}
+            _context.Orders.Remove(order);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        private bool OrderExists(long id)
+        {
+            return _context.Orders.Any(e => e.Id == id);
+        }
     }
 }
