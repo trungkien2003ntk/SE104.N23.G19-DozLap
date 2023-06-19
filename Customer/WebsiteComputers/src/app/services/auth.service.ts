@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
   constructor(private http: HttpClient) {}
-  apiurl = 'http://localhost:3000/customer/';
+  apiurl = 'https://dozlapapiasia.azurewebsites.net/api/customer/';
 
   registerUser(inputdata: any) {
     return this.http.post(this.apiurl, inputdata);

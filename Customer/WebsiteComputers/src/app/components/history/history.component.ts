@@ -57,7 +57,7 @@ export class HistoryComponent implements OnInit {
   }
 
   getDataFromServer() {
-    const variantId = sessionStorage.getItem('id');
+    const variantId = Number(sessionStorage.getItem('id'));
     if (variantId == null) {
       return;
     }
