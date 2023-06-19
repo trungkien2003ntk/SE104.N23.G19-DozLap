@@ -1240,7 +1240,26 @@
       "id": 2
     }
   ],
-  "shopping_cart_item": [],
+  "shopping_cart_item": [
+    {
+      "id": 1,
+      "customer_id": "1",
+      "product_id": 35,
+      "quantity": 4
+    },
+    {
+      "product_id": 1,
+      "customer_id": "1",
+      "quantity": 1,
+      "id": 3
+    },
+    {
+      "product_id": 2,
+      "customer_id": "1",
+      "quantity": 1,
+      "id": 4
+    }
+  ],
   "orders": [
     {
       "note": "This is note",
@@ -1286,6 +1305,15 @@
       "total_price": 4588000,
       "status": "COMPLETED",
       "id": 5
+    },
+    {
+      "note": "",
+      "created_on_utc": "2023-05-21T02:05:08.733Z",
+      "customer_id": "1",
+      "shipping_address_id": 6,
+      "total_price": 46788000,
+      "status": "PENDING",
+      "id": 6
     }
   ],
   "order_item": [
@@ -1376,6 +1404,22 @@
       "rate": 5,
       "comment": "very excellent",
       "id": 11
+    },
+    {
+      "order_id": 6,
+      "product_id": 2,
+      "quantity": 2,
+      "rate": 0,
+      "comment": "",
+      "id": 12
+    },
+    {
+      "order_id": 6,
+      "product_id": 3,
+      "quantity": 1,
+      "rate": 0,
+      "comment": "",
+      "id": 13
     }
   ],
   "address": [
@@ -1408,6 +1452,12 @@
       "street": "as",
       "province_id": 4,
       "id": 5
+    },
+    {
+      "house_number": "",
+      "street": "",
+      "province_id": 2,
+      "id": 6
     }
   ]
 }
