@@ -60,18 +60,26 @@ export class UserComponent {
 
   getDataFromSessionStorage() {
     for (const attribute of this.attributes) {
-      this.userData[attribute] = sessionStorage.getItem(attribute);
+      if (attribute === 'id'){
+        this.userData[attribute] = Number(sessionStorage.getItem(attribute));
+      }
+      else{
+        this.userData[attribute] = sessionStorage.getItem(attribute);
+      }
+      
     }
   }
 
   onSaveUser() {
     if (this.formUser.valid) {
-      sessionStorage.setItem('first_name', this.userData.first_name);
-      sessionStorage.setItem('last_name', this.userData.last_name);
-      sessionStorage.setItem('email', this.userData.email);
-      sessionStorage.setItem('phone_number', this.userData.phone_number);
-      sessionStorage.setItem('date_of_birth', this.userData.date_of_birth);
-      sessionStorage.setItem('gender', this.userData.gender);
+      // console.log(this.formUser.value.first_name!);
+      sessionStorage.setItem('first_name', this.formUser.value.first_name!);
+      sessionStorage.setItem('last_name', this.formUser.value.last_name!);
+      sessionStorage.setItem('email', this.formUser.value.email!);
+      sessionStorage.setItem('phone_number', this.formUser.value.phone_number!);
+      sessionStorage.setItem('date_of_birth', this.formUser.value.date_of_birth!);
+      sessionStorage.setItem('gender', this.formUser.value.gender!);
+      this.getDataFromSessionStorage();
       this.updateInfo();
     } else {
       alert('Invalid data.');

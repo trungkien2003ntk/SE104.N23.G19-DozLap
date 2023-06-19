@@ -69,7 +69,7 @@ export class CartComponent {
   }
 
   getCartItems() {
-    const customerId = sessionStorage.getItem('id');
+    const customerId = Number(sessionStorage.getItem('id'));
     this.service.getData('shopping_cart_item').subscribe((result) => {
       this.cartItems = result.filter(
         (item: any) => item.customer_id === customerId
@@ -131,7 +131,7 @@ export class CartComponent {
     const newCartItems = this.newItems.map((item: any) => {
       return {
         id: item.cart_item_id,
-        customer_id: sessionStorage.getItem('id'),
+        customer_id: Number(sessionStorage.getItem('id')),
         product_id: item.id,
         quantity: item.quantity,
       };

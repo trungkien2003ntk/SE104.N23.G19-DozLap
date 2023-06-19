@@ -89,7 +89,7 @@ export class OrderComponent {
 
   getCustomer() {
     this.customer = {
-      id: sessionStorage.getItem('id'),
+      id: Number(sessionStorage.getItem('id')),
       first_name: sessionStorage.getItem('first_name'),
       last_name: sessionStorage.getItem('last_name'),
       email: sessionStorage.getItem('email'),
@@ -98,7 +98,7 @@ export class OrderComponent {
   }
 
   getCartItems() {
-    const customerId = sessionStorage.getItem('id');
+    const customerId = Number(sessionStorage.getItem('id'));
     this.service.getData('shopping_cart_item').subscribe((result) => {
       this.cartItems = result.filter(
         (item: any) => item.customer_id === customerId

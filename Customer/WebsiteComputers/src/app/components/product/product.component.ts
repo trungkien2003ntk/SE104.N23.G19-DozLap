@@ -89,6 +89,7 @@ export class ProductComponent {
   async getCartItems(): Promise<any> {
     return new Promise<void>(resolve => {
       this.service.getData('shopping_cart_item').subscribe((result) => {
+        console.log('cart item', result);
         this.cartItems = result;
         resolve();
       });
@@ -97,6 +98,8 @@ export class ProductComponent {
 
   isDifferentFromAll(data:any, allData:any){
     for (const otherData of allData) {
+      console.log('Data', data);
+      console.log('other data', otherData);
       if (data.product_id === otherData.product_id && data.customer_id === otherData.customer_id) {
         return false;
       }
@@ -105,15 +108,16 @@ export class ProductComponent {
   }
 
   async addToCart(id: any) {
-    if (!sessionStorage.getItem('id')){
+    if (!Number(sessionStorage.getItem('id'))){
       this.routerLink.navigate(['login']);
       return;
     }
     await this.getCartItems();
     const data = {
       "product_id": id,
-      "customer_id": sessionStorage.getItem('id'),
-      "quantity": 1
+      "customer_id": Number(sessionStorage.getItem('id')),
+      "quantity": 1,
+      "created_on_utc": new Date().toISOString()
     };
     if (this.isDifferentFromAll(data, this.cartItems)) {
       this.service.postData("shopping_cart_item", data).subscribe((result) =>
