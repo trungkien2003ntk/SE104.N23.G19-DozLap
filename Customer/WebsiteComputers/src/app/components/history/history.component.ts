@@ -46,11 +46,13 @@ export class HistoryComponent implements OnInit {
           'rate': orderItem.rate,
           'comment': orderItem.comment,
           'rate_visible': false,
+          'order_id': order.id
         };
 
         this.purchaseHistory.push(row);
       }
     }
+    this.purchaseHistory.reverse();
     // console.log('This is all data', this.purchaseHistory);
   }
 
@@ -79,10 +81,15 @@ export class HistoryComponent implements OnInit {
   }
 
   cancel(purchase: any) {
+    let order = this.orders.find((order: any) => order.id === purchase.order_id);
+    order.total_price -= purchase.total_price;
+    
     this.service
       .deleteData('order_item', purchase.order_item_id)
       .subscribe((nothing: any) => {
-        this.getDataFromServer();
+        this.service.putData('orders', purchase.order_id, order)
+        .subscribe((nothing: any)=>
+        this.getDataFromServer());
       });
   }
 
