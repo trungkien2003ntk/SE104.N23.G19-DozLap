@@ -27,6 +27,7 @@ export class OrderdetaildialogComponent implements OnInit {
      private _coreService: CoreService,
      private messageService: MessageService){
      this.empForm = _fb.group({
+      order_id: '',
       product_id: '',
       quantity: '',
       rate: '',
@@ -34,6 +35,11 @@ export class OrderdetaildialogComponent implements OnInit {
     })
   }
   ngOnInit(): void {
+//     this.empForm.patchValue({
+//       order_id: this.data.order_id
+//     });
+//     console.log("this.data", this.data);
+// console.log("data.order_id", this.data.order_id);
     // this._empService.getCateIdList().subscribe((categoryIds: number[]) => {
     //   this.categories = categoryIds;
     // });
@@ -41,31 +47,59 @@ export class OrderdetaildialogComponent implements OnInit {
   }
 
 
+  updateTotalPriceOrder(){
+    this._empService.calculateOrderTotalPrice(this.data.order_id).subscribe(totalPrice => {
+      this._empService.getShipFee(this.data.shipping_address_id).subscribe(fee => {
+        if (totalPrice > 0)
+          totalPrice += fee;
+        console.log(totalPrice);
+        this._empService.updateTotalPrice(this.data.order_id, totalPrice).subscribe(
+          (response) => {
+
+            // this._empService.getOrderById(this.orderId).subscribe(data => {
+            //   this.thisOrder = data;
+            // });
+            // The request was successful
+            console.log('Total price updated successfully:', response);
+          },
+          (error) => {
+            // An error occurred
+            console.error('Error updating total price:', error);
+          }
+        );
+      });
+    });
+  }
+
   onFormSubmit(){
     if(this.empForm.valid)
     {
       console.log(this.empForm.value);
-      if (this.data)
-      {
-        this._empService.updateOrderDetail(this.data.id, this.empForm.value).subscribe({
-          next: (val: any) => {
-            this._coreService.openSnackBar('Order detail updated!');
-            this._dialogRef.close(true);
-          },
-          error: (err:any) => {
-            console.error(err);
-          }
-        }) ;
-      }else{
+      if(this.data.order_id !==null && this.data.product_id == null){
         this._empService.addOrderDetail(this.empForm.value).subscribe({
           next: (val: any) => {
            this._coreService.openSnackBar('Order detail added successfully');
             this._dialogRef.close(true);
+
+            this.updateTotalPriceOrder();
           },
           error: (err:any) => {
             console.error(err);
           }
         }) 
+      }
+      else{
+        this._empService.updateOrderDetail(this.data.id, this.empForm.value).subscribe({
+          next: (val: any) => {
+            this._coreService.openSnackBar('Order detail updated!');
+            this._dialogRef.close(true);
+
+            this.updateTotalPriceOrder();
+          },
+          error: (err:any) => {
+            console.error(err);
+          }
+        }) ;
       }
       
     }

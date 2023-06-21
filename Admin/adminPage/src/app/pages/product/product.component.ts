@@ -76,7 +76,10 @@ export class ProductComponent implements OnInit {
         this._coreService.openSnackBar('Product deleted!', 'done');
         this.getProdList();
       },
-      error: console.log,
+      error: () => {
+        console.log;
+        this._coreService.openSnackBar('Failed to delete product!', 'done');
+      } 
     })
   }
 

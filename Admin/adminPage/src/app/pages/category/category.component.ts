@@ -73,7 +73,10 @@ export class CategoryComponent implements OnInit {
         this._coreService.openSnackBar('Category deleted!', 'done');
         this.getCateList();
       },
-      error: console.log,
+      error: () => {
+        console.log;
+        this._coreService.openSnackBar('Failed to delete category!', 'done');
+      } 
     })
   }
 

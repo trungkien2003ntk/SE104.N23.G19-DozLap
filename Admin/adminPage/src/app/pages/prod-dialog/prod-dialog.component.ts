@@ -51,7 +51,7 @@ export class ProdDialogComponent implements OnInit {
       {
         this._empService.updateProd(this.data.id, this.empForm.value).subscribe({
           next: (val: any) => {
-            this._coreService.openSnackBar('Manufacturer detail updated!');
+            this._coreService.openSnackBar('Product detail updated!');
             this._dialogRef.close(true);
           },
           error: (err:any) => {
@@ -61,7 +61,7 @@ export class ProdDialogComponent implements OnInit {
       }else{
         this._empService.addProd(this.empForm.value).subscribe({
           next: (val: any) => {
-           this._coreService.openSnackBar('Manufacturer added successfully');
+           this._coreService.openSnackBar('Product added successfully');
             this._dialogRef.close(true);
           },
           error: (err:any) => {

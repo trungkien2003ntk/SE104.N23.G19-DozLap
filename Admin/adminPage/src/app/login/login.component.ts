@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr'
 import { AuthService } from '../services/auth.service';
+import { CoreService } from '../core/core.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,8 @@ import { AuthService } from '../services/auth.service';
 })
 export class LoginComponent {
   constructor(private builder: FormBuilder, private toastr: ToastrService, private service: AuthService,
-    private router: Router) {
+    private router: Router,
+    private _coreService: CoreService) {
       sessionStorage.clear();
 
   }
@@ -39,6 +41,7 @@ export class LoginComponent {
           }
         } else {
           this.toastr.error('Invalid credentials');
+          this._coreService.openSnackBar('The account information does not exist!', 'done');
         }
       });
     } else {

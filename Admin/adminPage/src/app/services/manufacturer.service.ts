@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map, forkJoin } from 'rxjs';
+import { Observable, map, forkJoin, switchMap, of, catchError } from 'rxjs';
 
 
 @Injectable({
@@ -15,6 +15,10 @@ export class ManufacturerService {
   apiurlOrder='http://localhost:3000/orders';
   apiurlCustomer='http://localhost:3000/customer';
   apiurlOrderItem='http://localhost:3000/order_item';
+  apiurlAddress='http://localhost:3000/address';
+  apiurlProvince='http://localhost:3000/province';
+  
+
 
 
   apiurl='http://localhost:3000/manufacturer';
@@ -253,6 +257,54 @@ export class ManufacturerService {
     );
   }
 
+  updateTotalPrice(orderId: number, totalPrice: number): Observable<any> {
+    const data = { total_price: totalPrice };
+    console.log(data);
+    return this._http.patch(`${this.apiurlOrder}/${orderId}`, data);
+  }  
 
+  getShipFee(addressId: number): Observable<number> {
+    return this._http.get<any>(`${this.apiurlAddress}/${addressId}`).pipe(
+      switchMap((address: any) => {
+        const provinceId = address.province_id;
+        return this._http.get<any>(`${this.apiurlProvince}/${provinceId}`).pipe(
+          map((province: any) => province.shipping_charge),
+          catchError(() => of(0)) // Trả về 0 nếu có lỗi trong quá trình lấy giá ship của province
+        );
+      }),
+      catchError(() => of(0)) // Trả về 0 nếu có lỗi trong quá trình lấy địa chỉ
+    );
+  }
+  
+  calculateOrderTotalPrice(orderId: number): Observable<number> {
+    return this._http.get<any[]>(`${this.apiurlOrderItem}?order_id=${orderId}`).pipe(
+      switchMap((orderItems: any[]) => {
+        if (orderItems.length === 0) {
+          return of(0); // Trả về 0 nếu không có order items nào
+        }
+        
+        const productIds = orderItems.map(orderItem => orderItem.product_id);
+        console.log(productIds);
+        
+        const requests = productIds.map(productId => this._http.get<any>(`${this.apiurlProduct}/${productId}`));
+  
+        return forkJoin(requests).pipe(
+          map((products: any[]) => {
+            console.log(products);
+            let totalPrice = 0;
+            orderItems.forEach((orderItem, index) => {
+              const product = products[index];
+              if (product) {
+                totalPrice += Number(product.price) * Number(orderItem.quantity);
+              }
+            });
+            return totalPrice;
+          })
+        );
+      })
+    );
+  }
+  
+  
   
 }
