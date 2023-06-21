@@ -74,12 +74,15 @@ export class CustomerComponent implements OnInit {
   }
 
   deleteCate(id: number) {
-    this._emService.deleteCate(id).subscribe({
+    this._emService.deleteCust(id).subscribe({
       next: (res) => {
         this._coreService.openSnackBar('Customer deleted!', 'done');
         this.getCustomList();
       },
-      error: console.log,
+      error: () => {
+        console.log;
+        this._coreService.openSnackBar('Failed to delete customer!', 'done');
+      } 
     })
   }
 

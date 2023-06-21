@@ -319,9 +319,9 @@
   ],
   "category": [
     {
-      "id": 1,
       "name": "Laptop",
-      "description": "A small, portable personal computer (PC)"
+      "description": "A small, portable personal computer (PC)",
+      "id": 1
     },
     {
       "id": 2,
@@ -332,16 +332,6 @@
       "id": 3,
       "name": "Screen",
       "description": "An output device that displays information in pictorial or textual form"
-    },
-    {
-      "id": 4,
-      "name": "Keyboard",
-      "description": "A peripheral input device modeled after the typewriter keyboard which uses an arrangement of buttons or keys to act as mechanical levers or electronic switches."
-    },
-    {
-      "id": 5,
-      "name": "Mouse",
-      "description": "A hand-held pointing device that detects two-dimensional motion relative to a surface."
     },
     {
       "id": 6,
@@ -1503,15 +1493,26 @@
       "date_of_birth": "2023-05-24"
     },
     {
-      "id": 3,
-      "username": "thanhtam",
+      "username": "thanhtamdfsdafasdf",
       "password": "1232312312",
       "email": "tam@gm.com",
       "first_name": "Tam",
       "last_name": "Tran",
       "gender": "female",
       "phone_number": "123123123",
-      "date_of_birth": "2003-12-15T17:00:00.000Z"
+      "date_of_birth": "2003-12-15T17:00:00.000Z",
+      "id": 3
+    },
+    {
+      "username": "sdfdsfasdf",
+      "password": "",
+      "email": "",
+      "first_name": "",
+      "last_name": "",
+      "gender": "",
+      "phone_number": "",
+      "date_of_birth": "",
+      "id": 4
     }
   ],
   "shopping_cart_item": [
@@ -1560,118 +1561,43 @@
   ],
   "orders": [
     {
-      "note": "No need to notekasjfdlksadjkflsad\najlksdfjkldsajflksdaf\nasf;alsdkflsadjflksdaf\naskdfldsakjlfdsaljfjldsakfjldsaf",
-      "created_on_utc": "2023-05-15T14:12:01.529Z",
+      "note": "This is note",
+      "created_on_utc": "2023-05-17T08:14:45.252Z",
       "customer_id": "1",
       "shipping_address_id": 1,
-      "total_price": 270428000,
+      "total_price": 0,
       "status": "COMPLETED",
-      "category_id": "",
       "id": 1
     },
     {
-      "note": "1223333",
-      "created_on_utc": "2023-05-16T01:43:58.201Z",
-      "customer_id": "2",
+      "note": "",
+      "created_on_utc": "2023-05-17T10:00:45.067Z",
+      "customer_id": "1",
       "shipping_address_id": 2,
-      "total_price": 3330000,
-      "status": "PENDING",
+      "total_price": 5560000,
+      "status": "COMPLETED",
       "id": 2
     },
     {
       "note": "",
-      "created_on_utc": "2023-05-17T03:40:17.566Z",
+      "created_on_utc": "2023-05-17T10:03:25.973Z",
       "customer_id": "1",
       "shipping_address_id": 3,
-      "total_price": 95000000,
-      "status": "PENDING",
+      "total_price": 0,
+      "status": "COMPLETED",
       "id": 3
     },
     {
-      "note": "",
-      "created_on_utc": "2023-05-17T03:40:17.566Z",
-      "customer_id": "1",
+      "note": "333",
+      "created_on_utc": "2023-05-17T10:36:56.451Z",
+      "customer_id": "2",
       "shipping_address_id": 4,
-      "total_price": 95000000,
-      "status": "PENDING",
-      "id": 4
-    },
-    {
-      "id": 5,
-      "note": "sdakfjsaldfjklsad",
-      "created_on_utc": "2023-05-18T17:00:00.000Z",
-      "customer_id": 3,
-      "shipping_address_id": 4,
-      "total_price": "25600000",
-      "status": "DECLINED",
-      "category_id": ""
-    },
-    {
-      "id": 6,
-      "note": "asfsadfas",
-      "created_on_utc": "2023-05-16T17:00:00.000Z",
-      "customer_id": 5,
-      "shipping_address_id": 5,
-      "total_price": "7000000",
-      "status": "CONFIRMED",
-      "category_id": ""
-    },
-    {
-      "id": 7,
-      "note": "askokljlkjlkdsjf",
-      "created_on_utc": "2023-05-17T17:00:00.000Z",
-      "customer_id": 9,
-      "shipping_address_id": 5,
-      "total_price": "19000000",
-      "status": "SHIPPING",
-      "category_id": ""
-    },
-    {
-      "id": 8,
-      "note": "mvnlkakfdjlkasdf",
-      "created_on_utc": "2023-05-17T17:00:00.000Z",
-      "customer_id": 8,
-      "shipping_address_id": 2,
-      "total_price": "17500000",
+      "total_price": 141010000,
       "status": "COMPLETED",
-      "category_id": ""
-    },
-    {
-      "id": 9,
-      "note": "",
-      "created_on_utc": "2023-05-18T17:00:00.000Z",
-      "customer_id": "",
-      "shipping_address_id": "",
-      "total_price": "9000000",
-      "status": "CONFIRMED",
-      "category_id": ""
+      "id": 4
     }
   ],
   "order_item": [
-    {
-      "order_id": 1,
-      "product_id": 35,
-      "quantity": 2,
-      "rate": 3,
-      "comment": "Too bad boy",
-      "id": 1
-    },
-    {
-      "order_id": 1,
-      "product_id": 36,
-      "quantity": 3,
-      "rate": 0,
-      "comment": "",
-      "id": 2
-    },
-    {
-      "order_id": 1,
-      "product_id": 37,
-      "quantity": 4,
-      "rate": 0,
-      "comment": "",
-      "id": 3
-    },
     {
       "order_id": 2,
       "product_id": 28,
@@ -1689,22 +1615,6 @@
       "id": 5
     },
     {
-      "order_id": 3,
-      "product_id": 28,
-      "quantity": 4,
-      "rate": 4,
-      "comment": "Lan any on asdfhoasf",
-      "id": 6
-    },
-    {
-      "order_id": 3,
-      "product_id": 29,
-      "quantity": 3,
-      "rate": 3,
-      "comment": "asdfasa",
-      "id": 7
-    },
-    {
       "order_id": 4,
       "product_id": 65,
       "quantity": 3,
@@ -1719,22 +1629,6 @@
       "rate": 4,
       "comment": "qutie good",
       "id": 9
-    },
-    {
-      "order_id": 5,
-      "product_id": 28,
-      "quantity": 2,
-      "rate": 5,
-      "comment": "good 100",
-      "id": 10
-    },
-    {
-      "order_id": 5,
-      "product_id": 29,
-      "quantity": 1,
-      "rate": 5,
-      "comment": "very excellent",
-      "id": 11
     }
   ],
   "address": [

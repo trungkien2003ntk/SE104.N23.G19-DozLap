@@ -77,7 +77,10 @@ export class OrderComponent implements OnInit {
         this._coreService.openSnackBar('Order deleted!', 'done');
         this.getOrderList();
       },
-      error: console.log,
+      error: () => {
+        console.log;
+        this._coreService.openSnackBar('Failed to delete order!', 'done');
+      } 
     })
   }
 

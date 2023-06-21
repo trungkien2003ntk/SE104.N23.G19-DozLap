@@ -19,7 +19,7 @@ import { ActivatedRoute } from '@angular/router';
 export class OrderdetailComponent implements OnInit {
   displayedColumns: string[] = [
     // 'id', 
-    // 'order_id', 
+    'order_id', 
     'product_id', 
     'quantity',
     'rate',
@@ -27,7 +27,7 @@ export class OrderdetailComponent implements OnInit {
     'action'];
   dataSource!: MatTableDataSource<any>;
 
-  orderId: number | undefined;
+  orderId: number = 0;
 
   thisOrder: any;
 
@@ -51,18 +51,33 @@ export class OrderdetailComponent implements OnInit {
     });
     this.getOrderItemsByOrderId(this.orderId);
 
-    this._emService.getOrderById(this.orderId).subscribe(data => {
-      this.thisOrder = data;
+    this.getOrderByID(this.orderId);
+  }
+
+  getOrderByID(id: any)
+  {
+    this._emService.getOrderById(id).subscribe({
+      next:  (data) => {
+        this.thisOrder = data;
+        //console.log(this.dataSource);
+      },
+      error: (err) => {
+        console.log(err);
+      }
     });
   }
 
   openAddEditManuForm()
   {
-    const dialogRef = this._dialog.open(OrderdetaildialogComponent);
+    const dialogRef = this._dialog.open(OrderdetaildialogComponent, {
+      data: { order_id: this.orderId,
+              shipping_address_id: this.thisOrder.shipping_address_id }
+    });
     dialogRef.afterClosed().subscribe({
       next: (val) => {
          if (val){
           this.getOrderItemsByOrderId(this.orderId);
+          this.getOrderByID(this.orderId);
          }
       }
     });
@@ -74,7 +89,7 @@ export class OrderdetailComponent implements OnInit {
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
-        console.log(this.dataSource);
+        //console.log(this.dataSource);
       },
       error: (err) => {
         console.log(err);
@@ -96,9 +111,44 @@ export class OrderdetailComponent implements OnInit {
       next: (res) => {
         this._coreService.openSnackBar('Order detail deleted!', 'done');
         this.getOrderItemsByOrderId(this.orderId);
+
+        //
+        this.updateTotalPriceOrder();
+        //
       },
-      error: console.log,
+      error: () => {
+        console.log;
+        this._coreService.openSnackBar('Failed to delete order detail!', 'done');
+      } 
     })
+  }
+
+  updateTotalPriceOrder(){
+    this._emService.calculateOrderTotalPrice(this.orderId).subscribe(totalPrice => {
+      this._emService.getShipFee(this.thisOrder?.shipping_address_id).subscribe(fee => {
+        if (totalPrice > 0)
+          totalPrice += fee;
+        console.log(totalPrice);
+        this._emService.updateTotalPrice(this.orderId, totalPrice).subscribe(
+          (response) => {
+
+            this._emService.getOrderById(this.orderId).subscribe(data => {
+              this.thisOrder = data;
+            });
+            // The request was successful
+            console.log('Total price updated successfully:', response);
+          },
+          (error) => {
+            // An error occurred
+            console.error('Error updating total price:', error);
+          }
+        );
+  
+  
+      });
+
+      
+    });
   }
 
   openEditForm(data: any)
@@ -111,6 +161,7 @@ export class OrderdetailComponent implements OnInit {
       next: (val) => {
          if (val){
           this.getOrderItemsByOrderId(this.orderId);
+          this.getOrderByID(this.orderId);
          }
       }
     });
