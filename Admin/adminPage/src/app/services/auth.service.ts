@@ -9,7 +9,8 @@ export class AuthService {
   constructor(private http:HttpClient) { 
 
   }
-  apiurl='http://localhost:3000/admin';
+  //  apiurl='http://localhost:3000/admin';
+  apiurl='https://dozlapapiasia.azurewebsites.net/api/admin';
 
   GetUserbyCode(id:any){
     return this.http.get(this.apiurl+'/'+id);

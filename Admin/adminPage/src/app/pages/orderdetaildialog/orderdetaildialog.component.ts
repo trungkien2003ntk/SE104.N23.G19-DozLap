@@ -27,6 +27,7 @@ export class OrderdetaildialogComponent implements OnInit {
      private _coreService: CoreService,
      private messageService: MessageService){
      this.empForm = _fb.group({
+      id:'',
       order_id: '',
       product_id: '',
       quantity: '',
@@ -76,6 +77,7 @@ export class OrderdetaildialogComponent implements OnInit {
     {
       console.log(this.empForm.value);
       if(this.data.order_id !==null && this.data.product_id == null){
+        this.empForm.get('id')?.setValue(1);
         this._empService.addOrderDetail(this.empForm.value).subscribe({
           next: (val: any) => {
            this._coreService.openSnackBar('Order detail added successfully');

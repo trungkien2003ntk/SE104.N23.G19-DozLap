@@ -10,13 +10,21 @@ export class ManufacturerService {
 
   constructor(private _http: HttpClient) { }
 
-  apiurlCategory='http://localhost:3000/category';
-  apiurlProduct='http://localhost:3000/product';
-  apiurlOrder='http://localhost:3000/orders';
-  apiurlCustomer='http://localhost:3000/customer';
-  apiurlOrderItem='http://localhost:3000/order_item';
-  apiurlAddress='http://localhost:3000/address';
-  apiurlProvince='http://localhost:3000/province';
+  // apiurlCategory='http://localhost:3000/category';
+  // apiurlProduct='http://localhost:3000/product';
+  // apiurlOrder='http://localhost:3000/orders';
+  // apiurlCustomer='http://localhost:3000/customer';
+  // apiurlOrderItem='http://localhost:3000/order_item';
+  // apiurlAddress='http://localhost:3000/address';
+  // apiurlProvince='http://localhost:3000/province';
+
+  apiurlCategory='https://dozlapapiasia.azurewebsites.net/api/product_category';
+  apiurlProduct='https://dozlapapiasia.azurewebsites.net/api/product';
+  apiurlOrder='https://dozlapapiasia.azurewebsites.net/api/orders';
+  apiurlCustomer='https://dozlapapiasia.azurewebsites.net/api/customer';
+  apiurlOrderItem='https://dozlapapiasia.azurewebsites.net/api/order_item';
+  apiurlAddress='https://dozlapapiasia.azurewebsites.net/api/address';
+  apiurlProvince='https://dozlapapiasia.azurewebsites.net/api/province';
   
 
 
