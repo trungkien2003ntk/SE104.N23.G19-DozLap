@@ -37,7 +37,8 @@ export class ManufacturerService {
   }
 
   getOrderItemsByOrderId(orderId: number): Observable<any> {
-    return this._http.get(`${this.apiurlOrderItem}?order_id=${orderId}`);
+    // return this._http.get(`${this.apiurlOrderItem}?order_id=${orderId}`);
+    return this._http.get(`${this.apiurlOrderItem}/order/${orderId}`);
   }
   
 
@@ -285,7 +286,7 @@ export class ManufacturerService {
   }
   
   calculateOrderTotalPrice(orderId: number): Observable<number> {
-    return this._http.get<any[]>(`${this.apiurlOrderItem}?order_id=${orderId}`).pipe(
+    return this._http.get<any[]>(`${this.apiurlOrderItem}/order/${orderId}`).pipe(
       switchMap((orderItems: any[]) => {
         if (orderItems.length === 0) {
           return of(0); // Trả về 0 nếu không có order items nào
