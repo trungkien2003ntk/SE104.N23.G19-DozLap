@@ -84,12 +84,14 @@ export class OrderdetailComponent implements OnInit {
   }
 
   getOrderItemsByOrderId(id: any) {
+    console.log('id', id);
     this._emService.getOrderItemsByOrderId(id).subscribe({
       next:  (res) => {
+        console.log('res', res);
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
-        //console.log(this.dataSource);
+        console.log(this.dataSource);
       },
       error: (err) => {
         console.log(err);

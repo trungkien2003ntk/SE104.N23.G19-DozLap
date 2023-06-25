@@ -23,6 +23,7 @@ export class CateDialogComponent implements OnInit {
      @Inject(MAT_DIALOG_DATA) public data: any,
      private _coreService: CoreService){
      this.empForm = _fb.group({
+      id:'',
       name: '',
       description: '',
       // displayOrder:'',
@@ -49,6 +50,7 @@ export class CateDialogComponent implements OnInit {
           }
         }) ;
       }else{
+        this.empForm.get('id')?.setValue(1);
         this._empService.addCate(this.empForm.value).subscribe({
           next: (val: any) => {
            this._coreService.openSnackBar('Category added successfully');

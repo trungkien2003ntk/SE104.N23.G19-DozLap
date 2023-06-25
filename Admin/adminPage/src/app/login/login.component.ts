@@ -32,13 +32,16 @@ export class LoginComponent {
         console.log(item);
         if (this.result.username === this.loginform.value.username
           && this.result.password === this.loginform.value.password) {
-          if (this.result.isactive) {
-            sessionStorage.setItem('username',this.result.id);
-            this.router.navigate(['/dashboard']);
-          } else {
-            this.toastr.error('Please contact Admin', 'InActive User');
+          // if (this.result.isactive) {
+          //   sessionStorage.setItem('username',this.result.id);
+          //   this.router.navigate(['/dashboard']);
+          // } else {
+          //   this.toastr.error('Please contact Admin', 'InActive User');
             
-          }
+          // }
+
+          sessionStorage.setItem('username',this.result.id);
+            this.router.navigate(['/dashboard']);
         } else {
           this.toastr.error('Invalid credentials');
           this._coreService.openSnackBar('The account information does not exist!', 'done');

@@ -29,6 +29,7 @@ export class CustomDialogComponent implements OnInit {
      private _coreService: CoreService,
      private messageService: MessageService){
      this.empForm = _fb.group({
+      id:'',
       username: '',
       password: '',
       email: '',
@@ -61,6 +62,7 @@ export class CustomDialogComponent implements OnInit {
           }
         }) ;
       }else{
+        this.empForm.get('id')?.setValue(1);
         this._empService.addCust(this.empForm.value).subscribe({
           next: (val: any) => {
            this._coreService.openSnackBar('Customer added successfully');

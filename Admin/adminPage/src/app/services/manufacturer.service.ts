@@ -10,13 +10,21 @@ export class ManufacturerService {
 
   constructor(private _http: HttpClient) { }
 
-  apiurlCategory='http://localhost:3000/category';
-  apiurlProduct='http://localhost:3000/product';
-  apiurlOrder='http://localhost:3000/orders';
-  apiurlCustomer='http://localhost:3000/customer';
-  apiurlOrderItem='http://localhost:3000/order_item';
-  apiurlAddress='http://localhost:3000/address';
-  apiurlProvince='http://localhost:3000/province';
+  // apiurlCategory='http://localhost:3000/category';
+  // apiurlProduct='http://localhost:3000/product';
+  // apiurlOrder='http://localhost:3000/orders';
+  // apiurlCustomer='http://localhost:3000/customer';
+  // apiurlOrderItem='http://localhost:3000/order_item';
+  // apiurlAddress='http://localhost:3000/address';
+  // apiurlProvince='http://localhost:3000/province';
+
+  apiurlCategory='https://dozlapapiasia.azurewebsites.net/api/product_category';
+  apiurlProduct='https://dozlapapiasia.azurewebsites.net/api/product';
+  apiurlOrder='https://dozlapapiasia.azurewebsites.net/api/orders';
+  apiurlCustomer='https://dozlapapiasia.azurewebsites.net/api/customer';
+  apiurlOrderItem='https://dozlapapiasia.azurewebsites.net/api/order_item';
+  apiurlAddress='https://dozlapapiasia.azurewebsites.net/api/address';
+  apiurlProvince='https://dozlapapiasia.azurewebsites.net/api/province';
   
 
 
@@ -29,7 +37,8 @@ export class ManufacturerService {
   }
 
   getOrderItemsByOrderId(orderId: number): Observable<any> {
-    return this._http.get(`${this.apiurlOrderItem}?order_id=${orderId}`);
+    // return this._http.get(`${this.apiurlOrderItem}?order_id=${orderId}`);
+    return this._http.get(`${this.apiurlOrderItem}/order/${orderId}`);
   }
   
 
@@ -277,7 +286,7 @@ export class ManufacturerService {
   }
   
   calculateOrderTotalPrice(orderId: number): Observable<number> {
-    return this._http.get<any[]>(`${this.apiurlOrderItem}?order_id=${orderId}`).pipe(
+    return this._http.get<any[]>(`${this.apiurlOrderItem}/order/${orderId}`).pipe(
       switchMap((orderItems: any[]) => {
         if (orderItems.length === 0) {
           return of(0); // Trả về 0 nếu không có order items nào

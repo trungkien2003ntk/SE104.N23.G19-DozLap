@@ -749,14 +749,14 @@
   ],
   "product": [
     {
-      "name": "Laptop MSI Modern 14 B11MOU-1065VN",
+      "id": 1,
+      "name": "Laptop MSI Modern 14 B11MOU-1065VN dfadsfsadfsdaf fdsafsdfdsf",
       "image_url": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/t/e/text_ng_n_5__1_68.png",
       "description": "Laptop học tập - văn phòng cực mỏng nhẹ với trọng lượng chỉ 1.3 kg|\r\nCPU Intel Core i7-1195G7 cân mọi tác vụ văn phòng như: Word, Excel, PowerPoint|\r\nCard đồ họa Intel Iris Xe Graphics thoải mái chạy các ứng dụng văn phòng cơ bản hay các phần mềm thiết kế đơn giản|\r\nRAM 8 GB chuẩn DDR4 giúp thao tác đa nhiệm mượt mà hơn|\r\nKhởi động máy, ứng dụng nhanh chóng chỉ trong vài giây nhờ ổ cứng SSD 512 GB PCIe NVMe|\r\nĐộ phủ màu 45% NTSC, 63% sRGB hỗ trợ thiết kế, làm việc với màu sắc chuẩn xác",
       "specs": "Loại card đồ họa    Intel Iris Xe Graphics|\r\nDung lượng RAM    8GB|\r\nLoại RAM    DDR4 3200MHz|\r\nSố khe ram    2 khe (Nâng cấp tối đa 64GB)|\r\nỔ cứng    512GB PCIe NVMe M.2 SSD (1 slot)|\r\nKích thước màn hình    14 inches|\r\nCông nghệ màn hình    Tần số quét 60Hz  Độ phủ màu 45% NTSC, 63% sRGB  Thin Bezel|\r\nPin    3 Cell, 39Whr|\r\nHệ điều hành    Windows 11 Home|\r\nĐộ phân giải màn hình    1920 x 1080 pixels (FullHD)|\r\nCổng giao tiếp    1x Type-C USB3.2 Gen 2  2x Type-A USB3.2 Gen 1 1x Micro SD 1x HDMI (4K @ 60Hz)|\r\n",
       "price": 16100000,
       "status": false,
-      "category_id": 1,
-      "id": 1
+      "category_id": 1
     },
     {
       "id": 2,
@@ -1504,7 +1504,7 @@
       "id": 3
     },
     {
-      "username": "sdfdsfasdf",
+      "username": "sdfdsfasdfgfsgfdg",
       "password": "",
       "email": "",
       "first_name": "",
@@ -1579,21 +1579,13 @@
       "id": 2
     },
     {
-      "note": "",
-      "created_on_utc": "2023-05-17T10:03:25.973Z",
-      "customer_id": "1",
-      "shipping_address_id": 3,
-      "total_price": 0,
-      "status": "COMPLETED",
-      "id": 3
-    },
-    {
-      "note": "333",
+      "note": "333fdafdsaf",
       "created_on_utc": "2023-05-17T10:36:56.451Z",
       "customer_id": "2",
       "shipping_address_id": 4,
       "total_price": 141010000,
       "status": "COMPLETED",
+      "category_id": "",
       "id": 4
     }
   ],

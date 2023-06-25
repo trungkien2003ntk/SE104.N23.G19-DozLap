@@ -26,6 +26,7 @@ export class ProdDialogComponent implements OnInit {
      private _coreService: CoreService,
      private messageService: MessageService){
      this.empForm = _fb.group({
+      id:'',
       name: '',
       image_url: '',
       description: '',
@@ -59,6 +60,8 @@ export class ProdDialogComponent implements OnInit {
           }
         }) ;
       }else{
+
+        this.empForm.get('id')?.setValue(1);
         this._empService.addProd(this.empForm.value).subscribe({
           next: (val: any) => {
            this._coreService.openSnackBar('Product added successfully');
